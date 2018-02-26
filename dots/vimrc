@@ -9,7 +9,8 @@ call plug#begin(g:plugin_path)
 " Theme
 " ------------------------------------------------------------------------------
 
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " tmux
 " ------------------------------------------------------------------------------
@@ -215,7 +216,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs'
 
 call plug#end()
-
 " Shortcut for checking if a plugin is loaded
 function! s:has_plugin(plugin)
   let lookup = 'g:plugs["' . a:plugin . '"]'
@@ -227,7 +227,7 @@ endfunction
 
 " Theme
 set background=dark
-silent! colorscheme onedark
+silent! colorscheme PaperColor
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
@@ -705,7 +705,6 @@ if executable('jq')
 endif
 
 if s:has_plugin('vim-airline')
-  let g:airline_theme = 'onedark'
   let g:airline#extensions#branch#enabled = 1
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tmuxline#enabled = 0

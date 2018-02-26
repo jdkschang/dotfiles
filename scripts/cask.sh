@@ -20,7 +20,6 @@ brew cask install skype
 brew cask install burn
 brew cask install imageoptim
 brew cask install max
-brew cask install sonos
 brew cask install spotify
 brew cask install iina
 

@@ -50,6 +50,8 @@ Plug 'schickling/vim-bufonly'
 Plug 'moll/vim-bbye'
 " Manage buffers in a list
 Plug 'jlanzarotta/bufexplorer'
+" Scratch pad
+Plug 'vim-scripts/scratch.vim'
 
 " Language pack
 " ------------------------------------------------------------------------------
@@ -145,7 +147,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " ------------------------------------------------------------------------------
 
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 
 " Status bar
 " ------------------------------------------------------------------------------
@@ -233,10 +235,17 @@ colorscheme PaperColor
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
 
+inoremap jj <ESC>
+
 " Set <,> to leader
 let mapleader = ','
-nmap <leader>ne :NERDTree<cr>
 let maplocalleader='\'
+
+nmap <leader>ne :NERDTree<cr>
+map <C-\> :NERDTreeToggle<CR>
+map <leader><tab> :Sscratch<cr>
+map <leader><S-tab> :Scratch<cr>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Turn off swapfiles
 set noswapfile

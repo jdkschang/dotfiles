@@ -44,5 +44,9 @@ When complete, open new terminal window to trigger `zgen` plugin downloads.
 
 ## UserStyles
 
-* [Slack Dark](https://userstyles.org/styles/117475/slack-night-mode-black)
 * [Hacker News](https://github.com/oskarkrawczyk/hackernews-userstyles)
+
+## Credit
+[jackfranklin](https://github.com/jackfranklin/dotfiles)
+[simonsmith](https://github.com/simonsmith/dotfiles)
+

@@ -1,6 +1,4 @@
 # Navigation
-alias ll="ls -al --color=always"
-alias ls="ls -G --color=always"
 alias ..="builtin cd .."
 alias ...="builtin cd ../.."
 
@@ -64,7 +62,9 @@ alias yu='yarn upgrade'
 alias yui='yarn upgrade-interactive'
 
 # https://github.com/ogham/exa
-alias l="exa -lbha --git"
+alias ls="exa"
+alias l="exa -lbh --git"
+alias ll="exa -lbha --git"
 alias t="exa -Ta"
 alias t1="exa -Ta -L 1"
 alias t2="exa -Ta -L 2"

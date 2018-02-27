@@ -1,31 +1,26 @@
 # Navigation
-alias -- -="cd -"
 alias ll="ls -al --color=always"
 alias ls="ls -G --color=always"
+alias ..="builtin cd .."
+alias ...="builtin cd ../.."
 
 # oa
-alias proj="cd ~/Dropbox\ \(Personal\)/Projects/"
-alias oa="cd ~/Dropbox\ \(Personal\)/Projects/oa_control/web/laravel"
-alias home="cd ~/Dropbox\ \(Personal\)/Projects/homestead"
+alias proj="builtin cd ~/Dropbox\ \(Personal\)/Projects/"
+alias oa="builtin cd ~/Dropbox\ \(Personal\)/Projects/oa_control/web/laravel"
+alias home="builtin cd ~/Dropbox\ \(Personal\)/Projects/homestead"
 
 # Shortcuts
 alias d="cd ~/Dropbox\ \(Personal\)"
 alias df="cd ~/dotfiles"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+
 alias h="history"
-alias j="jobs"
+alias jo="jobs"
+alias j="z"
 alias cask="brew cask"
 alias v="nvim"
 alias mux="tmuxinator"
-alias nf="neofetch \
---config off \
---block_range 1 8 \
---bold off \
---uptime_shorthand on \
---gtk_shorthand on \
---colors 4 1 8 8 8 7 \
-"
 
 # Add line numbers here as they aren't desirable by default (make git log ugly)
 alias less='less -N'
@@ -178,6 +173,3 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# Faster npm for europeans
-command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"

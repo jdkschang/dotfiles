@@ -12,6 +12,11 @@ cdf() {
    file=$(fzf-tmux +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
+cd () {
+  builtin cd "$*"
+  ls
+}
+
 # fd - cd to selected directory
 fd() {
   local dir

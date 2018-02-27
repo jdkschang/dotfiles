@@ -9,7 +9,6 @@ call plug#begin(g:plugin_path)
 " Theme
 " ------------------------------------------------------------------------------
 
-" Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " tmux
@@ -227,13 +226,14 @@ endfunction
 
 " Theme
 set background=dark
-silent! colorscheme PaperColor
+colorscheme PaperColor
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
 
-" Set <space> to leader
-let mapleader=' '
+" Set <,> to leader
+let mapleader = ','
+nmap <leader>ne :NERDTree<cr>
 let maplocalleader='\'
 
 " Turn off swapfiles
@@ -251,7 +251,7 @@ set termguicolors
 
 " Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=+1
+" set colorcolumn=+1
 
 " Use ``indent`` based folding
 set foldmethod=indent
@@ -482,6 +482,12 @@ nnoremap <cr> o<esc>
 
 " Allow sourcing of vimrc
 nnoremap <leader>y :source $MYVIMRC<cr>
+
+" scroll options
+" :map <ScrollWheelUp> <C-Y>
+" :map <S-ScrollWheelUp> <C-U>
+" :map <ScrollWheelDown> <C-E>
+" :map <S-ScrollWheelDown> <C-D>
 
 if exists(':tnoremap')
   " Allow movement seamlessly with terminals

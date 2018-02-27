@@ -2,6 +2,8 @@
 /temp_dir
 TAG*
 .tag*
+vim_tags*
+
 *css.map
 *js.map
 *.orig

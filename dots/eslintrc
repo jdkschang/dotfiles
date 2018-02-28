@@ -25,6 +25,7 @@
       "tab",
       {
         "MemberExpression": 1,
+        "ArrayExpression": "first",
         "ObjectExpression": "first",
         "FunctionDeclaration": {
           "parameters": "first"

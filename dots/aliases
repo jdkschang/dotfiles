@@ -18,6 +18,7 @@ alias jo="jobs"
 alias j="z"
 alias cask="brew cask"
 alias v="nvim"
+alias e="emacs -nw"
 alias mux="tmuxinator"
 
 # Add line numbers here as they aren't desirable by default (make git log ugly)

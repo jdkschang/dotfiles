@@ -36,6 +36,11 @@ Plug 'junegunn/vim-slash'
 " File management
 " ------------------------------------------------------------------------------
 
+" Console File Manager
+Plug 'francoiscabrol/ranger.vim'
+" neovim dep for ranger
+Plug 'rbgrouleff/bclose.vim'
+
 " File browser
 Plug 'scrooloose/nerdtree'
 " Easy directory browsing with `-`, integrates with NERDTree
@@ -226,12 +231,13 @@ function! s:has_plugin(plugin)
   return exists(lookup)
 endfunction
 
+
 "  General config
 " ------------------------------------------------------------------------------
 
 " Theme
 set background=dark
-colorscheme PaperColor
+" colo PaperColor
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
@@ -725,7 +731,7 @@ endif
 
 if s:has_plugin('vim-airline')
   let g:airline#extensions#branch#enabled = 1
-  let g:airline_theme='papercolor'
+  let g:airline_theme=''
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tmuxline#enabled = 0
   let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -846,3 +852,5 @@ augroup omnifuncs
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup endif
+
+colo PaperColor

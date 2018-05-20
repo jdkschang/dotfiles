@@ -14,7 +14,7 @@ rbenv shell "$ruby_version"
 gem update --system
 
 gem install bundler
-gem install tmuxinator
+gem install colorls
 gem install circle-cli
 
 rbenv rehash

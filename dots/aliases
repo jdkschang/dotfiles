@@ -3,15 +3,14 @@ alias ..="builtin cd .."
 alias ...="builtin cd ../.."
 
 # oa
-alias proj="builtin cd ~/Dropbox\ \(Personal\)/Projects/"
-alias oa="builtin cd ~/Dropbox\ \(Personal\)/Projects/oa_control/web/laravel"
-alias home="builtin cd ~/Dropbox\ \(Personal\)/Projects/homestead"
+alias proj="builtin cd ~/Dropbox/Projects/"
+alias oa="builtin cd ~/Dropbox/Projects/oa_control/web/laravel"
+alias home="builtin cd ~/Dropbox/Projects/homestead"
 
 # Shortcuts
-alias d="cd ~/Dropbox\ \(Personal\)"
+alias d="cd ~/Dropbox"
 alias df="cd ~/dotfiles"
 alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
 
 alias h="history"
 alias jo="jobs"
@@ -19,7 +18,6 @@ alias j="z"
 alias cask="brew cask"
 alias v="nvim"
 alias e="emacs -nw"
-alias mux="tmuxinator"
 
 # Add line numbers here as they aren't desirable by default (make git log ugly)
 alias less='less -N'
@@ -55,6 +53,7 @@ alias nf='npm cache clean && rm -rf node_modules && npm install'
 # yarn
 alias y='yarn'
 alias ya='yarn add'
+alias yag='yarn global add'
 alias yad='yarn add --dev'
 alias yr='yarn run'
 alias yR='yarn remove'

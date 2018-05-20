@@ -79,9 +79,9 @@ brew install go
 brew install exa
 brew install htop
 brew install httpie
-brew install hugo
 brew install p7zip
 brew install python
+brew install neofetch
 brew install redis
 brew install youtube-dl
 

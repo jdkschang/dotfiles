@@ -24,7 +24,6 @@ symlink_dotfile functions
 symlink_dotfile gitconfig
 symlink_dotfile gitignore
 symlink_dotfile gitmessage
-symlink_dotfile honukai.zsh-theme
 symlink_dotfile hushlogin
 symlink_dotfile khdrc
 symlink_dotfile stylelintrc
@@ -33,7 +32,6 @@ symlink_dotfile tmux.conf
 symlink_dotfile tmuxline_snapshot
 symlink_dotfile vimrc
 symlink_dotfile wgetrc
-symlink_dotfile zshenv
 symlink_dotfile zshrc
 ln -sfv $(grealpath tern-project) "$HOME/.tern-config"
 mkdir "$HOME/.ssh"

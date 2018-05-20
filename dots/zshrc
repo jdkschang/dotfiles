@@ -216,4 +216,7 @@ eval "$(direnv hook zsh)"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^o' autosuggest-accept
 
+# colorls tab completion
+source $(dirname $(gem which colorls))/tab_complete.sh
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

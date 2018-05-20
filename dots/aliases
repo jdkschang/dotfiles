@@ -21,6 +21,10 @@ alias cask="brew cask"
 alias v="nvim"
 alias e="emacs -nw"
 
+# Services
+alias bstart="brew services start"
+alias bstop="brew services stop"
+
 # Add line numbers here as they aren't desirable by default (make git log ugly)
 alias less='less -N'
 

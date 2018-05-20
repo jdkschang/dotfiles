@@ -72,8 +72,8 @@ alias t2="exa -Ta -L 2"
 alias t3="exa -Ta -L 3"
 
 # colorls
-alias lc="colorls -lA --sd"
-alias lcd="colorls -ld --sd"
+alias lc="colorls --gs -lA --sd"
+alias lcd="colorls --gs -ld --sd"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

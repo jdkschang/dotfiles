@@ -4,13 +4,15 @@ alias ...="builtin cd ../.."
 
 # oa
 alias proj="builtin cd ~/Dropbox/Projects/"
+alias tao="builtin cd ~/Dropbox/Projects/tao"
+
 alias oa="builtin cd ~/Dropbox/Projects/oa_control/web/laravel"
 alias home="builtin cd ~/Dropbox/Projects/homestead"
 
 # Shortcuts
 alias d="cd ~/Dropbox"
-alias df="cd ~/dotfiles"
 alias dl="cd ~/Downloads"
+alias df="cd ~/dotfiles"
 
 alias h="history"
 alias jo="jobs"

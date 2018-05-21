@@ -150,7 +150,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a faster keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with

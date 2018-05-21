@@ -200,6 +200,15 @@ SPACESHIP_PROMPT_ORDER=(
 # Misc
 # ---------------------------------------------------------------
 
+# https://github.com/dylanaraps/pywal/wiki/Getting-Started
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+# Add this to your .xinitrc or whatever file starts programs on startup.
+# -R restores the last colorscheme that was in use.
+wal -R
+
 # https://github.com/carlitux/deoplete-ternjs#vim-configuration-example
 ulimit -n 2048
 

@@ -10,6 +10,8 @@ call plug#begin(g:plugin_path)
 " ------------------------------------------------------------------------------
 
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'dylanaraps/wal.vim'
 
 " tmux
 " ------------------------------------------------------------------------------
@@ -96,6 +98,8 @@ Plug 'dietsche/vim-lastplace'
 Plug 'yssl/QFEnter'
 " Move blocks of code with ALT+j/k
 Plug 'matze/vim-move'
+" Super Focus
+Plug 'junegunn/limelight.vim'
 
 " Text objects
 " ------------------------------------------------------------------------------
@@ -237,7 +241,22 @@ endfunction
 
 " Theme
 set background=dark
-" colo PaperColor
+
+" true color for gruvbox
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let g:gruvbox_contrast_dark = 'hard'
+
+" focus mode
+" default: 0.5
+let g:limelight_default_coefficient = 0.8
+" default: 0
+let g:limelight_paragraph_span = 1
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+nmap <leader>l :Limelight!!<cr>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
@@ -248,8 +267,9 @@ inoremap jj <ESC>
 let mapleader = ','
 let maplocalleader='\'
 
+
 nmap <leader>ne :NERDTree<cr>
-map <C-\> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<cr>
 map <leader><tab> :Sscratch<cr>
 map <leader><S-tab> :Scratch<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -731,7 +751,7 @@ endif
 
 if s:has_plugin('vim-airline')
   let g:airline#extensions#branch#enabled = 1
-  let g:airline_theme=''
+  let g:airline_theme='gruvbox'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tmuxline#enabled = 0
   let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -853,4 +873,4 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup endif
 
-colo PaperColor
+colo gruvbox

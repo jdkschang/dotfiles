@@ -39,37 +39,37 @@ cmd + shift - 9           :   chunkc tiling::window --send-to-desktop 9
 
 # toggle between modes
 # switcher
-# ctrl - cmd                :   khd -e "mode activate switcher"
-# switcher + ctrl - cmd     :   khd -e "mode activate default"
-# ytd + ctrl - cmd          :   khd -e "mode activate default"
-# swap + ctrl - cmd         :   khd -e "mode activate default"
-# space + ctrl - cmd        :   khd -e "mode activate default"
-# tree + ctrl - cmd         :   khd -e "mode activate default"
+ctrl + f               :   khd -e "mode activate switcher"
+switcher + ctrl - cmd     :   khd -e "mode activate default"
+ytd + ctrl - cmd          :   khd -e "mode activate default"
+swap + ctrl - cmd         :   khd -e "mode activate default"
+space + ctrl - cmd        :   khd -e "mode activate default"
+tree + ctrl - cmd         :   khd -e "mode activate default"
 
-# switcher - escape       :   khd -e "mode activate default"
-# swap - escape           :   khd -e "mode activate default"
-# space - escape          :   khd -e "mode activate default"
-# tree - escape           :   khd -e "mode activate default"
+switcher - escape       :   khd -e "mode activate default"
+swap - escape           :   khd -e "mode activate default"
+space - escape          :   khd -e "mode activate default"
+tree - escape           :   khd -e "mode activate default"
 
-# switcher - w            :   khd -e "mode activate ytd"
-# switcher - a            :   khd -e "mode activate swap"
-# switcher - s            :   khd -e "mode activate space"
-# switcher - t            :   khd -e "mode activate tree"
-# switcher - q            :   khd -e "mode activate info"
+switcher - w            :   khd -e "mode activate ytd"
+switcher - a            :   khd -e "mode activate swap"
+switcher - s            :   khd -e "mode activate space"
+switcher - t            :   khd -e "mode activate tree"
+switcher - q            :   khd -e "mode activate info"
 
-# # switcher mode
-# switcher - r            :   khd -e "reload" # reload config
+# switcher mode
+switcher - r            :   khd -e "reload" # reload config
 
 # # open apps
-# switcher - return       :   open -na /Applications/iTerm.app;\
-#                             khd -e "mode activate default"
+switcher - return       :   open -na /Applications/iTerm.app;\
+                            khd -e "mode activate default" -s "float"
 # # # select windows
-# switcher - h            :   chunkc tiling::window --focus west
-# switcher - l            :   chunkc tiling::window --focus east
-# switcher - j            :   chunkc tiling::window --focus south
-# switcher - k            :   chunkc tiling::window --focus north
-# switcher - m            :   chunkc tiling::window --focus prev
-# switcher - n            :   chunkc tiling::window --focus next
+switcher - h            :   chunkc tiling::window --focus west
+switcher - l            :   chunkc tiling::window --focus east
+switcher - j            :   chunkc tiling::window --focus south
+switcher - k            :   chunkc tiling::window --focus north
+switcher - m            :   chunkc tiling::window --focus prev
+switcher - n            :   chunkc tiling::window --focus next
 
 # # close window
 # switcher - w            :   chunkc tiling::window --close;\

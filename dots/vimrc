@@ -228,6 +228,9 @@ Plug 'styled-components/vim-styled-components'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs'
 
+" Org Mode
+Plug 'jceb/vim-orgmode'
+
 call plug#end()
 " Shortcut for checking if a plugin is loaded
 function! s:has_plugin(plugin)

@@ -19,8 +19,8 @@ chunkc core::hotload 1
 #
 
 chunkc set global_desktop_mode           bsp
-chunkc set global_desktop_offset_top     45 # pecan bar padding (20)
-chunkc set global_desktop_offset_bottom  25
+chunkc set global_desktop_offset_top     25
+chunkc set global_desktop_offset_bottom  45	# pecan bar padding (20)
 chunkc set global_desktop_offset_left    25
 chunkc set global_desktop_offset_right   25
 chunkc set global_desktop_offset_gap     25

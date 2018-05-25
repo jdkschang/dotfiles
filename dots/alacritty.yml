@@ -11,14 +11,15 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  # TERM: xterm-256color
+  TERM: screen-256color-italic
 
 window:
   # Window dimensions in character columns and lines
   # (changes require restart)
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 120
+    lines: 25
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
@@ -40,7 +41,7 @@ window:
   decorations: transparent
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
@@ -49,25 +50,25 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "Hack Nerd Font"
+    family: Operator Mono SSm Book
 
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: "Hack Nerd Font"
+    family: Operator Mono SSm Book
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: "Hack Nerd Font"
+    family: Operator Mono SSm Book Italic
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 13.0
+  size: 15.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -88,7 +89,7 @@ font:
   use_thin_strokes: true
 
 # Should display the render timer
-render_timer: false
+render_timer: true
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.

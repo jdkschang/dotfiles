@@ -294,6 +294,7 @@ set termguicolors
 set textwidth=80
 " set colorcolumn=+1
 
+" italics support for alacritty
 hi Comment gui=italic cterm=italic
 hi htmlArg gui=italic cterm=italic
 

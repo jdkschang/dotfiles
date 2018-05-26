@@ -67,21 +67,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Operator Mono SSm Book
+    family: Operator Mono SSm
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Book
 
   # The bold font face
-  bold:
-    family: Operator Mono SSm Book
+  # bold:
+  #   family: Operator Mono SSm
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: Hasklug Nerd Font
+    family: Operator Mono SSm
     # Style can be specified to pick a specific face.
-    style: Italic
+    style: Book Italic
 
   # Point size of the font
   size: 13.0

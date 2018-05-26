@@ -294,6 +294,9 @@ set termguicolors
 set textwidth=80
 " set colorcolumn=+1
 
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+
 " Use ``indent`` based folding
 set foldmethod=indent
 

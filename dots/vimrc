@@ -199,7 +199,7 @@ Plug 'junegunn/gv.vim'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql']}
+  \ 'for': ['javascript', 'css', 'scss', 'json', 'graphql']}
 
 " HTML/CSS
 " ------------------------------------------------------------------------------
@@ -249,7 +249,7 @@ set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 let g:gruvbox_contrast_dark = 'hard'
 
-" focus mode
+" Limelight :: focus mode
 " default: 0.5
 let g:limelight_default_coefficient = 0.8
 " default: 0
@@ -260,6 +260,9 @@ let g:limelight_paragraph_span = 1
 let g:limelight_bop = '^\s'
 let g:limelight_eop = '\ze\n^\s'
 nmap <leader>l :Limelight!!<cr>
+
+let g:ranger_map_keys = 0
+map <leader>f :Ranger<cr>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags='li\|p'
@@ -545,6 +548,10 @@ endif
 
 "  Plugin config
 " ------------------------------------------------------------------------------
+if s:has_plugin('editorconfig')
+	let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+endif
+
 if s:has_plugin('vim-textobj-entire')
   let g:textobj_entire_no_default_key_mappings = 1
   xmap aE <Plug>(textobj-entire-a)

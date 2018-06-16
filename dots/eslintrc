@@ -8,7 +8,7 @@
     "ramda"
   ],
   "extends": [
-    "eslint:recommended",
+	"airbnb",
     "plugin:ramda/recommended"
   ],
   "parserOptions": {

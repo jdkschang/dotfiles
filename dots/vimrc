@@ -11,7 +11,6 @@ call plug#begin(g:plugin_path)
 
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'dylanaraps/wal.vim'
 
 " tmux
 " ------------------------------------------------------------------------------
@@ -135,6 +134,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 " Whitespace removal
 Plug 'ntpeters/vim-better-whitespace'
+" Font icon
+Plug 'ryanoasis/vim-devicons'
 
 " Refactoring
 " ------------------------------------------------------------------------------

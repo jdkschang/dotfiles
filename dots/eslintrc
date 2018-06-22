@@ -4,12 +4,8 @@
     "es6": true,
     "jquery": true
   },
-  "plugins": [
-    "ramda"
-  ],
   "extends": [
-	"airbnb",
-    "plugin:ramda/recommended"
+	"airbnb"
   ],
   "parserOptions": {
     "sourceType": "module",
@@ -20,7 +16,8 @@
     }
   },
   "rules": {
-    "indent": [
+  "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  , "indent": [
       "warn",
       "tab",
       {

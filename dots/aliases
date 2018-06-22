@@ -25,6 +25,9 @@ alias e="emacs -nw"
 alias bstart="brew services start"
 alias bstop="brew services stop"
 
+alias bsr="brew services stop chunkwm; brew services start chunkwm"
+alias bsc="brew services stop chunkwm"
+
 # Add line numbers here as they aren't desirable by default (make git log ugly)
 alias less='less -N'
 

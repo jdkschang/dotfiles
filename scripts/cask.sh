@@ -6,21 +6,13 @@ brew cask install firefox
 brew cask install google-chrome-beta
 
 # Cloud
-brew cask install cloud
 brew cask install dropbox
-
-# Comms
-brew cask install google-hangouts
-brew cask install skype
 
 # Media
 brew cask install spotify
-brew cask install imageoptim
-brew cask install iina
 
 # Development
 brew cask install java
-brew cask install iterm2-nightly
 brew cask install visual-studio-code
 
 # Mac OS Enhancements
@@ -36,5 +28,3 @@ brew cask install deluge
 brew tap caskroom/fonts
 brew cask install caskroom/fonts/font-hack
 brew cask install caskroom/fonts/font-hack-nerd-font
-
-brew cask cleanup

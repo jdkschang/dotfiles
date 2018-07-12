@@ -223,7 +223,7 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'moll/vim-node', {'for': ['javascript', 'javascript.jsx', 'json']}
 Plug 'alampros/vim-styled-jsx'
 Plug 'Galooshi/vim-import-js'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -803,7 +803,9 @@ if s:has_plugin('ale')
   let airline#extensions#ale#warning_symbol = 'Warn: '
   let g:ale_echo_msg_format = '%linter% | %s (%code%)'
   let g:ale_lint_on_text_changed = 'always'
-  let g:ale_linters = {'html': []}
+  let g:ale_linters = {'html': [],
+	\ 'javascript': ['standard']
+	\ }
   " Fix JavaScript code with ESlint
   let g:ale_fixers = {}
   let g:ale_fixers.javascript = ['eslint']

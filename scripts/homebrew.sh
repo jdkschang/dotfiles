@@ -83,5 +83,6 @@ brew install p7zip
 brew install python
 brew install neofetch
 brew install redis
+brew install thefuck
 
 brew cleanup

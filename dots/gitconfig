@@ -43,7 +43,7 @@
   st = status
   me = merge
   dm = log --oneline --decorate --color --graph head ^master
-  standup = log --since='yesterday' --author='Simon Smith'
+  standup = log --since='yesterday' --author='Jonathan D Chang'
   lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
   latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
 
@@ -97,11 +97,11 @@
 	autocorrect = 1
 
 # URL shorthands
-[url "git@github.com:"]
-	insteadOf = "gh:"
+[url "git@github.com:jdkschang/"]
+	insteadOf = "jdkschang:"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
+[url "https://github.com/"]
 	insteadOf = "github:"
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
@@ -134,7 +134,7 @@
     trustExitCode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

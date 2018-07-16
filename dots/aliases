@@ -4,7 +4,7 @@ alias ...="builtin cd ../.."
 
 # oa
 alias proj="builtin cd ~/Dropbox/Projects/"
-alias tao="builtin cd ~/Dropbox/Projects/tao"
+alias projgc="builtin cd ~/Projects/react-web-app/"
 
 alias oa="builtin cd ~/Dropbox/Projects/oa_control/web/laravel"
 alias home="builtin cd ~/Dropbox/Projects/homestead"

@@ -229,8 +229,9 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs'
 
-" Org Mode
+" Document Mode
 Plug 'jceb/vim-orgmode'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 " Shortcut for checking if a plugin is loaded
@@ -249,6 +250,9 @@ set background=dark
 " true color for gruvbox
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 let g:gruvbox_contrast_dark = 'hard'
+
+" vimwiki
+let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md' }]
 
 " Limelight :: focus mode
 " default: 0.5

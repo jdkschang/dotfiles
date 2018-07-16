@@ -2,9 +2,9 @@
 alias ..="builtin cd .."
 alias ...="builtin cd ../.."
 
-# oa
+# Projects
 alias proj="builtin cd ~/Dropbox/Projects/"
-alias projgc="builtin cd ~/Projects/react-web-app/"
+alias projgc="builtin cd ~/Projects/"
 
 alias oa="builtin cd ~/Dropbox/Projects/oa_control/web/laravel"
 alias home="builtin cd ~/Dropbox/Projects/homestead"
@@ -13,6 +13,7 @@ alias home="builtin cd ~/Dropbox/Projects/homestead"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias df="cd ~/dotfiles"
+alias dc="cd ~/Dropbox/Docs/"
 
 alias h="history"
 alias jo="jobs"

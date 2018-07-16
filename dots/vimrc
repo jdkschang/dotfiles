@@ -252,7 +252,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 let g:gruvbox_contrast_dark = 'hard'
 
 " vimwiki
-let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md', 'path': '$HOME/Dropbox/Docs' }]
+let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md', 'path': '$HOME/docs' }]
 
 " Limelight :: focus mode
 " default: 0.5

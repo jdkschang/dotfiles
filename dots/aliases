@@ -13,7 +13,7 @@ alias home="builtin cd ~/Dropbox/Projects/homestead"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias df="cd ~/dotfiles"
-alias dc="cd ~/Dropbox/Docs/"
+alias dc="cd ~/docs"
 
 alias h="history"
 alias jo="jobs"

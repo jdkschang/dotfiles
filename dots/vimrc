@@ -99,6 +99,8 @@ Plug 'yssl/QFEnter'
 Plug 'matze/vim-move'
 " Super Focus
 Plug 'junegunn/limelight.vim'
+" Smooth Scroll
+Plug 'cskeeters/vim-smooth-scroll'
 
 " Text objects
 " ------------------------------------------------------------------------------

@@ -255,6 +255,7 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " vimwiki
 let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md', 'path': '$HOME/personal' }]
+nmap <leader><space> :VimwikiToggleListItem<cr>
 
 " reload vimrc
 nnoremap <Leader>r :source $MYVIMRC<CR>

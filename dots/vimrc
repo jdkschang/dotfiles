@@ -27,6 +27,11 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 
+" layout
+" ------------------------------------------------------------------------------
+Plug 'roman/golden-ratio'
+
+
 " tmux
 " ------------------------------------------------------------------------------
 

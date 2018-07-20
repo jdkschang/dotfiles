@@ -23,9 +23,9 @@ call plug#begin(g:plugin_path)
 " Theme
 " ------------------------------------------------------------------------------
 
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " layout
 " ------------------------------------------------------------------------------
@@ -922,4 +922,4 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup endif
 
-  colo ayu
+colo ayu

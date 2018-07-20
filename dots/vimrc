@@ -9,8 +9,9 @@ call plug#begin(g:plugin_path)
 " Theme
 " ------------------------------------------------------------------------------
 
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " tmux
 " ------------------------------------------------------------------------------
@@ -248,6 +249,8 @@ endfunction
 
 " Theme
 set background=dark
+
+let ayucolor='dark'
 
 " true color for gruvbox
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -898,4 +901,4 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup endif
 
-colo gruvbox
+colo ayu

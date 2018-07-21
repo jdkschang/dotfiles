@@ -19,6 +19,7 @@
   let g:mapleader='\\'
   " alias for leader key
   nmap <space> \
+  
   " setting general behaviors
   set background=dark   " tell vim what the background color looks like
   set backspace=2       " Backspace deletes like most programs in insert mode

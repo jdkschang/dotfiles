@@ -97,7 +97,7 @@
   let g:sh_fold_enabled=1
 " }}}
 
-"  Plugin Modifications (BEFORE loading bundles) {{{
+" Plugin Modifications (BEFORE loading bundles) {{{
   " VimMatchUp:
   " ----------------------------------------------------------------------------
   let g:matchup_transmute_enabled = 1
@@ -115,6 +115,11 @@
   let g:cm_sources_override = {
       \ 'cm-ultisnips': { 'enable': 0 }
       \ }
+
+  " GitGutter:
+  " ----------------------------------------------------------------------------
+  nnoremap <silent> + :GitGutterNextHunk<cr>
+  nnoremap <silent> _ :GitGutterPrevHunk<cr>
 
 " }}}
 
@@ -366,15 +371,9 @@ endfunction
 " ------------------------------------------------------------------------------
 
 " Theme
-set background=dark
-
-"let ayucolor="light"
+" let ayucolor="light"
 " let ayucolor="mirage"
 let ayucolor="dark"
-
-" true color for gruvbox
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-let g:gruvbox_contrast_dark = 'hard'
 
 " vimwiki
 let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md', 'path': '$HOME/personal' }]

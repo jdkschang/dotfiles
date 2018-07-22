@@ -463,10 +463,10 @@
   " Vim Wiki
   " ----------------------------------------------------------------------------
   if s:has_plugin('vimwiki')
-    let g:vimwiki_list = [{ 
-      \ 'syntax': 'markdown', 
-      \ 'ext': '.md', 
-      \ 'path': '$HOME/personal' 
+    let g:vimwiki_list = [{
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md',
+      \ 'path': '$HOME/personal'
       \ }]
     nmap <leader><space> :VimwikiToggleListItem<cr>
   endif
@@ -536,6 +536,15 @@
     nnoremap <silent><leader>w :silent w<cr>
     " Switch to last buffer
     nnoremap <leader><leader> <C-^>
+    " space open/closes folds
+    nnoremap <space> za
+
+    " move to beginning/end of line
+    nnoremap B ^
+    nnoremap E $
+    " $/^ doesn't do anything
+    nnoremap $ <nop>
+    nnoremap ^ <nop>
 
     nmap <leader>ne :NERDTree<cr>
     map <C-\> :NERDTreeToggle<cr>
@@ -564,9 +573,6 @@ nnoremap j gj
 vnoremap k gk
 vnoremap j gj
 
-" Map <C-i> to <f7> with Karabiner so tab can be used at the same time
-nnoremap <f7> <C-i>
-
 " Disable arrow keys
 noremap <right> <Nop>
 noremap <left> <Nop>
@@ -575,7 +581,6 @@ noremap <down> <Nop>
 
 " Delete line but preserve the space
 nnoremap dD S<Esc>
-
 " Make `Y` work from the cursor to the end of line
 nnoremap Y y$
 

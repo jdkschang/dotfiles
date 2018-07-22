@@ -171,6 +171,11 @@
     tnoremap <C-l> <C-\><C-n><C-w>l
   endif
 
+  if s:has_plugin('gen_tags')
+    " disable GNU Global message
+    let g:loaded_gentags#gtags = 1
+  endif
+
   " VimMatchUp:
   " ----------------------------------------------------------------------------
   let g:matchup_transmute_enabled = 1

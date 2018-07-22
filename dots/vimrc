@@ -73,8 +73,8 @@
   set ttyfast           " should make scrolling faster
   set lazyredraw        " should make scrolling faster
   set scrolloff=5       " Start scrolling before cursor gets to the edge
-  set sidescrolloff=15  
-  set sidescroll=1      " smooth horizontal scrolling 
+  set sidescrolloff=15
+  set sidescroll=1      " smooth horizontal scrolling
   " visual bell for errors
   set visualbell
 
@@ -233,7 +233,7 @@
   endif
 
   " Prettier
-  " ----------------------------------------------------------------------------  
+  " ---------------------------------------------------------------------------
   if s:has_plugin('vim-prettier')
     let g:prettier#exec_cmd_async = 1
     nmap <leader>o <Plug>(Prettier)
@@ -260,14 +260,14 @@
   endif
 
   " TODO: Replace with gentags
-  if s:has_plugin('vim-gutentags')
-    let g:gutentags_ctags_tagfile = 'vim_tags'
-    let g:gutentags_ctags_exclude = [
-          \ 'node_modules',
-          \ 'dist',
-          \ 'vendor',
-          \ 'bower_components']
-  endif
+  " if s:has_plugin('vim-gutentags')
+  "   let g:gutentags_ctags_tagfile = 'vim_tags'
+  "   let g:gutentags_ctags_exclude = [
+  "         \ 'node_modules',
+  "         \ 'dist',
+  "         \ 'vendor',
+  "         \ 'bower_components']
+  " endif
 
   " BufOnly
   " Close all buffers except current
@@ -523,7 +523,8 @@
 " General Config {{{
   " Theme (light | mirage | dark)
   let ayucolor="dark"
-  
+  colo ayu
+
   " Remapping {{{
     " reload vimrc
     nnoremap <Leader>r :source $MYVIMRC<CR>
@@ -675,15 +676,3 @@ augroup auto-resize
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
-
-" Autocomplete
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup endif
-
-  colo ayu

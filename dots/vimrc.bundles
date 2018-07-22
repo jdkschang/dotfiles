@@ -49,11 +49,6 @@ call plug#begin(g:plugin_path)
   Plug 'ncm2/ncm2-github'
   " other buffers completions
   Plug 'ncm2/ncm2-bufword'
-  " C lang completions
-  Plug 'ncm2/ncm2-pyclang'
-  " auto-generate ctags on save
-  Plug 'ncm2/ncm2-tagprefix'
-  Plug 'jsfaint/gen_tags.vim'
 " }}}
 
 " Git: {{{
@@ -233,6 +228,8 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " Other: {{{
+  " auto-generate ctags on save
+  Plug 'jsfaint/gen_tags.vim'
   " Make managing tabs easier with rename, add, delete etc
   Plug 'gcmt/taboo.vim'
   " Allow a window to be fully viewed. Useful when multiple splits are in use

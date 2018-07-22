@@ -1,6 +1,6 @@
 " List Plugins {{{
 let g:plugin_path = '~/.config/nvim/plugged'
-call plug#begin('g:plugin_path')
+call plug#begin(g:plugin_path)
 
 " Dependencies: {{{
   " fzf greatness (fuzzy finding)
@@ -37,7 +37,7 @@ call plug#begin('g:plugin_path')
   " ncm2 requires nvim-yarp
   Plug 'roxma/nvim-yarp'
   " path completion
-  Plug 'ncm2/ncpm2-path'
+  Plug 'ncm2/ncm2-path'
   Plug 'jsfaint/ncm2-syntax' | Plug 'Shougo/neco-syntax'
   " Tmux completions
   Plug 'ncm2/ncm2-tmux'
@@ -119,9 +119,10 @@ call plug#begin('g:plugin_path')
 " HTML: {{{
   " RagTag: Auto-close html tags + mappings for template scripting languages
   Plug 'tpope/vim-ragtag'
-
   " add text object for HTML attributes - allows dax cix etc
-  Plug 'kana/ vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
+  Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
+  " Automatically add a closing HTML tag
+  Plug 'alvan/vim-closetag'
 " }}}
 
 " Searching: {{{
@@ -154,15 +155,10 @@ call plug#begin('g:plugin_path')
 " }}}
 
 " Snippets: {{{
-  " ES2015 code snippets (Optional)
-  Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
-
   " React code snippets
   Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
-
   " vim snippets for UltiSnips ...
   Plug 'honza/vim-snippets'
-
   " modern snippets for vim
   Plug 'SirVer/ultisnips'
 " }}}
@@ -170,25 +166,16 @@ call plug#begin('g:plugin_path')
 " JavaScript: {{{
   " JavaScript support (required by vim-jsx)
   Plug 'pangloss/vim-javascript'
-
-  " Vim plugin for Flow (js static type checker)
-  Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-
-  " React:
-  " JSX support for react components
+  " React: JSX support for react components
   Plug 'mxw/vim-jsx'
-
   " A Vim plugin that provides functions that modify React source files
   Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
-
   " extract partial render, rename tag, select self close tags
   Plug 'samuelsimoes/vim-jsx-utils', { 'for': 'javascript.jsx' }
-
-  " JSON manipulation
-  Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-
+  Plug 'Galooshi/vim-import-js'
   " syntax highlighting for styled components
-  Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  " Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
 " }}}
 
 " ColorSchemes: {{{
@@ -199,18 +186,23 @@ call plug#begin('g:plugin_path')
   Plug 'rakr/vim-one'
 " }}}
 
-" Writing: {{{
+" Writing & Editing: {{{
   " distraction free writing (like iA Writer)
   Plug 'laktek/distraction-free-writing-vim', { 'on': 'ToggleDistractionFreeWriting' }
-
   " Distraction free writing in vim
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-
   " Highlight current paragraph (works well with goyo)
   Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
-
-  " integration with Deckset macOS app
-  Plug 'bwmcadams/vim-deckset', { 'for': 'markdown' }
+  " show trailing white spaces and allow deleting them
+  Plug 'ntpeters/vim-better-whitespace'
+  " Move blocks of code with Alt+j/k
+  Plug 'matze/vim-move'
+  " Allow motions like `w`, `b` and `iw` to work on camel case
+  Plug 'chaoren/vim-wordmotion'
+  " Remember cursor position
+  Plug 'farmergreg/vim-lastplace'
+  " Document Mode
+  Plug 'vimwiki/vimwiki'
 " }}}
 
 " Docker {{{
@@ -225,7 +217,6 @@ call plug#begin('g:plugin_path')
 " Airline {{{
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'enricobacis/vim-airline-clock'
 " }}}
 
 " CSS/SCSS {{{
@@ -236,13 +227,18 @@ call plug#begin('g:plugin_path')
 " Format+Lint: {{{
   " staticly check code and highlight errors (async syntastic replacement)
   Plug 'w0rp/ale'
+  Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'css', 'scss', 'json', 'graphql']}
 " }}}
 
 " Other: {{{
+  " Make managing tabs easier with rename, add, delete etc
+  Plug 'gcmt/taboo.vim'
+  " Allow a window to be fully viewed. Useful when multiple splits are in use
+  Plug 'troydm/zoomwintab.vim'
   " replacement for matchit
   Plug 'andymass/vim-matchup'
-  " show trailing white spaces and allow deleting them
-  Plug 'ntpeters/vim-better-whitespace'
   " Indent lines (visual indication)
   Plug 'Yggdroot/indentLine'
   " syntax for apple scripts
@@ -259,12 +255,10 @@ call plug#begin('g:plugin_path')
   Plug 'jiangmiao/auto-pairs'
   " File icons in vim --- keep at the bottom, below airline, nerdtree and startify
   Plug 'ryanoasis/vim-devicons'
-  " Vim layout to golden-ratio
+  " Layout resize toggle
   Plug 'roman/golden-ratio'
   " Keep folds performant
   Plug 'Konfekt/FastFold'
-  " Move blocks of code with Alt+j/k
-  Plug 'matze/vim-move'
   " Smooth Scroll
   Plug 'cskeeters/vim-smooth-scroll'
 " }}}

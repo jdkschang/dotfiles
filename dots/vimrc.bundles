@@ -6,6 +6,10 @@ call plug#begin(g:plugin_path)
   " fzf greatness (fuzzy finding)
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
+  " Project-wide async search and replace
+  Plug 'eugen0329/vim-esearch'
+  " Improved search in Vim
+  Plug 'junegunn/vim-slash'
 " }}}
 
 " Neovim: {{{

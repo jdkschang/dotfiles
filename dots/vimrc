@@ -16,9 +16,8 @@
 
 " Behavior Modifications {{{
   " set leader key
-  let g:mapleader='\\'
-  " alias for leader key
-  nmap <space> \
+  let mapleader = ','
+  let maplocalleader='\'
 
   " setting general behaviors
   set background=dark   " tell vim what the background color looks like
@@ -171,10 +170,8 @@
     tnoremap <C-l> <C-\><C-n><C-w>l
   endif
 
-  if s:has_plugin('gen_tags')
-    " disable GNU Global message
-    let g:loaded_gentags#gtags = 1
-  endif
+  " disable GNU Global message
+  let g:loaded_gentags#gtags = 1
 
   " VimMatchUp:
   " ----------------------------------------------------------------------------
@@ -414,7 +411,7 @@
   " ----------------------------------------------------------------------------
   if s:has_plugin('vim-airline')
     let g:airline#extensions#branch#enabled = 1
-    let g:airline_theme='gruvbox'
+    let g:airline_theme='ayu_mirage'
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tmuxline#enabled = 0
     let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -532,7 +529,7 @@
 
   " Remapping {{{
     " reload vimrc
-    nnoremap <Leader>r :source $MYVIMRC<CR>
+    nnoremap <leader>r :source $MYVIMRC<cr>
     inoremap jk <ESC>
 
     " Save file
@@ -614,9 +611,6 @@ vnoremap > >gv
 
 " Press enter for newline without insert
 nnoremap <cr> o<esc>
-
-" Allow sourcing of vimrc
-nnoremap <leader>y :source $MYVIMRC<cr>
 
 " Output the current syntax group
 nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

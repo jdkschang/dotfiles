@@ -136,16 +136,12 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " TMUX: {{{
-  " .tmux.conf syntax highlighting
-  Plug 'keith/tmux.vim', { 'for': 'tmux' }
-  " tmux config file stuff
-  Plug 'tmux-plugins/vim-tmux'
-  " vim slime for tmux integration (C-c, C-c to send selction to tmux)
-  Plug 'jpalardy/vim-slime'
-  " seamless tmux/vim pane navigation
-  Plug 'christoomey/vim-tmux-navigator'
-  " Restore `FocusLost` and `FocusGained` events in tmux
-  Plug 'tmux-plugins/vim-tmux-focus-events'
+  if executable('tmux')
+    " seamless tmux/vim pane navigation
+    Plug 'christoomey/vim-tmux-navigator'
+    " Restore `FocusLost` and `FocusGained` events in tmux
+    Plug 'tmux-plugins/vim-tmux-focus-events'
+  endif
 " }}}
 
 " Snippets: {{{

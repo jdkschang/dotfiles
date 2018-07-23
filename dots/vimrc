@@ -375,9 +375,9 @@
     let g:fzf_commits_log_options = '--color --graph --pretty=format:"%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset" --abbrev-commit'
 
     nnoremap <c-p> :FZF<cr>
-    nnoremap <c-i> :Buffers<cr>
+    nnoremap <c-b> :Buffers<cr>
     nnoremap <c-t> :BLines<cr>
-    nnoremap <c-space> :Ag<cr>
+    nnoremap <c-a> :Ag<cr>
     nnoremap <silent> <BS> :History:<cr>
 
     " Allow options to be passed to FZF :Ag
@@ -474,7 +474,7 @@
 
     " Limelight :: focus mode
     " default: 0.5
-    let g:limelight_default_coefficient = 0.8
+    let g:limelight_default_coefficient = 0.7
     let g:limelight_paragraph_span = 1
     let g:limelight_priority = -1
     " Beginning/end of paragraph
@@ -482,6 +482,7 @@
     "   and each paragraph starts with indentation
     let g:limelight_bop = '^\s'
     let g:limelight_eop = '\ze\n^\s'
+    let g:goyo_width = '120'
 
     let g:background_before_goyo = &background
 
@@ -538,10 +539,10 @@
     map <leader>s :Obsession<cr>
 
     " Use ctrl-[hjkl] to select the active split!
-    nmap <silent> <C-k> :wincmd k<CR>
-    nmap <silent> <C-j> :wincmd j<CR>
-    nmap <silent> <C-h> :wincmd h<CR>
-    nmap <silent> <C-l> :wincmd l<CR>
+    " nmap <silent> <C-k> :wincmd k<CR>
+    " nmap <silent> <C-j> :wincmd j<CR>
+    " nmap <silent> <C-h> :wincmd h<CR>
+    " nmap <silent> <C-l> :wincmd l<CR>
 
     " move to beginning/end of line
     nnoremap B ^

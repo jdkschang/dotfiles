@@ -253,16 +253,6 @@
     nnoremap gm m
   endif
 
-  " TODO: Replace with gentags
-  " if s:has_plugin('vim-gutentags')
-  "   let g:gutentags_ctags_tagfile = 'vim_tags'
-  "   let g:gutentags_ctags_exclude = [
-  "         \ 'node_modules',
-  "         \ 'dist',
-  "         \ 'vendor',
-  "         \ 'bower_components']
-  " endif
-
   " BufOnly
   " Close all buffers except current
   " ----------------------------------------------------------------------------

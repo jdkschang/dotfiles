@@ -444,10 +444,8 @@
 
   " Vim Wiki
   " ----------------------------------------------------------------------------
-  if s:has_plugin('vimwiki')
-    let g:vimwiki_list = [{ 'path': '$HOME/personal', 'syntax': 'markdown', 'ext': '.md' }]
-    nmap <leader><space> :VimwikiToggleListItem<cr>
-  endif
+  let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
+  nmap <leader><space> :VimwikiToggleListItem<cr>
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------

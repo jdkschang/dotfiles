@@ -520,12 +520,6 @@
     " save current session
     map <leader>s :Obsession<cr>
 
-    " Use ctrl-[hjkl] to select the active split!
-    " nmap <silent> <C-k> :wincmd k<CR>
-    " nmap <silent> <C-j> :wincmd j<CR>
-    " nmap <silent> <C-h> :wincmd h<CR>
-    " nmap <silent> <C-l> :wincmd l<CR>
-
     " move to beginning/end of line
     nnoremap B ^
     nnoremap E $

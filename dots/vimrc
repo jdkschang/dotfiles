@@ -527,8 +527,12 @@
 
     nmap <leader>ne :NERDTree<cr>
     map <C-\> :NERDTreeToggle<cr>
-    map <leader><tab> :Sscratch<cr>
-    map <leader><S-tab> :Scratch<cr>
+
+    nnoremap <leader>sc :Scratch<cr>
+    augroup ScratchToggle
+      autocmd!
+      autocmd FileType scratch nnoremap <buffer> <leader>sc :q<CR>
+    augroup END
   " }}}
 
 " Remap annoying mistakes to something useful
@@ -578,10 +582,6 @@ nnoremap <silent> p p`]
 noremap <silent><leader>h :split<cr>
 noremap <silent><leader>v :vsplit<cr>
 
-" Switch buffers
-nnoremap <silent>H :silent bp<CR>
-nnoremap <silent>L :silent bn<CR>
-
 " Spellcheck
 nnoremap <F6> :setlocal spell!<cr>
 
@@ -592,6 +592,13 @@ nnoremap <silent> <leader>k :noh<cr>
 " after indenting or unindenting.
 vnoremap < <gv
 vnoremap > >gv
+
+" VimPlug:
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
+nnoremap <leader>pc :PlugClean<CR>
+" change dir to current file's dir
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Press enter for newline without insert
 nnoremap <cr> o<esc>

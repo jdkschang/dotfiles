@@ -162,14 +162,6 @@
     return exists(lookup)
   endfunction
 
-  if exists(':tnoremap')
-    " Allow movement seamlessly with terminals
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
-  endif
-
   " disable GNU Global message
   let g:loaded_gentags#gtags = 1
 

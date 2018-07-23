@@ -463,11 +463,7 @@
   " Vim Wiki
   " ----------------------------------------------------------------------------
   if s:has_plugin('vimwiki')
-    let g:vimwiki_list = [{
-      \ 'syntax': 'markdown',
-      \ 'ext': '.md',
-      \ 'path': '$HOME/personal'
-      \ }]
+    let g:vimwiki_list = [{ 'path': '$HOME/personal', 'syntax': 'markdown', 'ext': '.md' }]
     nmap <leader><space> :VimwikiToggleListItem<cr>
   endif
 

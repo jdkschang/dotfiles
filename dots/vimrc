@@ -600,7 +600,7 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Split
-noremap <silent><leader>x :split<cr>
+noremap <silent><leader>h :split<cr>
 noremap <silent><leader>v :vsplit<cr>
 
 " Switch buffers

@@ -28,11 +28,6 @@ call plug#begin(g:plugin_path)
           \ 'branch': 'next',
           \ 'do': 'bash install.sh',
           \ }
-
-    if !exists('$TMUX')
-      " simulate tmux shortcuts in neovim
-      Plug 'hkupty/nvimux'
-    endif
   endif
 " }}}
 
@@ -144,11 +139,11 @@ call plug#begin(g:plugin_path)
   " .tmux.conf syntax highlighting
   Plug 'keith/tmux.vim', { 'for': 'tmux' }
   " tmux config file stuff
-  Plug 'tmux-plugins/vim-tmux', { 'on': 'Mux' }
+  Plug 'tmux-plugins/vim-tmux'
   " vim slime for tmux integration (C-c, C-c to send selction to tmux)
-  Plug 'jpalardy/vim-slime', { 'on': 'Mux' }
+  Plug 'jpalardy/vim-slime'
   " seamless tmux/vim pane navigation
-  Plug 'christoomey/vim-tmux-navigator', { 'on': 'Mux' }
+  Plug 'christoomey/vim-tmux-navigator'
   " Restore `FocusLost` and `FocusGained` events in tmux
   Plug 'tmux-plugins/vim-tmux-focus-events'
 " }}}

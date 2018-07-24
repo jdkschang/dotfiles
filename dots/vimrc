@@ -448,7 +448,7 @@
 
   " Vim Wiki
   " ----------------------------------------------------------------------------
-  let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
+  let g:vimwiki_list = [{ 'path': '~/Dropbox/Docs/', 'syntax': 'markdown', 'ext': '.md' }]
   nmap <leader><space> :VimwikiToggleListItem<cr>
 
   " Limelight + Goyo

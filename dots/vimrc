@@ -451,7 +451,6 @@
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------
-    echo 'in limelight'
     nnoremap <Leader>l :Limelight!!<cr>
 
     " Limelight :: focus mode
@@ -624,6 +623,13 @@ augroup vimrc-help
   autocmd!
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | setlocal relativenumber | endif
 augroup END
+
+" Vim Script file settings ------------------------ {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
 
 augroup file-types
   autocmd!

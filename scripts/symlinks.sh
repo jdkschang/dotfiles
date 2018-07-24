@@ -31,6 +31,7 @@ symlink_dotfile tern-project
 symlink_dotfile tmux.conf
 symlink_dotfile tmuxline_snapshot
 symlink_dotfile vimrc
+symlink_dotfile vimrc.bundles
 symlink_dotfile wgetrc
 symlink_dotfile zshrc
 ln -sfv $(grealpath tern-project) "$HOME/.tern-config"

@@ -444,8 +444,10 @@
 
   " Vim Wiki
   " ----------------------------------------------------------------------------
-  let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
-  nmap <leader><space> :VimwikiToggleListItem<cr>
+  if s:has_plugin('vimwiki')
+    let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
+    nmap <leader><space> :VimwikiToggleListItem<cr>
+  endif
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------
@@ -516,7 +518,7 @@
     " space open/closes folds
     nnoremap <space> za
     " save current session
-    map <leader>s :Obsession<cr>
+    nnoremap <leader>ss :Obsession<cr>
 
     " move to beginning/end of line
     nnoremap B ^
@@ -597,6 +599,7 @@ vnoremap > >gv
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pu :PlugUpdate<CR>
 nnoremap <leader>pc :PlugClean<CR>
+
 " change dir to current file's dir
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 

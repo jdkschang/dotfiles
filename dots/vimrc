@@ -435,11 +435,15 @@
     let airline#extensions#ale#error_symbol = 'Err: '
     let airline#extensions#ale#warning_symbol = 'Warn: '
     let g:ale_echo_msg_format = '%linter% | %s (%code%)'
+    let g:ale_lint_delay = 1000
     let g:ale_lint_on_text_changed = 'always'
     let g:ale_linters = {'html': [] }
     let g:ale_fixers = {}
     let g:ale_fixers.javascript = ['standard']
     let g:ale_fix_on_save = 1
+
+    nmap ]a <Plug>(ale_next_wrap)
+    nmap [a <Plug>(ale_previous_wrap)
   endif
 
   " Vim Wiki
@@ -452,6 +456,7 @@
   " Limelight + Goyo
   " ----------------------------------------------------------------------------
     nnoremap <Leader>l :Limelight!!<cr>
+    nnoremap <Leader>G :Goyo<cr>
 
     " Limelight :: focus mode
     " default: 0.5
@@ -491,6 +496,17 @@
       autocmd! User GoyoEnter nested call <SID>goyo_enter()
       autocmd! User GoyoLeave nested call <SID>goyo_leave()
     augroup END
+
+  " gv.vim / gl.vim
+  " ----------------------------------------------------------------------------
+  function! s:gv_expand()
+    let line = getline('.')
+    GV --name-status
+    call search('\V'.line, 'c')
+    normal! zz
+  endfunction
+
+  autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 " }}}
 
 " Load Plugins {{{

@@ -16,8 +16,8 @@
 
 " Behavior Modifications {{{
   " set leader key
-  let mapleader = ','
-  let maplocalleader='\'
+  let mapleader      = ' '
+  let maplocalleader = ' '
 
   " setting general behaviors
   set background=dark   " tell vim what the background color looks like
@@ -451,8 +451,8 @@
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------
-  if s:has_plugin('Limelight')
-    nmap <leader>l :Limelight!!<cr>
+    echo 'in limelight'
+    nnoremap <Leader>l :Limelight!!<cr>
 
     " Limelight :: focus mode
     " default: 0.5
@@ -492,7 +492,6 @@
       autocmd! User GoyoEnter nested call <SID>goyo_enter()
       autocmd! User GoyoLeave nested call <SID>goyo_leave()
     augroup END
-  endif
 " }}}
 
 " Load Plugins {{{
@@ -516,7 +515,7 @@
     " Switch to last buffer
     nnoremap <leader><leader> <C-^>
     " space open/closes folds
-    nnoremap <space> za
+    nnoremap <leader>f za
     " save current session
     nnoremap <leader>ss :Obsession<cr>
 

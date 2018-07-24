@@ -448,54 +448,52 @@
 
   " Vim Wiki
   " ----------------------------------------------------------------------------
-  if s:has_plugin('vimwiki')
-    let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
-    nmap <leader><space> :VimwikiToggleListItem<cr>
-  endif
+  let g:vimwiki_list = [{ 'path': '~/personal/', 'syntax': 'markdown', 'ext': '.md' }]
+  nmap <leader><space> :VimwikiToggleListItem<cr>
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------
-    nnoremap <Leader>l :Limelight!!<cr>
-    nnoremap <Leader>G :Goyo<cr>
+  nnoremap <Leader>l :Limelight!!<cr>
+  nnoremap <Leader>G :Goyo<cr>
 
-    " Limelight :: focus mode
-    " default: 0.5
-    let g:limelight_default_coefficient = 0.7
-    let g:limelight_paragraph_span = 1
-    let g:limelight_priority = -1
-    " Beginning/end of paragraph
-    "   When there's no empty line between the paragraphs
-    "   and each paragraph starts with indentation
-    let g:limelight_bop = '^\s'
-    let g:limelight_eop = '\ze\n^\s'
-    let g:goyo_width = '120'
+  " Limelight :: focus mode
+  " default: 0.5
+  let g:limelight_default_coefficient = 0.7
+  let g:limelight_paragraph_span = 1
+  let g:limelight_priority = -1
+  " Beginning/end of paragraph
+  "   When there's no empty line between the paragraphs
+  "   and each paragraph starts with indentation
+  let g:limelight_bop = '^\s'
+  let g:limelight_eop = '\ze\n^\s'
+  let g:goyo_width = '120'
 
+  let g:background_before_goyo = &background
+
+  function! s:goyo_enter()
     let g:background_before_goyo = &background
+    if has('gui_running')
+      set linespace=7
+    elseif exists('$TMUX')
+      silent !tmux set status off
+    endif
+    Limelight
+  endfunction
 
-    function! s:goyo_enter()
-      let g:background_before_goyo = &background
-      if has('gui_running')
-        set linespace=7
-      elseif exists('$TMUX')
-        silent !tmux set status off
-      endif
-      Limelight
-    endfunction
+  function! s:goyo_leave()
+    if has('gui_running')
+      set linespace=0
+    elseif exists('$TMUX')
+      silent !tmux set status on
+    endif
+    execute 'Limelight!'
+    execute 'set background=' . g:background_before_goyo
+  endfunction
 
-    function! s:goyo_leave()
-      if has('gui_running')
-        set linespace=0
-      elseif exists('$TMUX')
-        silent !tmux set status on
-      endif
-      execute 'Limelight!'
-      execute 'set background=' . g:background_before_goyo
-    endfunction
-
-    augroup GOYO
-      autocmd! User GoyoEnter nested call <SID>goyo_enter()
-      autocmd! User GoyoLeave nested call <SID>goyo_leave()
-    augroup END
+  augroup GOYO
+    autocmd! User GoyoEnter nested call <SID>goyo_enter()
+    autocmd! User GoyoLeave nested call <SID>goyo_leave()
+  augroup END
 
   " gv.vim / gl.vim
   " ----------------------------------------------------------------------------

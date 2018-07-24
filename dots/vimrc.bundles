@@ -41,7 +41,7 @@ call plug#begin(g:plugin_path)
   " Tmux completions
   Plug 'ncm2/ncm2-tmux'
   " JS completions
-  Plug 'ncm2/ncm2-tern'
+  Plug 'ncm2/ncm2-tern', { 'do': 'npm install' }
   " CSS completions
   Plug 'ncm2/ncm2-cssomni'
   " github completions

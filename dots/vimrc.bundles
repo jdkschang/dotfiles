@@ -192,7 +192,7 @@ call plug#begin(g:plugin_path)
   " Remember cursor position
   Plug 'farmergreg/vim-lastplace'
   " Document Mode
-  Plug 'vimwiki/vimwiki'
+  Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " }}}
 
 " Docker {{{

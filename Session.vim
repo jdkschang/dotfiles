@@ -7,11 +7,16 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +5 ~/personal/diary/2018-07-23.md
-badd +503 dots/vimrc
+badd +506 dots/vimrc
+badd +2 dots/vimrc.bundles
+badd +0 README.md
+badd +6 scripts/vim.sh
+badd +6 scripts/zsh.sh
+badd +2 install.sh
+badd +34 scripts/symlinks.sh
 argglobal
 silent! argdel *
-edit dots/vimrc
+edit README.md
 set splitbelow splitright
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
@@ -25,12 +30,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 455 - ((14 * winheight(0) + 34) / 68)
+let s:l = 36 - ((35 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-455
-normal! 010|
+36
+normal! 0
 lcd ~/dotfiles
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

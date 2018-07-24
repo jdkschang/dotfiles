@@ -195,9 +195,7 @@
   " ----------------------------------------------------------------------------
   if s:has_plugin('splitjoin')
     let g:splitjoin_align = 1
-    let g:splitjoin_trailing_comma = 1
-    let g:splitjoin_ruby_curly_braces = 0
-    let g:splitjoin_ruby_hanging_args = 0
+    " let g:splitjoin_trailing_comma = 1
   endif
 
   " Snippets (UltiSnips):
@@ -450,6 +448,10 @@
   " ----------------------------------------------------------------------------
   let g:vimwiki_list = [{ 'path': '~/Dropbox/Docs/', 'syntax': 'markdown', 'ext': '.md' }]
   nmap <leader><space> :VimwikiToggleListItem<cr>
+
+  " Golden Ratio
+  " ----------------------------------------------------------------------------
+  nnoremap <Leader>gt :GoldenRatioToggle<cr>
 
   " Limelight + Goyo
   " ----------------------------------------------------------------------------

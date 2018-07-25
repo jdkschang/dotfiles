@@ -165,6 +165,32 @@
   " disable GNU Global message
   let g:loaded_gentags#gtags = 1
 
+  " Neoterm:
+  " ----------------------------------------------------------------------------
+  if has('nvim')
+    " Navigate neovim + neovim terminal emulator with alt+direction
+    tnoremap <c-h> <C-\><C-n><C-w>h
+    tnoremap <c-j> <C-\><C-n><C-w>j
+    tnoremap <c-k> <C-\><C-n><C-w>k
+    tnoremap <c-l> <C-\><C-n><C-w>l
+
+    " easily escape terminal
+    tnoremap <leader><esc> <C-\><C-n><esc><cr>
+    tnoremap <C-o> <C-\><C-n><esc><cr>
+
+    " quickly toggle term
+    " nnoremap <silent> <leader>o :vertical Ttoggle<cr><C-w>l
+    " nnoremap <silent> <leader><space> :vertical Ttoggle<cr><C-w>l
+    nnoremap <silent> <leader>t :rightbelow Ttoggle<cr><C-w>j
+    " close terminal
+    tnoremap <silent> <leader>t <C-\><C-n>:Ttoggle<cr>
+    " tnoremap <silent> <leader><space> <C-\><C-n>:Ttoggle<cr>
+
+    " send stuff to REPL using NeoTerm
+    nnoremap <silent> <c-s>r :TREPLSendLine<CR>
+    vnoremap <silent> <c-s>r :TREPLSendSelection<CR>
+  endif
+
   " VimMatchUp:
   " ----------------------------------------------------------------------------
   let g:matchup_transmute_enabled = 1
@@ -228,7 +254,7 @@
   " ---------------------------------------------------------------------------
   if s:has_plugin('vim-prettier')
     let g:prettier#exec_cmd_async = 1
-    nmap <leader>o <Plug>(Prettier)
+    nmap <leader>pf <Plug>(Prettier)
   endif
 
   " BufExplorer
@@ -359,6 +385,8 @@
     nnoremap <c-b> :Buffers<cr>
     nnoremap <c-t> :BLines<cr>
     nnoremap <c-a> :Ag<cr>
+    nnoremap <c-c> :Commits<cr>
+    nnoremap <c-n> :BCommits<cr>
     nnoremap <silent> <BS> :History:<cr>
 
     " Allow options to be passed to FZF :Ag
@@ -448,7 +476,7 @@
   " Vim Wiki
   " ----------------------------------------------------------------------------
   let g:vimwiki_list = [{ 'path': '~/Dropbox/Docs/', 'syntax': 'markdown', 'ext': '.md' }]
-  nmap <leader>tl :VimwikiToggleListItem<cr>
+  nmap <leader>lt :VimwikiToggleListItem<cr>
 
   " Golden Ratio
   " ----------------------------------------------------------------------------

@@ -16,7 +16,6 @@ call plug#begin(g:plugin_path)
   if has('nvim')
     " abstraction on top of neovim terminal
     Plug 'kassio/neoterm'
-
     " Highlight Yanked String
     Plug 'machakann/vim-highlightedyank'
 
@@ -108,7 +107,9 @@ call plug#begin(g:plugin_path)
 
 " HTML: {{{
   " add text object for HTML attributes - allows dax cix etc
-  Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
+  Plug 'kana/vim-textobj-user'
+  Plug 'Julian/vim-textobj-brace'
+  Plug 'whatyouhide/vim-textobj-xmlattr'
   " Automatically add a closing HTML tag
   Plug 'alvan/vim-closetag'
 " }}}

@@ -83,9 +83,8 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " Navigation: {{{
-  Plug 'tpope/vim-vinegar'
-
-  Plug 'easymotion/vim-easymotion'
+  " Advanced movement similar to motions
+  Plug 'justinmk/vim-sneak'
 " }}}
 
 " Buffers {{{
@@ -126,8 +125,6 @@ call plug#begin(g:plugin_path)
   Plug 'mileszs/ack.vim'
   " RipGrep - grep is dead. All hail the new king RipGrep.
   Plug 'jremmen/vim-ripgrep'
-  " Advanced movement similar to motions
-  Plug 'justinmk/vim-sneak'
 " }}}
 
 " Align Code: {{{

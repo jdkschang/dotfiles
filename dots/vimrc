@@ -447,10 +447,11 @@
   " Vim Wiki
   " ----------------------------------------------------------------------------
   let g:vimwiki_list = [{ 'path': '~/Dropbox/Docs/', 'syntax': 'markdown', 'ext': '.md' }]
-  nmap <leader><space> :VimwikiToggleListItem<cr>
+  nmap <leader>tl :VimwikiToggleListItem<cr>
 
   " Golden Ratio
   " ----------------------------------------------------------------------------
+  let g:golden_ratio_exclude_nonmodifiable = 1
   nnoremap <Leader>gt :GoldenRatioToggle<cr>
 
   " Limelight + Goyo
@@ -537,11 +538,7 @@
     " move to beginning/end of line
     nnoremap B ^
     nnoremap E $
-    " $/^ doesn't do anything
-    nnoremap $ <nop>
-    nnoremap ^ <nop>
 
-    nmap <leader>ne :NERDTree<cr>
     map <C-\> :NERDTreeToggle<cr>
 
     nnoremap <leader>sc :Scratch<cr>
@@ -599,7 +596,7 @@ noremap <silent><leader>h :split<cr>
 noremap <silent><leader>v :vsplit<cr>
 
 " Spellcheck
-nnoremap <F6> :setlocal spell!<cr>
+nnoremap <Leader>sc :setlocal spell!<cr>
 
 " Clear search (highlight)
 nnoremap <silent> <leader>k :noh<cr>

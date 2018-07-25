@@ -7,21 +7,25 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +506 dots/vimrc
-badd +2 dots/vimrc.bundles
-badd +0 README.md
-badd +6 scripts/vim.sh
-badd +6 scripts/zsh.sh
-badd +2 install.sh
-badd +34 scripts/symlinks.sh
+badd +4 ~/Dropbox/Docs/index.md
+badd +6 ~/Dropbox/Docs/c.md
+badd +10 ~/Dropbox/Docs/diary/2018-07-24.md
+badd +535 dots/vimrc
+badd +88 dots/vimrc.bundles
 argglobal
 silent! argdel *
-edit README.md
+edit dots/vimrc
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 123 + 123) / 247)
+exe 'vert 2resize ' . ((&columns * 123 + 123) / 247)
 argglobal
-setlocal fdm=manual
+setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -29,14 +33,42 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 36 - ((35 * winheight(0) + 29) / 59)
+519
+normal! zo
+524
+normal! zo
+641
+normal! zo
+let s:l = 536 - ((5 * winheight(0) + 34) / 68)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
+536
+normal! 026|
+lcd ~/dotfiles
+wincmd w
+argglobal
+if bufexists('~/.config/nvim/plugged/vim-obsession/doc/obsession.txt') | buffer ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt | else | edit ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 34) / 68)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
 normal! 0
 lcd ~/dotfiles
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 123 + 123) / 247)
+exe 'vert 2resize ' . ((&columns * 123 + 123) / 247)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -521,9 +521,30 @@
   let ayucolor="dark"
   colo ayu
 
+  " toggle background light / dark
+  fun! ToggleBackground()
+    if (&background ==? 'dark')
+      set background=light
+    else
+      set background=dark
+    endif
+  endfun
+
+  nnoremap <silent> <F10> :call ToggleBackground()<CR>
+
   " Remapping {{{
+    fun! OpenConfigFile(file)
+      if (&filetype ==? 'startify')
+        execute 'e ' . a:file
+      else
+        execute 'tabe ' . a:file
+      endif
+    endfun
+    " edit vimrc
+    nnoremap <silent> <leader>vr :call OpenConfigFile($MYVIMRC)<cr>
+    nnoremap <silent> <leader>vb :call OpenConfigFile('~/.vimrc.bundles')<cr>
     " reload vimrc
-    nnoremap <leader>r :source $MYVIMRC<cr>
+    nnoremap <leader>so :source $MYVIMRC<cr>
     inoremap jk <ESC>
 
     " Save file
@@ -615,7 +636,7 @@ nnoremap <leader>pc :PlugClean<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Press enter for newline without insert
-nnoremap <cr> o<esc>
+" nnoremap <cr> o<esc>
 
 " Output the current syntax group
 nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -687,3 +708,4 @@ augroup auto-resize
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
+

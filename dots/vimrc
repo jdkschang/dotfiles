@@ -179,12 +179,9 @@
     tnoremap <C-o> <C-\><C-n><esc><cr>
 
     " quickly toggle term
-    " nnoremap <silent> <leader>o :vertical Ttoggle<cr><C-w>l
-    " nnoremap <silent> <leader><space> :vertical Ttoggle<cr><C-w>l
-    nnoremap <silent> <leader>t :rightbelow Ttoggle<cr><C-w>j
+    nnoremap <silent> <leader><tab> :rightbelow Ttoggle<cr><C-w>j
     " close terminal
-    tnoremap <silent> <leader>t <C-\><C-n>:Ttoggle<cr>
-    " tnoremap <silent> <leader><space> <C-\><C-n>:Ttoggle<cr>
+    tnoremap <silent> <leader><tab> <C-\><C-n>:Ttoggle<cr>
 
     " send stuff to REPL using NeoTerm
     nnoremap <silent> <c-s>r :TREPLSendLine<CR>
@@ -568,6 +565,8 @@
 
     " Save file
     nnoremap <silent><leader>w :silent w<cr>
+    " Save & Exit file
+    nnoremap <silent><leader>x :silent x<cr>
     " Switch to last buffer
     nnoremap <leader><leader> <C-^>
     " toggle folds

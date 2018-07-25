@@ -316,6 +316,7 @@
   if s:has_plugin('vim-closetag')
     let g:closetag_filenames = "*.html,*.js,*.jsx"
     let g:closetag_close_shortcut = ''
+    let g:closetag_xhtml_filetypes = 'xhtml,jsx'
   endif
 
   " Auto Pairing
@@ -534,14 +535,17 @@
     nnoremap <silent> <leader>vb :call OpenConfigFile('~/.vimrc.bundles')<cr>
     " reload vimrc
     nnoremap <leader>so :source $MYVIMRC<cr>
+    nnoremap <leader>r :source $MYVIMRC<cr>
     inoremap jk <ESC>
 
     " Save file
     nnoremap <silent><leader>w :silent w<cr>
     " Switch to last buffer
     nnoremap <leader><leader> <C-^>
-    " space open/closes folds
-    nnoremap <leader>f za
+    " toggle folds
+    nnoremap <leader>F za
+    " toggle folds recursively
+    nnoremap <leader>f zA
     " save current session
     nnoremap <leader>ss :Obsession<cr>
 

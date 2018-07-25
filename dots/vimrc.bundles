@@ -17,9 +17,6 @@ call plug#begin(g:plugin_path)
     " abstraction on top of neovim terminal
     Plug 'kassio/neoterm'
 
-    " run tests at the speed of thought
-    " Plug 'janko-m/vim-test'
-
     " Highlight Yanked String
     Plug 'machakann/vim-highlightedyank'
 
@@ -110,8 +107,6 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " HTML: {{{
-  " RagTag: Auto-close html tags + mappings for template scripting languages
-  Plug 'tpope/vim-ragtag'
   " add text object for HTML attributes - allows dax cix etc
   Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
   " Automatically add a closing HTML tag
@@ -142,12 +137,14 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " Snippets: {{{
+  " track snippet engine
+  Plug 'SirVer/ultisnips'
+  " snippets separate from engine
+  Plug 'honza/vim-snippets'
   " React code snippets
   Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
-  " vim snippets for UltiSnips ...
-  Plug 'honza/vim-snippets'
-  " modern snippets for vim
-  Plug 'SirVer/ultisnips'
+  " ES2015 code snippets
+  Plug 'epilande/vim-es2015-snippets'
 " }}}
 
 " JavaScript: {{{

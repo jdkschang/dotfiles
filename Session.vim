@@ -10,45 +10,16 @@ set shortmess=aoO
 badd +4 ~/Dropbox/Docs/index.md
 badd +6 ~/Dropbox/Docs/c.md
 badd +10 ~/Dropbox/Docs/diary/2018-07-24.md
-badd +535 dots/vimrc
+badd +420 dots/vimrc
 badd +88 dots/vimrc.bundles
+badd +0 ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt
 argglobal
 silent! argdel *
 edit dots/vimrc
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 123 + 123) / 247)
-exe 'vert 2resize ' . ((&columns * 123 + 123) / 247)
 argglobal
-setlocal fdm=marker
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-519
-normal! zo
-524
-normal! zo
-641
-normal! zo
-let s:l = 536 - ((5 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-536
-normal! 026|
-lcd ~/dotfiles
-wincmd w
-argglobal
-if bufexists('~/.config/nvim/plugged/vim-obsession/doc/obsession.txt') | buffer ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt | else | edit ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -56,19 +27,28 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 34) / 68)
+10,15fold
+17,155fold
+157,511fold
+513,517fold
+524,559fold
+650,655fold
+519,700fold
+17
+normal! zo
+157
+normal! zo
+519
+normal! zo
+let s:l = 524 - ((21 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+524
 normal! 0
 lcd ~/dotfiles
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 123 + 123) / 247)
-exe 'vert 2resize ' . ((&columns * 123 + 123) / 247)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

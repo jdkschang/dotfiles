@@ -521,17 +521,6 @@
   let ayucolor="dark"
   colo ayu
 
-  " toggle background light / dark
-  fun! ToggleBackground()
-    if (&background ==? 'dark')
-      set background=light
-    else
-      set background=dark
-    endif
-  endfun
-
-  nnoremap <silent> <F10> :call ToggleBackground()<CR>
-
   " Remapping {{{
     fun! OpenConfigFile(file)
       if (&filetype ==? 'startify')

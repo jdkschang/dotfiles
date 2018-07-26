@@ -49,6 +49,10 @@
   set noerrorbells      " Disable error bells
   set title             " Show the current mode
 
+  " support italics with tmux...
+  set t_ZH=^[[3m
+  set t_ZR=^[[23m
+  highlight Comment cterm=italic
   " Don't show the intro message when starting Vim
   " Also suppress several 'Press Enter to continue messages' especially
   " with FZF

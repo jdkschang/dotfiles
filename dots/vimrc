@@ -365,7 +365,7 @@
   " NERDTree
   " ----------------------------------------------------------------------------
   if s:has_plugin('nerdtree')
-    let g:NERDTreeWinSize = 30
+    let g:NERDTreeWinSize = 15
     let NERDTreeIgnore = ['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
     let NERDTreeShowHidden = 1
     let NERDTreeHijackNetrw = 1
@@ -678,16 +678,11 @@ augroup vimrc-help
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | setlocal relativenumber | endif
 augroup END
 
-" Vim Script file settings ------------------------ {{{
-augroup filetype_vim
-  autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
 augroup file-types
   autocmd!
 
+  " vimscript foldmethod
+  autocmd FileType vim setlocal foldmethod=marker
   " Override some syntaxes so things look better
   autocmd BufNewFile,BufRead *.html setlocal syntax=swig
   autocmd BufNewFile,BufRead *.sss setlocal syntax=stylus
@@ -705,6 +700,12 @@ augroup file-types
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+  " NERDTree fixed window
+  function! s:ignore_golden_ratio ()
+    let b:golden_ratio_resizing_ignored = 1
+    let g:golden_ratio_exclude_nonmodifiable = 1
+  endfunction
+  autocmd FileType nerdtree :call s:ignore_golden_ratio()
 augroup END
 
 " Switch between normal and relative line numbers and cursorline

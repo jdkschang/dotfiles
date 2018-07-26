@@ -172,8 +172,6 @@ call plug#begin(g:plugin_path)
 " }}}
 
 " Writing & Editing: {{{
-  " distraction free writing (like iA Writer)
-  Plug 'laktek/distraction-free-writing-vim', { 'on': 'ToggleDistractionFreeWriting' }
   " Distraction free writing in vim
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   " Highlight current paragraph (works well with goyo)

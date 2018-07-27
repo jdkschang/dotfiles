@@ -52,8 +52,6 @@
   " support italics with tmux...
   set t_ZH=[3m
   set t_ZR=[23m
-  hi Comment cterm=italic
-  hi Comment gui=italic
 
   " Don't show the intro message when starting Vim
   " Also suppress several 'Press Enter to continue messages' especially

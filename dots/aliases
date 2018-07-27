@@ -21,6 +21,7 @@ alias j="z"
 alias cask="brew cask"
 alias v="nvim"
 alias e="emacs -nw"
+alias ec="TERM=xterm-256color-it emacsclient"
 
 # Services
 alias bstart="brew services start"

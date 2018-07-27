@@ -52,7 +52,9 @@
   " support italics with tmux...
   set t_ZH=[3m
   set t_ZR=[23m
-  highlight Comment cterm=italic
+  hi Comment cterm=italic
+  hi Comment gui=italic
+
   " Don't show the intro message when starting Vim
   " Also suppress several 'Press Enter to continue messages' especially
   " with FZF
@@ -550,6 +552,9 @@
   " Theme (light | mirage | dark)
   let ayucolor="dark"
   colo ayu
+
+  " hi Comment cterm=italic
+  hi Comment gui=italic
 
   " Remapping {{{
     fun! OpenConfigFile(file)

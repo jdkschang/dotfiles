@@ -35,6 +35,7 @@ alias less='less -N'
 alias srcz="source ~/.zshrc"
 
 # tmux
+alias tmux="env TERM=xterm-256color-it tmux -2"
 alias tls="tmux ls"
 alias tnew="tmux new -s"
 alias tkill="tmux kill-session -t"

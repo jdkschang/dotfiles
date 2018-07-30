@@ -700,7 +700,7 @@ augroup file-types
 
   " Wrap text and turn on spell for markdown files
   autocmd BufNewFile,BufRead *.md setlocal wrap linebreak spell filetype=markdown
-
+  autocmd BufNewFile,BufRead *.md setlocal foldmethod=indent
   " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
   autocmd FileType gitcommit setlocal spell

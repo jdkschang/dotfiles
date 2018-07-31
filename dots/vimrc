@@ -383,7 +383,7 @@
     let g:fzf_commits_log_options = '--color --graph --pretty=format:"%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset" --abbrev-commit'
 
     nnoremap <c-p> :FZF<cr>
-    nnoremap <c-b> :Buffers<cr>
+    nnoremap <c-i> :Buffers<cr>
     nnoremap <c-t> :BLines<cr>
     nnoremap <c-a> :Ag<cr>
     nnoremap <c-c> :Commits<cr>

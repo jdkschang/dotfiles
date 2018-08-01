@@ -8,10 +8,10 @@
 "  ▀██████▀  █▀    ▀█   ███   █▀
 
 " General settings {{{
-  scriptencoding  utf-16		" allow emojies in vimrc
-  set nocompatible			" vim, not vi
-  syntax on					" syntax highlighting
-  filetype plugin indent on	" try to recognize filetypes and load rel' plugins
+  scriptencoding  utf-16    " allow emojies in vimrc
+  set nocompatible          " vim, not vi
+  syntax on                 " syntax highlighting
+  filetype plugin indent on " try to recognize filetypes and load rel' plugins
 " }}}
 
 " Behavior Modifications {{{

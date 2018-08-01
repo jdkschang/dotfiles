@@ -570,6 +570,11 @@
     nnoremap <leader>r :source $MYVIMRC<cr>
     inoremap jk <ESC>
 
+
+    " copy to system clipboard
+    noremap gy "+y
+    " copy whole file to system clipboard
+    nnoremap gY gg"+yG
     " Save file
     nnoremap <silent><leader>w :silent w<cr>
     " Save & Exit file
@@ -589,7 +594,7 @@
 
     map <C-\> :NERDTreeToggle<cr>
 
-    nnoremap <leader>sc :Scratch<cr>
+    nnoremap <leader>; :Scratch<cr>
     augroup ScratchToggle
       autocmd!
       autocmd FileType scratch nnoremap <buffer> <leader>sc :q<CR>

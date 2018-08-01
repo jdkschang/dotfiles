@@ -207,6 +207,12 @@
 
   " NeovimCompletionManager (NCM):
   " ----------------------------------------------------------------------------
+  " enable ncm2 for all buffers
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+
+  " :help Ncm2PopupOpen for more information
+  set completeopt=noinsert,menuone,noselect
+
   " use tab to cycle through completions
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -646,7 +652,7 @@ nnoremap <silent> p p`]
 
 " Split
 noremap <silent><leader>h :split<cr>
-noremap <silent><leader>v :vsplit<cr>
+noremap <silent><leader>vv :vsplit<cr>
 
 " Spellcheck
 nnoremap <Leader>sc :setlocal spell!<cr>

@@ -6,7 +6,7 @@ shift + alt - space : chunkc tiling::window --toggle float
 
 # change layout of desktop
 alt - e : chunkc tiling::desktop --layout bsp
-alt - e : chunkc tiling::desktop --layout monocle
+alt - s : chunkc tiling::desktop --layout monocle
 
 # kill focused window
 shift + alt - q : chunkc tiling::window --close
@@ -25,6 +25,12 @@ shift + alt - h : chunkc tiling::window --warp west
 shift + alt - j : chunkc tiling::window --warp south
 shift + alt - k : chunkc tiling::window --warp north
 shift + alt - l : chunkc tiling::window --warp east
+
+# resize window
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
 
 # move focused container to workspace
 shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)

@@ -23,6 +23,9 @@ export MANPATH="$HOME/git-hub/man:$MANPATH"
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Gradle
+export GRADLE_USER_HOME="~/.gradle"
+
 # zgen
 # ---------------------------------------------------------------
 

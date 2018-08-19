@@ -115,6 +115,6 @@ chunkc tiling::rule --owner Notion --state float --desktop 1  --grid-layout 8:8:
 chunkc tiling::rule --owner Spotify --state tile --desktop 1  --grid-layout 8:8:3:4:5:4
 
 
-chunkc tiling::rule --owner Finder --state float
+chunkc tiling::rule --owner Finder --state float --alpha 0.85
 # terminal float
 chunkc tiling::rule --owner iTerm --state float --level 5 --grid-layout 1:1:0:0:1:1

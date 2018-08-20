@@ -43,15 +43,9 @@ chunkc set global_desktop_offset_gap     12.5
 chunkc set desktop_padding_step_size     15.0
 chunkc set desktop_gap_step_size         5.0
 
-chunkc set 1_desktop_offset_top     75
-chunkc set 1_desktop_offset_bottom  75
-chunkc set 1_desktop_offset_left    75
-chunkc set 1_desktop_offset_right   75
-chunkc set 1_desktop_offset_gap     50
-
 chunkc set 1_desktop_mode 				 float
 chunkc set 2_desktop_mode 				 monocle
-# chunkc set 3_desktop_mode 				 bsp
+chunkc set 3_desktop_mode 				 bsp
 
 chunkc set bsp_spawn_left                1
 chunkc set bsp_optimal_ratio             1.618
@@ -71,8 +65,13 @@ chunkc set window_region_locked          1
 #       to pass value containing a whitespace.
 #
 # chunkc set mouse_modifier              \"cmd shift\"
+<<<<<<< HEAD
 chunkc set mouse_move_window              \"cmd 2\"
 chunkc set mouse_resize_window            \"cmd 2\"
+=======
+chunkc set mouse_move_window                \"ctrl 1\"
+chunkc set mouse_resize_window              \"ctrl 2\"
+>>>>>>> 7e3481e760498d8d78ad7c577b05a6e768325bb5
 
 chunkc set preselect_border_color        0xffd75f5f
 chunkc set preselect_border_width        5
@@ -98,6 +97,8 @@ chunkc set focused_border_width          0
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
 
+alt - r : chunkc tiling::desktop --rotate 90
+
 #
 # NOTE: specify plugins to load when chunkwm starts.
 #       if chunkc plugin_dir is not set, the absolutepath is necessary.
@@ -105,11 +106,21 @@ chunkc set focused_border_skip_floating  0
 
 chunkc core::load border.so
 chunkc core::load tiling.so
+chunkc core::load ffm.so
 
 #
 # NOTE: shell commands require escaped quotes
 #       to pass value containing a whitespace.
 #
 
-chunkc tiling::rule --owner Finder --name Copy --state float
-chunkc tiling::rule --owner \"App Store\" --state float
+# desktop 1
+chunkc tiling::rule --name \"Google Hangouts\" --state tile --desktop 1  --grid-layout 8:8:0:0:3:4
+chunkc tiling::rule --owner Messages --state tile --desktop 1  --grid-layout 8:8:0:4:3:4
+chunkc tiling::rule --owner Timing --state tile --desktop 1  --grid-layout 8:8:3:0:5:4
+chunkc tiling::rule --owner Notion --state float --desktop 1  --grid-layout 8:8:3:3:5:5
+chunkc tiling::rule --owner Spotify --state tile --desktop 1  --grid-layout 8:8:3:4:5:4
+
+
+chunkc tiling::rule --owner Finder --state float --alpha 0.85
+# terminal float
+chunkc tiling::rule --owner iTerm --state float --level 5 --grid-layout 1:1:0:0:1:1

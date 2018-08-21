@@ -27,6 +27,7 @@ alias ec="TERM=xterm-256color-it emacsclient"
 alias bstart="brew services start"
 alias bstop="brew services stop"
 
+alias bsrcs="brew services restart chunkwm; brew services restart skhd;"
 alias bsrc="brew services restart chunkwm"
 alias bssc="brew services stop chunkwm"
 alias bsrs="brew services restart skhd"

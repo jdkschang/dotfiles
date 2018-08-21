@@ -52,6 +52,7 @@ chunkc set bsp_optimal_ratio             1.618
 chunkc set bsp_split_mode                optimal
 chunkc set bsp_split_ratio               0.5
 
+chunkc set monitor_focus_cycle           1
 chunkc set window_focus_cycle            monitor
 
 chunkc set mouse_follows_focus           intrinsic

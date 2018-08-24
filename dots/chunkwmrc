@@ -5,7 +5,7 @@
 #       'stdout' and 'stderr' are valid values.
 #
 
-chunkc core::log_file stdout
+
 
 #
 # NOTE: specify the desired level of logging.
@@ -43,9 +43,9 @@ chunkc set global_desktop_offset_gap     12.5
 chunkc set desktop_padding_step_size     15.0
 chunkc set desktop_gap_step_size         5.0
 
-chunkc set 1_desktop_mode 				 float
-chunkc set 2_desktop_mode 				 monocle
-chunkc set 3_desktop_mode 				 bsp
+chunkc set 1_desktop_mode               bsp
+chunkc set 2_desktop_mode               monocle
+chunkc set 3_desktop_mode               float
 
 chunkc set bsp_spawn_left                1
 chunkc set bsp_optimal_ratio             1.618
@@ -92,8 +92,6 @@ chunkc set focused_border_width          0
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
 
-alt - r : chunkc tiling::desktop --rotate 90
-
 #
 # NOTE: specify plugins to load when chunkwm starts.
 #       if chunkc plugin_dir is not set, the absolutepath is necessary.
@@ -101,7 +99,7 @@ alt - r : chunkc tiling::desktop --rotate 90
 
 chunkc core::load border.so
 chunkc core::load tiling.so
-chunkc core::load ffm.so
+# chunkc core::load ffm.so
 
 #
 # NOTE: shell commands require escaped quotes
@@ -109,10 +107,10 @@ chunkc core::load ffm.so
 #
 
 # desktop 1
-chunkc tiling::rule --name \"Google Hangouts\" --state tile --alpha 0.9 --desktop 1  --grid-layout 8:8:0:0:3:4
-chunkc tiling::rule --owner Messages --state tile --alpha 0.9 --desktop 1  --grid-layout 8:8:0:4:3:4
-chunkc tiling::rule --owner Timing --state tile --alpha 0.9 --desktop 1  --grid-layout 8:8:3:0:5:4
-chunkc tiling::rule --owner Spotify --state tile --alpha 0.9 --desktop 1  --grid-layout 8:8:3:4:5:4
+chunkc tiling::rule --name \"Google Hangouts\" --state tile --alpha 0.9 --desktop 1
+chunkc tiling::rule --owner Messages --state tile --alpha 0.9 --desktop 1
+chunkc tiling::rule --owner Timing --state tile --alpha 0.9 --desktop 1
+chunkc tiling::rule --owner Spotify --state tile --alpha 0.9 --desktop 1
 
 chunkc tiling::rule --owner \"Google Chrome\" --alpha 0.98
 chunkc tiling::rule --owner Notion --state tile --alpha 0.95

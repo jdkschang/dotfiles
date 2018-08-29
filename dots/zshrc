@@ -46,6 +46,7 @@ if ! zgen saved; then
   zgen load Tarrasch/zsh-bd
   zgen load lukechilds/zsh-better-npm-completion
   zgen load hlissner/zsh-autopair
+  zgen load zdharma/zsh-diff-so-fancy
 
   # https://github.com/zsh-users/zsh-completions
   zgen load zsh-users/zsh-completions src

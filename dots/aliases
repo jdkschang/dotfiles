@@ -95,9 +95,6 @@ alias sudo='sudo '
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
 
-# Screensaver
-alias ss='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-
 # Git shortcuts
 alias gac='git add . && git commit -v'
 alias gcf='git commit --fixup `fcs`'
@@ -165,6 +162,13 @@ alias vrel="vagrant reload --provision"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# improved cat
+alias cat="bat"
+# pretty ping
+alias ping="prettyping --nolegend"
+# better disk utility
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"

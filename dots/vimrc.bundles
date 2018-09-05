@@ -81,6 +81,8 @@ call plug#begin(g:plugin_path)
 " Navigation: {{{
   " Advanced movement similar to motions
   Plug 'justinmk/vim-sneak'
+  " easier navigation
+  Plug 'easymotion/vim-easymotion'
 " }}}
 
 " Buffers {{{

@@ -116,6 +116,6 @@ chunkc tiling::rule --owner \"Google Chrome\" --alpha 0.98
 chunkc tiling::rule --owner Notion --state tile --alpha 0.95
 chunkc tiling::rule --owner Finder --state float --alpha 0.85
 # terminal float
-chunkc tiling::rule --owner iTerm --state tile --level 5 --grid-layout 1:1:0:0:1:1
+chunkc tiling::rule --owner iTerm --state tile --grid-layout 1:1:0:0:1:1
 # emacs
 chunkc tiling::rule --owner Emacs --except "^$" --state tile

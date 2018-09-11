@@ -24,6 +24,7 @@
 ;; (setq doom-theme 'doom-city-lights)
 ;; (setq doom-theme 'doom-opera)
 ;; (setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-Iosvkem)
 
 (setq doom-font (font-spec :family "Operator Mono SSm" :size 16)
       doom-big-font (font-spec :family "Operator Mono SSm" :size 28)
@@ -36,7 +37,7 @@
 (add-hook 'doom-load-theme-hook #'my-theme-customizations)
 
 ;; emoji
-(add-hook 'after-init-hook #'global-emojify-mode)
+;; (add-hook 'after-init-hook #'global-emojify-mode)
 
 ;; Dash highlighting
 (after! dash (dash-enable-font-lock))

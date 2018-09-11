@@ -28,12 +28,15 @@
 (setq doom-font (font-spec :family "Operator Mono SSm" :size 16)
       doom-big-font (font-spec :family "Operator Mono SSm" :size 28)
       doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic)
-      doom-unicode-font (font-spec :family "Dank Mono"))
+      doom-unicode-font (font-spec :family "Iosevka"))
 
 (defun my-theme-customizations ()
   (set-face-italic 'font-lock-comment-face t))
 
 (add-hook 'doom-load-theme-hook #'my-theme-customizations)
+
+;; emoji
+(add-hook 'after-init-hook #'global-emojify-mode)
 
 ;; Dash highlighting
 (after! dash (dash-enable-font-lock))

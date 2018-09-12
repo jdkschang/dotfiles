@@ -20,16 +20,23 @@
   (setq mouse-sel-mode t))
 
 ;; Theme
-;; (setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord)
 ;; (setq doom-theme 'doom-city-lights)
 ;; (setq doom-theme 'doom-opera)
 ;; (setq doom-theme 'doom-dracula)
-(setq doom-theme 'doom-Iosvkem)
+;; (setq doom-theme 'doom-Iosvkem)
+(set-frame-parameter nil 'alpha 80)
+(setq global-prettify-symbols-mode t)
 
 (setq doom-font (font-spec :family "Operator Mono SSm" :size 16)
-      doom-big-font (font-spec :family "Operator Mono SSm" :size 28)
-      doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic)
-      doom-unicode-font (font-spec :family "Iosevka"))
+	  doom-big-font (font-spec :family "Operator Mono SSm" :size 28)
+	  doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic)
+	  doom-unicode-font (font-spec :family "Iosevka"))
+
+;; (setq doom-font (font-spec :family "Dank Mono" :size 16)
+;;       doom-big-font (font-spec :family "Dank Mono" :size 28)
+;;       doom-variable-pitch-font (font-spec :family "Dank Mono" :slant 'italic)
+;;       doom-unicode-font (font-spec :family "Iosevka"))
 
 (defun my-theme-customizations ()
   (set-face-italic 'font-lock-comment-face t))

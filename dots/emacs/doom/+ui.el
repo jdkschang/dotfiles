@@ -25,13 +25,13 @@
 ;; (setq doom-theme 'doom-opera)
 ;; (setq doom-theme 'doom-dracula)
 ;; (setq doom-theme 'doom-Iosvkem)
-(set-frame-parameter nil 'alpha 80)
+(set-frame-parameter nil 'alpha 90)
 (setq global-prettify-symbols-mode t)
 
-(setq doom-font (font-spec :family "Operator Mono SSm" :size 16)
-	  doom-big-font (font-spec :family "Operator Mono SSm" :size 28)
-	  doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic)
-	  doom-unicode-font (font-spec :family "Iosevka"))
+(setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)
+	  doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 28)
+	  doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
+	  doom-unicode-font (font-spec :family "Operator Mono SSm Lig"))
 
 ;; (setq doom-font (font-spec :family "Dank Mono" :size 16)
 ;;       doom-big-font (font-spec :family "Dank Mono" :size 28)

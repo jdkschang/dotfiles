@@ -18,7 +18,7 @@
   (defun setup-prettier-js ()
     "Sets up arguments and the mode."
     (interactive)
-    (setq prettier-js-args '("--single-quote"))
+    (setq prettier-js-args '("--single-quote --no-semi --jsx-bracket-same-line"))
 
     (prettier-js-mode))
   (add-hook! (typescript-mode

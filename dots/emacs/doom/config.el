@@ -18,7 +18,7 @@
   (defun setup-prettier-js ()
     "Sets up arguments and the mode."
     (interactive)
-    (setq prettier-js-args '("--single-quote"))
+    (setq prettier-js-args '("--single-quote --no-semi --jsx-bracket-same-line"))
 
     (prettier-js-mode))
   (add-hook! (typescript-mode
@@ -34,7 +34,6 @@
 (after! js2-mode
   ;; use eslintd-fix so when i save it fixes dumb shit
   (add-hook 'js2-mode-hook #'eslintd-fix-mode)
-
   ;; Indent shit
   (setq js2-basic-offset 2))
 

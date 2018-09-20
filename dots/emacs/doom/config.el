@@ -1,5 +1,16 @@
 ;;; ~/dotfiles/dots/emacs/doom/config.el -*- lexical-binding: t; -*-
 
+;;;;
+;;;; General Settings
+;;;;
+
+;; Make Doom shut up about recentf-cleanup
+(advice-add #'recentf-cleanup :around #'doom*shut-up)
+
+(setq-default
+ user-full-name    "Dmitri Chang"
+ user-mail-address "jdkschang@protonmail.com")
+
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
               tab-width 2)
 
@@ -66,7 +77,10 @@
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
+(load! "+theme")
+(load! "+macos")
 (load! "+ranger") ;; File manager stuff
 (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
+(load! "+bindings")
 ;; (load! "+irc") ;; Irc config

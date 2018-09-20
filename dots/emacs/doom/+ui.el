@@ -1,8 +1,23 @@
 ;;; ~/dotfiles/dots/emacs/doom/+ui.el -*- lexical-binding: t; -*-
 
-;; natural title bar
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+;;;;;
+;;;;; User Interface
+;;;;;
+
+;; Setting transparency values
+(defvar solid 100)
+(defvar transparent 88)
+(defun +jdkschang/toggle-transparency ()
+  (interactive)
+  (cond ((eq (frame-parameter nil 'alpha) solid)
+		 (message "Toggling to transparent: %s" transparent)
+		 (set-frame-parameter nil 'alpha transparent))
+		((eq (frame-parameter nil 'alpha) transparent)
+		 (message "Toggling to solid: %s" solid)
+		 (set-frame-parameter nil 'alpha solid))
+		(t (message "Can't toggle transparency."))))
+
+(set-frame-parameter nil 'alpha 88)
 
 ;; Line Numbers
 (setq display-line-numbers 'relative)
@@ -21,22 +36,11 @@
 
 ;; Theme
 (setq doom-theme 'doom-nord)
-;; (setq doom-theme 'doom-city-lights)
-;; (setq doom-theme 'doom-opera)
-;; (setq doom-theme 'doom-dracula)
-;; (setq doom-theme 'doom-Iosvkem)
-(set-frame-parameter nil 'alpha 90)
-(setq global-prettify-symbols-mode t)
 
 (setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)
 	  doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 28)
 	  doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
 	  doom-unicode-font (font-spec :family "Operator Mono SSm Lig"))
-
-;; (setq doom-font (font-spec :family "Dank Mono" :size 16)
-;;       doom-big-font (font-spec :family "Dank Mono" :size 28)
-;;       doom-variable-pitch-font (font-spec :family "Dank Mono" :slant 'italic)
-;;       doom-unicode-font (font-spec :family "Iosevka"))
 
 (defun my-theme-customizations ()
   (set-face-italic 'font-lock-comment-face t))
@@ -50,3 +54,5 @@
 (after! dash (dash-enable-font-lock))
 
 (load! "+magit")
+
+;; (load! "+bindings.el")

@@ -7,6 +7,8 @@
 ;; Setting transparency values
 (defvar solid 100)
 (defvar transparent 88)
+
+;; hotswap between transparencies
 (defun +jdkschang/toggle-transparency ()
   (interactive)
   (cond ((eq (frame-parameter nil 'alpha) solid)
@@ -17,10 +19,11 @@
 		 (set-frame-parameter nil 'alpha solid))
 		(t (message "Can't toggle transparency."))))
 
-(set-frame-parameter nil 'alpha 88)
+(set-frame-parameter nil 'alpha transparent)
 
 ;; Line Numbers
-(setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
+
 ;; terminal mouse support
 (unless window-system
   (require 'mouse)

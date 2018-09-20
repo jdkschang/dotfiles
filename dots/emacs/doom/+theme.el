@@ -7,11 +7,9 @@
 ;; Setting light & dark themes
 (defvar light-theme 'doom-nord-light) ; doom-nord-light doom-one-light doom-solarized-light
 (defvar dark-theme 'doom-nord) ; doom-one doom-molokai doom-opera doom-city-lights
-(defvar mac-default-theme dark-theme
-  "Controls whether default theme is `dark-theme` or `light-theme`.")
 
 ;; System agnostic default theme choice goes here:
-(setq doom-theme light-theme)
+(setq doom-theme dark-theme)
 
 ;; hotswap between themes
 (defun +jdkschang/toggle-theme ()

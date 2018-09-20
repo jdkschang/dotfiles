@@ -71,10 +71,6 @@
     (map! :map helm-find-files-map
           "<DEL>" #'helm-find-files-up-one-level)))
 
-
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
-
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
 (load! "+theme")
@@ -82,5 +78,5 @@
 (load! "+ranger") ;; File manager stuff
 (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
-(load! "+bindings")
 ;; (load! "+irc") ;; Irc config
+(load! "+bindings")

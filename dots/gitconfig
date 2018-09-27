@@ -139,4 +139,4 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	email = jdkschang@gmail.com
+	email = 6375175+jdkschang@users.noreply.github.com

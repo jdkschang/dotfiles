@@ -1,4 +1,18 @@
 
-# ^ If applied, this commit will
+# WHAT
+# ^ <issue id> <subject> If applied, this commit will
 
+# WHY & HOW
 # ^ Why was the change made?
+
+# RELATED
+# Provide links or keys to relevant issues or resources
+
+
+# REMEMBER
+# use lower case in subject line
+# start with an imperative verb on subject line
+# do not end subject line with a period
+# separate subject from body with a blankk line
+# use body to explain what and why vs. how
+# can use multiple lines with "-" for bullet points

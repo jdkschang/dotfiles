@@ -1,13 +1,12 @@
 # Navigation
 alias ..="builtin cd .."
 alias ...="builtin cd ../.."
+alias ....="builtin cd ../../.."
+alias .....="builtin cd ../../../.."
 
 # Projects
 alias proj="builtin cd ~/Dropbox/Projects/"
 alias projgc="builtin cd ~/Projects/"
-
-# alias oa="builtin cd ~/Dropbox/Projects/oa_control/web/laravel"
-# alias home="builtin cd ~/Dropbox/Projects/homestead"
 
 # Shortcuts
 alias d="cd ~/Dropbox"

@@ -7,15 +7,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +4 ~/Dropbox/Docs/index.md
-badd +6 ~/Dropbox/Docs/c.md
-badd +10 ~/Dropbox/Docs/diary/2018-07-24.md
-badd +420 dots/vimrc
-badd +88 dots/vimrc.bundles
-badd +0 ~/.config/nvim/plugged/vim-obsession/doc/obsession.txt
+badd +112 dots/chunkwmrc
 argglobal
 silent! argdel *
-edit dots/vimrc
+$argadd .
+edit dots/chunkwmrc
 set splitbelow splitright
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
@@ -29,26 +25,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-10,15fold
-17,155fold
-157,511fold
-513,517fold
-524,559fold
-650,655fold
-519,700fold
-17
-normal! zo
-157
-normal! zo
-519
-normal! zo
-let s:l = 524 - ((21 * winheight(0) + 17) / 34)
+let s:l = 118 - ((20 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-524
+118
 normal! 0
-lcd ~/dotfiles
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

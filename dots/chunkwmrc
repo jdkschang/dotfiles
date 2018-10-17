@@ -114,11 +114,12 @@ chunkc tiling::rule --owner Notion --state tile --alpha 0.95 --desktop 1
 #tiles
 chunkc tiling::rule --owner Timing --state tile --alpha 0.9
 chunkc tiling::rule --owner Spotify --state tile --alpha 0.9
-chunkc tiling::rule --owner \"Google Chrome\" --alpha 0.98
+chunkc tiling::rule --owner \"Google Chrome\" --alpha 0.99
 
 # floats
-chunkc tiling::rule --owner Finder --state float --alpha 0.85
-chunkc tiling::rule --owner iTunes --state float --alpha 0.85
+chunkc tiling::rule --owner Finder --state float --alpha 0.9
+chunkc tiling::rule --owner \"Activity Monitor\" --state float --alpha 0.9
+chunkc tiling::rule --owner iTunes --state float --alpha 0.9
 chunkc tiling::rule --owner iTerm --state float --grid-layout 1:1:0:0:1:1
 
 # emacs

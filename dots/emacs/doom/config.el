@@ -19,7 +19,7 @@
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Useless-Whitespace.html
 ;; http://ergoemacs.org/emacs/emacs_delete_trailing_whitespace.html
 (setq whitespace-style (quote
-(face tabs trailing empty)))
+						(face tabs trailing empty)))
 
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
               tab-width 2)

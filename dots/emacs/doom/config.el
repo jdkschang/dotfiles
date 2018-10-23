@@ -11,6 +11,8 @@
  user-full-name    "Dmitri Chang"
  user-mail-address "jdkschang@protonmail.com")
 
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
 ;; whitespace-mode
 ;; http://stackoverflow.com/questions/6378831/emacs-globally-enable-whitespace-mode
 (global-whitespace-mode 1)
@@ -19,7 +21,8 @@
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Useless-Whitespace.html
 ;; http://ergoemacs.org/emacs/emacs_delete_trailing_whitespace.html
 (setq whitespace-style (quote
-						(face tabs trailing empty)))
+(face tabs trailing empty)))
+
 
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
               tab-width 2)

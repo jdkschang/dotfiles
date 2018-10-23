@@ -11,8 +11,6 @@
  user-full-name    "Dmitri Chang"
  user-mail-address "jdkschang@protonmail.com")
 
-(when (string= system-type "darwin")
-  (setq dired-use-ls-dired nil))
 ;; whitespace-mode
 ;; http://stackoverflow.com/questions/6378831/emacs-globally-enable-whitespace-mode
 (global-whitespace-mode 1)

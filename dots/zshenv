@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Default path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 # Add brew coreutils

@@ -68,7 +68,9 @@
           (funcall (cdr my-pair)))))
 
 (after! web-mode
+  (add-hook 'web-mode-hook #'add-node-modules-path)
   (add-hook 'web-mode-hook #'flycheck-mode)
+
 
   (setq web-mode-markup-indent-offset 2 ;; Indentation
         web-mode-code-indent-offset 2

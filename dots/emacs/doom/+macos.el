@@ -5,6 +5,7 @@
 ;;;;
 
 (when (eq system-type 'darwin)       ; should be the same as (when IS-MAC...)
+  (exec-path-from-shell-initialize)
   (setq ns-use-thin-smoothing t)    ; thinner strokes for font-smoothing
   (setq dired-use-ls-dired nil)
 

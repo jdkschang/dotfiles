@@ -11,12 +11,15 @@
 ;; hotswap between transparencies
 (defun +jdkschang/toggle-transparency ()
   (interactive)
-  (cond ((eq (frame-parameter nil 'alpha) solid)
+  (cond
+    ((eq (frame-parameter nil 'alpha) solid)
 		 (message "Toggling to transparent: %s" transparent)
 		 (set-frame-parameter nil 'alpha transparent))
+
 		((eq (frame-parameter nil 'alpha) transparent)
 		 (message "Toggling to solid: %s" solid)
 		 (set-frame-parameter nil 'alpha solid))
+
 		(t (message "Can't toggle transparency."))))
 
 (set-frame-parameter nil 'alpha transparent)
@@ -48,12 +51,7 @@
 
 (add-hook 'doom-load-theme-hook #'my-theme-customizations)
 
-;; emoji
-;; (add-hook 'after-init-hook #'global-emojify-mode)
-
 ;; Dash highlighting
 (after! dash (dash-enable-font-lock))
 
 (load! "+magit")
-
-;; (load! "+bindings.el")

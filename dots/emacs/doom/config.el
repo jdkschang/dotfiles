@@ -56,6 +56,7 @@
 (after! js2-mode
   ;; use eslintd-fix so when i save it fixes dumb shit
   (add-hook 'js2-mode-hook #'eslintd-fix-mode)
+  (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   ;; Indent shit
   (setq js2-basic-offset 2))
 

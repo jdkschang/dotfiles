@@ -1,11 +1,13 @@
-
 # PATH
 # ---------------------------------------------------------------
 
+export PATH=""
 # Default path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-# rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
+
+# rbenv | already being exported in /zshrc calling `rbenv init`
+# export PATH="$HOME/.rbenv/shims:$PATH"
+
 # Add brew coreutils
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 

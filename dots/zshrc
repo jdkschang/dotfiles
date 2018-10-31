@@ -40,7 +40,8 @@ unset file
 # ---------------------------------------------------------------
 
 # Make nvim the default editor
-export EDITOR="nvim"
+# export EDITOR="nvim"
+export EDITOR="emacsclient"
 
 # vi mode
 bindkey '^r' history-incremental-search-backward

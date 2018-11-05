@@ -24,17 +24,17 @@
 (setq display-line-numbers-type 'relative)
 
 ;; terminal mouse support
-;; (unless window-system
-;;   (require 'mouse)
-;;   (xterm-mouse-mode t)
-;;   (global-set-key [mouse-4] (lambda ())
-;;                 (interactive)
-;;                 (scroll-down 1))
-;;   (global-set-key [mouse-5] (lambda ())
-;;                 (interactive)
-;;                 (scroll-up 1))
-;;   (defun track-mouse (e))
-;;   (setq mouse-sel-mode t))
+(unless window-system
+   (require 'mouse)
+   (xterm-mouse-mode t)
+   (global-set-key [mouse-4] (lambda ())
+                 (interactive)
+                 (scroll-down 1))
+   (global-set-key [mouse-5] (lambda ())
+                 (interactive)
+                 (scroll-up 1))
+   (defun track-mouse (e))
+   (setq mouse-sel-mode t))
 
 ;; Font
 (setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)

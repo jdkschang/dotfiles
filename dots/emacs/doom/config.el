@@ -77,12 +77,11 @@
         web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
         web-mode-auto-close-style 3)) ;; RJSX-mode style closing
 
-
 ;; (after! helm
-  ;; ;; I want backspace to go up a level, like ivy
-  ;; (add-hook! 'helm-find-files-after-init-hook
-  ;;   (map! :map helm-find-files-map
-  ;;         "<DEL>" #'helm-find-files-up-one-level)))
+;; ;; I want backspace to go up a level, like ivy
+;; (add-hook! 'helm-find-files-after-init-hook
+;;   (map! :map helm-find-files-map
+;;         "<DEL>" #'helm-find-files-up-one-level)))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

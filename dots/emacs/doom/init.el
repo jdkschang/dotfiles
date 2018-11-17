@@ -86,7 +86,7 @@
 										;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
 										;erlang            ; an elegant language for a more civilized age
-										;elixir            ; erlang done right
+	   elixir            ; erlang done right
 										;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        go                ; the hipster dialect
@@ -97,7 +97,7 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
 										;julia             ; a better, faster MATLAB
 										;latex             ; writing papers in Emacs has never been so fun
-										;ledger            ; an accounting system in Emacs
+	   ledger            ; an accounting system in Emacs
 										;lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
 										;nim               ; python + lisp at the speed of c

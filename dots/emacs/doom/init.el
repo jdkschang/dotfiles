@@ -40,7 +40,7 @@
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        (pretty-code       ; replace bits of code with pretty symbols
-        +fira-code)
+        +fira)
 										;unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
@@ -97,7 +97,7 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
 										;julia             ; a better, faster MATLAB
 										;latex             ; writing papers in Emacs has never been so fun
-										;ledger            ; an accounting system in Emacs
+	   ledger            ; an accounting system in Emacs
 										;lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
 										;nim               ; python + lisp at the speed of c

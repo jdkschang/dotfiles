@@ -86,7 +86,7 @@
 										;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
 										;erlang            ; an elegant language for a more civilized age
-										;elixir            ; erlang done right
+	   elixir            ; erlang done right
 										;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        go                ; the hipster dialect

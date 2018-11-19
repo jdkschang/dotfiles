@@ -6,6 +6,7 @@ alias .....="builtin cd ../../../.."
 
 # Projects
 alias proj="builtin cd ~/Dropbox/Projects/"
+alias fin="builtin cd ~/Dropbox/Finances/budgeting"
 alias projgc="builtin cd ~/Projects/"
 alias rwa="builtin cd ~/Projects/react-web-app"
 

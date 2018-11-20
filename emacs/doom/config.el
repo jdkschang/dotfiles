@@ -31,8 +31,8 @@
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 
 ;; Load snippets
-;; (after! yasnippet
-;;   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+(after! yasnippet
+  (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
 
 (def-package! prettier-js

@@ -65,7 +65,7 @@
        upload            ; map local to remote projects via ssh/ftp
 
        :lang
-       (cc +irony +rtags); C/C++/Obj-C madness
+       (cc +irony)       ; C/C++/Obj-C madness
        clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
@@ -73,7 +73,7 @@
        elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        go                ; the hipster dialect
-       (haskell +intero) ; a language that's lazier than I am
+       (haskell +dante) ; a language that's lazier than I am
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
        markdown          ; writing docs for people to ignore
@@ -100,13 +100,14 @@
        irc               ; how neckbeards socialize
                                         ;(rss +org)        ; emacs as an RSS reader
                                         ;twitter           ; twitter client https://twitter.com/vnought
-       ;; (write            ; emacs as a word processor (latex + org + markdown)
-       ;;  +wordnut         ; wordnet (wn) search
-       ;;  +langtool)       ; a proofreader (grammar/style check) for Emacs
+       (write            ; emacs as a word processor (latex + org + markdown)
+        +wordnut         ; wordnet (wn) search
+        +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :completion
        (lsp
         ;; +javascript
+        +go
         +css
         +rust
         +cpp

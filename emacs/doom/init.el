@@ -7,7 +7,8 @@
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        (lookup           ; helps you navigate your code and documentation
-        +docsets)        ; ...or in Dash docsets locally
+		+devdocs)
+       ;; +docsets)
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
        (syntax-checker   ; tasing you for every semicolon you forget
@@ -19,29 +20,23 @@
         +auto)           ; as-you-type code completion
        (helm             ; the *other* search engine for love and life
         +fuzzy)          ; enable fuzzy search backend for helm
-										;ido               ; the other *other* search engine...
-										;(ivy              ; a search engine for love and life
-										; +fuzzy)          ; enable fuzzy search backend for ivy
 
        :ui
-										;deft              ; notational velocity for Emacs
-       doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
-       doom-modeline     ; a snazzy Atom-inspired mode-line
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       evil-goggles      ; display visual hints when editing in evil
+       doom
+       doom-dashboard
+       doom-modeline
+       doom-quit
+       evil-goggles
 										;fci               ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
 										;modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
-										;neotree           ; a project drawer, like NERDTree for vim
        treemacs          ; a project drawer, like neotree but cooler
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       (pretty-code       ; replace bits of code with pretty symbols
-        +fira)
-										;unicode           ; extended unicode support for various languages
+       (pretty-code +fira)
+
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
@@ -86,7 +81,7 @@
 										;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
 										;erlang            ; an elegant language for a more civilized age
-	   elixir            ; erlang done right
+       elixir            ; erlang done right
 										;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        go                ; the hipster dialect
@@ -97,7 +92,7 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
 										;julia             ; a better, faster MATLAB
 										;latex             ; writing papers in Emacs has never been so fun
-	   ledger            ; an accounting system in Emacs
+       ledger            ; an accounting system in Emacs
 										;lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
 										;nim               ; python + lisp at the speed of c
@@ -134,19 +129,19 @@
 										;(rss +org)        ; emacs as an RSS reader
 										;twitter           ; twitter client https://twitter.com/vnought
        (write            ; emacs as a word processor (latex + org + markdown)
-		+wordnut         ; wordnet (wn) search
-		+langtool)       ; a proofreader (grammar/style check) for Emacs
+        +wordnut         ; wordnet (wn) search
+        +langtool)       ; a proofreader (grammar/style check) for Emacs
 
-	   :completion
-	   (lsp
-		;; +javascript
-		+css
-		+rust
-		+cpp
-		+ocaml
-		+java
-		+python
-		+sh)
+       :completion
+       (lsp
+        ;; +javascript
+        +css
+        +rust
+        +cpp
+        +ocaml
+        +java
+        +python
+        +sh)
 
        :config
        ;; For literate config users. This will tangle+compile a config.org

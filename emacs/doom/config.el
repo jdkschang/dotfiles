@@ -44,6 +44,7 @@
 
     (prettier-js-mode))
   (add-hook! (typescript-mode
+              rjsx-mode
               js2-mode)
     #'setup-prettier-js)
   (add-hook! web-mode (enable-minor-mode '("\\.tsx\\'" . setup-prettier-js))))
@@ -54,12 +55,12 @@
 
 
 (after! js2-mode
-  ;; use eslintd-fix so when i save it fixes dumb shit
-  (add-hook 'js2-mode-hook #'eslintd-fix-mode)
-  (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
-  ;; Indent shit
-  (setq js2-basic-offset 2))
-  ;; (set-pretty-symbols! '(js2-mode rjsx-mode web-mode)
+;; use eslintd-fix so when i save it fixes dumb shit
+(add-hook 'js2-mode-hook #'eslintd-fix-mode)
+;; (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
+;; Indent shit
+(setq js2-basic-offset 2))
+  ;; (set-pretty-symbols! '(js2-mode rjsx-mode web-mode prettier-js-mode)
   ;; 	;; Functional
   ;; 	:def "function"
   ;; 	:lambda "() =>"

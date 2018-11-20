@@ -4,6 +4,9 @@
       org-agenda-files '("~/org"))
 (setq +daypage-path "~/org/days/")
 
+(setq-default
+ org-babel-load-languages '((ledger . t)))
+
 (after! org
   (map! :map evil-org-mode-map
         :localleader

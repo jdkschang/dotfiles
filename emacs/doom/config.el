@@ -30,8 +30,8 @@
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 
 ;; Load snippets
-(after! yasnippet
-  (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+;; (after! yasnippet
+;;   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
 
 (def-package! prettier-js
@@ -58,7 +58,22 @@
   (add-hook 'js2-mode-hook #'eslintd-fix-mode)
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   ;; Indent shit
-  (setq js2-basic-offset 2))
+  (setq js2-basic-offset 2)
+  (set-pretty-symbols! 'rjsx-mode
+	;; Functional
+	:def "function"
+	:lambda "() =>"
+	:composition "compose"
+	;; Types
+	:null "null"
+	:true "true" :false "false"
+	;; Flow
+	:not "!"
+	:and "&&" :or "||"
+	:for "for"
+	:return "return"
+	;; Other
+	:yield "import"))
 
 
 (defun enable-minor-mode (my-pair)
@@ -77,11 +92,11 @@
         web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
         web-mode-auto-close-style 3)) ;; RJSX-mode style closing
 
-;; (after! helm
-;; ;; I want backspace to go up a level, like ivy
-;; (add-hook! 'helm-find-files-after-init-hook
-;;   (map! :map helm-find-files-map
-;;         "<DEL>" #'helm-find-files-up-one-level)))
+(after! helm
+  ;; I want backspace to go up a level, like ivy
+  (add-hook! 'helm-find-files-after-init-hook
+	(map! :map helm-find-files-map
+		  "<DEL>" #'helm-find-files-up-one-level)))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

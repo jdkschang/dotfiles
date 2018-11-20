@@ -2,12 +2,12 @@
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
 (doom! :feature
-										;debugger          ; FIXME stepping through code, to help you add bugs
+                                        ;debugger          ; FIXME stepping through code, to help you add bugs
        eval              ; run code, run (also, repls)
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        (lookup           ; helps you navigate your code and documentation
-		+devdocs)
+        +devdocs)
        ;; +docsets)
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
@@ -27,9 +27,9 @@
        doom-modeline
        doom-quit
        evil-goggles
-										;fci               ; a `fill-column' indicator
+                                        ;fci               ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
-										;modeline          ; snazzy, Atom-inspired modeline, plus API
+                                        ;modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        treemacs          ; a project drawer, like neotree but cooler
        (popup            ; tame sudden yet inevitable temporary windows
@@ -42,7 +42,7 @@
        window-select     ; visually switch windows
 
        :editor
-										;(format +onsave)  ; automated prettiness
+                                        ;(format +onsave)  ; automated prettiness
        multiple-cursors  ; editing in many places at once
        parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
@@ -51,7 +51,6 @@
        dired             ; making dired pretty [functional]
        ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
-										;eshell            ; a consistent, cross-platform shell (WIP)
        hideshow          ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
        term              ; terminals in Emacs
@@ -67,14 +66,14 @@
        prodigy           ; FIXME managing external services & code builders
        tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
-										;wakatime
+                                        ;wakatime
 
        :lang
        (cc +irony +rtags); C/C++/Obj-C madness
        clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
-	   erlang            ; an elegant language for a more civilized age
+       erlang            ; an elegant language for a more civilized age
        elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        go                ; the hipster dialect
@@ -101,10 +100,10 @@
        ;; toward a specific purpose. They may have additional dependencies and
        ;; should be loaded late.
        :app
-										;(email +gmail)    ; emacs as an email client
+                                        ;(email +gmail)    ; emacs as an email client
        irc               ; how neckbeards socialize
-										;(rss +org)        ; emacs as an RSS reader
-										;twitter           ; twitter client https://twitter.com/vnought
+                                        ;(rss +org)        ; emacs as an RSS reader
+                                        ;twitter           ; twitter client https://twitter.com/vnought
        (write            ; emacs as a word processor (latex + org + markdown)
         +wordnut         ; wordnet (wn) search
         +langtool)       ; a proofreader (grammar/style check) for Emacs
@@ -123,7 +122,7 @@
        :config
        ;; For literate config users. This will tangle+compile a config.org
        ;; literate config in your `doom-private-dir' whenever it changes.
-										;literate
+                                        ;literate
 
        ;; The default module sets reasonable defaults for Emacs. It also
        ;; provides a Spacemacs-inspired keybinding scheme, a custom yasnippet

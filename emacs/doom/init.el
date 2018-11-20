@@ -27,9 +27,7 @@
        doom-modeline
        doom-quit
        evil-goggles
-                                        ;fci               ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
-                                        ;modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        treemacs          ; a project drawer, like neotree but cooler
        (popup            ; tame sudden yet inevitable temporary windows
@@ -42,7 +40,6 @@
        window-select     ; visually switch windows
 
        :editor
-                                        ;(format +onsave)  ; automated prettiness
        multiple-cursors  ; editing in many places at once
        parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
@@ -66,7 +63,6 @@
        prodigy           ; FIXME managing external services & code builders
        tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
-                                        ;wakatime
 
        :lang
        (cc +irony +rtags); C/C++/Obj-C madness
@@ -104,9 +100,9 @@
        irc               ; how neckbeards socialize
                                         ;(rss +org)        ; emacs as an RSS reader
                                         ;twitter           ; twitter client https://twitter.com/vnought
-       (write            ; emacs as a word processor (latex + org + markdown)
-        +wordnut         ; wordnet (wn) search
-        +langtool)       ; a proofreader (grammar/style check) for Emacs
+       ;; (write            ; emacs as a word processor (latex + org + markdown)
+       ;;  +wordnut         ; wordnet (wn) search
+       ;;  +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :completion
        (lsp

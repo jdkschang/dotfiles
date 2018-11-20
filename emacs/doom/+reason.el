@@ -1,5 +1,8 @@
 ;;; ~/dotfiles/dots/emacs/doom/+reason.el -*- lexical-binding: t; -*-
 
+(add-to-list 'load-path "/Users/dmitri/.opam/default/share/emacs/site-lisp")
+(require 'ocp-indent)
+
 (def-package! reason-mode
   :mode "\\.rei?$"
   :commands (reason-mode)
@@ -18,13 +21,13 @@
       (setq refmt-command refmt-bin))
     (require 'merlin)
     (add-hook! reason-mode
-        (add-hook 'before-save-hook #'refmt-before-save nil t)
-        (merlin-mode))
+      (add-hook 'before-save-hook #'refmt-before-save nil t)
+      (merlin-mode))
     (setq-hook! reason-mode
-        indent-region-function #'apply-refmt)
+      indent-region-function #'apply-refmt)
     (set-electric! 'some-mode :chars '(?|))
     (set-lookup-handlers! 'reason-mode
-                          :definition #'merlin-locate
-                          :references #'merlin-occurrences
-                          :documentation #'merlin-document)
+      :definition #'merlin-locate
+      :references #'merlin-occurrences
+      :documentation #'merlin-document)
     (set-company-backend! 'reason-mode 'merlin-company-backend)))

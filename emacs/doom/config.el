@@ -3,7 +3,7 @@
 ;;;;
 ;;;; General Settings
 ;;;;
-; (setq debug-on-error t)
+                                        ; (setq debug-on-error t)
 
 ;; Make Doom shut up about recentf-cleanup
 (advice-add #'recentf-cleanup :around #'doom*shut-up)
@@ -20,7 +20,7 @@
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Useless-Whitespace.html
 ;; http://ergoemacs.org/emacs/emacs_delete_trailing_whitespace.html
 (setq whitespace-style (quote
-(face tabs trailing empty)))
+                        (face tabs trailing empty)))
 
 
 (setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
@@ -56,26 +56,26 @@
 
 
 (after! js2-mode
-;; use eslintd-fix so when i save it fixes dumb shit
-(add-hook 'js2-mode-hook #'eslintd-fix-mode)
-(setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
-;; Indent shit
-(setq js2-basic-offset 2))
-  ;; (set-pretty-symbols! '(js2-mode rjsx-mode web-mode prettier-js-mode)
-  ;; 	;; Functional
-  ;; 	:def "function"
-  ;; 	:lambda "() =>"
-  ;; 	:composition "compose"
-  ;; 	;; Types
-  ;; 	:null "null"
-  ;; 	:true "true" :false "false"
-  ;; 	;; Flow
-  ;; 	:not "!"
-  ;; 	:and "&&" :or "||"
-  ;; 	:for "for"
-  ;; 	:return "return"
-  ;; 	;; Other
-  ;; 	:yield "import"))
+  ;; use eslintd-fix so when i save it fixes dumb shit
+  (add-hook 'js2-mode-hook #'eslintd-fix-mode)
+  (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
+  ;; Indent shit
+  (setq js2-basic-offset 2)
+  (set-pretty-symbols! '(js2-mode rjsx-mode web-mode prettier-js-mode)
+    ;; Functional
+    :def "function"
+    :lambda "() =>"
+    :composition "compose"
+    ;; Types
+    :null "null"
+    :true "true" :false "false"
+    ;; Flow
+    :not "!"
+    :and "&&" :or "||"
+    :for "for"
+    :return "return"
+    ;; Other
+    :yield "import"))
 
 
 (defun enable-minor-mode (my-pair)
@@ -88,7 +88,6 @@
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)
 
-
   (setq web-mode-markup-indent-offset 2 ;; Indentation
         web-mode-code-indent-offset 2
         web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
@@ -97,8 +96,8 @@
 (after! helm
   ;; I want backspace to go up a level, like ivy
   (add-hook! 'helm-find-files-after-init-hook
-	(map! :map helm-find-files-map
-		  "<DEL>" #'helm-find-files-up-one-level)))
+    (map! :map helm-find-files-map
+          "<DEL>" #'helm-find-files-up-one-level)))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

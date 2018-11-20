@@ -28,8 +28,6 @@
 
 (delq 'rg +helm-project-search-engines) ;; rg is kinda buggy, and i prefer ag
 
-(add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-
 ;; Load snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
@@ -42,17 +40,14 @@
     "Sets up arguments and the mode."
     (interactive)
     (setq prettier-js-args '("--single-quote --no-semi --jsx-bracket-same-line"))
-
     (prettier-js-mode))
-  (add-hook! (typescript-mode
-              rjsx-mode
-              js2-mode)
-    #'setup-prettier-js)
-  (add-hook! web-mode (enable-minor-mode '("\\.tsx\\'" . setup-prettier-js))))
 
-(after! typescript-mode
-  (add-hook 'typescript-mode-hook #'flycheck-mode)
-  (setq typescript-indent-level 2))
+  (add-hook! js2-mode #'setup-prettier-js))
+  ;; (add-hook! web-mode (enable-minor-mode '("\\.tsx\\'" . setup-prettier-js))))
+
+;; (after! typescript-mode
+;;   (add-hook 'typescript-mode-hook #'flycheck-mode)
+;;   (setq typescript-indent-level 2))
 
 
 (after! js2-mode
@@ -61,7 +56,7 @@
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   ;; Indent shit
   (setq js2-basic-offset 2)
-  (set-pretty-symbols! '(js2-mode rjsx-mode web-mode prettier-js-mode)
+  (set-pretty-symbols! '(js2-mode web-mode prettier-js-mode)
     ;; Functional
     :def "function"
     :lambda "() =>"

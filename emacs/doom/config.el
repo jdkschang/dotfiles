@@ -3,6 +3,7 @@
 ;;;;
 ;;;; General Settings
 ;;;;
+(setq debug-on-error t)
 
 ;; Make Doom shut up about recentf-cleanup
 (advice-add #'recentf-cleanup :around #'doom*shut-up)

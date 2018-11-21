@@ -2,9 +2,10 @@
 
 (setq-default
  org-babel-load-languages '((ledger . t)))
-(setq +todo-file "~/org/todo.org"
-      org-agenda-files '("~/org"))
-(setq +daypage-path "~/org/days/")
+
+(setq +todo-file "~/Dropbox/org/todo.org"
+      org-agenda-files '("~/Dropbox/org"))
+(setq +daypage-path "~/Dropbox/org/days/")
 
 (after! org
   (map! :map evil-org-mode-map

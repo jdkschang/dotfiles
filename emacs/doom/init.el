@@ -53,6 +53,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
+       editorconfig
        gist              ; interacting with github gists
        macos             ; MacOS-specific commands
        make              ; run make tasks from Emacs

@@ -1,7 +1,6 @@
 # PATH
 # ---------------------------------------------------------------
 
-echo "SETTING PATH"
 export PATH=""
 # Default path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
@@ -10,6 +9,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 # Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
+
 # GO
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"

@@ -28,6 +28,8 @@
 
 (delq 'rg +helm-project-search-engines) ;; rg is kinda buggy, and i prefer ag
 
+(add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
+
 ;; Load snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
@@ -42,12 +44,14 @@
     (setq prettier-js-args '("--single-quote --no-semi --jsx-bracket-same-line"))
     (prettier-js-mode))
 
-  (add-hook! js2-mode #'setup-prettier-js))
-  ;; (add-hook! web-mode (enable-minor-mode '("\\.tsx\\'" . setup-prettier-js))))
+  (add-hook! (typescript-mode
+              js2-mode)
+    #'setup-prettier-js)
+  (add-hook! web-mode (enable-minor-mode '("\\.tsx\\'" . setup-prettier-js))))
 
-;; (after! typescript-mode
-;;   (add-hook 'typescript-mode-hook #'flycheck-mode)
-;;   (setq typescript-indent-level 2))
+(after! typescript-mode
+  (add-hook 'typescript-mode-hook #'flycheck-mode)
+  (setq typescript-indent-level 2))
 
 
 (after! js2-mode
@@ -101,5 +105,4 @@
 (load! "+ranger") ;; File manager stuff
 (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
-;; (load! "+irc") ;; Irc config
 (load! "+bindings")

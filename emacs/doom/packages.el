@@ -18,3 +18,6 @@
 
 ;; Reasonml stuff
 (package! reason-mode)
+
+;; Better folds
+(package! origami)

@@ -21,7 +21,7 @@ session_base ()
   tmux neww -k -n config -t base:1
   tmux send-keys 'df' C-m
   tmux split-window -h
-  tmux neww -k -n main
+  tmux neww -k -n main -t base:2
   tmux send-keys 'proj' C-m
   tmux split-window -h
   tmux send-keys 'proj' C-m

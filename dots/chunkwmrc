@@ -1,13 +1,6 @@
 #!/bin/bash
 
 #
-# NOTE: specify the absolutepath of the file to use for logging.
-#       'stdout' and 'stderr' are valid values.
-#
-
-
-
-#
 # NOTE: specify the desired level of logging.
 #
 #       - none, debug, warn, error

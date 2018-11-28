@@ -30,7 +30,7 @@
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 ; (add-hook 'prog-mode-hook #'parinfer-toggle-mode)
-(add-hook 'prog-mode-hook #'origami-mode)
+(add-hook 'prog-mode-hook #'global-origami-mode)
 
 ;; Load snippets
 (after! yasnippet

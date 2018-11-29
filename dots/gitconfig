@@ -140,3 +140,5 @@
 	trustExitCode = true
 [user]
 	email = 6375175+jdkschang@users.noreply.github.com
+[github]
+	user = jdkschang

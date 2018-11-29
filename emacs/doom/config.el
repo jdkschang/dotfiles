@@ -29,13 +29,18 @@
 (delq 'rg +helm-project-search-engines) ;; rg is kinda buggy, and i prefer ag
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-; (add-hook 'prog-mode-hook #'parinfer-toggle-mode)
+;; (add-hook 'prog-mode-hook #'parinfer-toggle-mode)
 (add-hook 'prog-mode-hook #'global-origami-mode)
 
 ;; Load snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
+
+(def-package! parinfer
+  :bind (("C-," . parinfer-toggle-mode))
+  :hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
+  :config (setq parinfer-extensions '(defaults pretty-parens evil paredit)))
 
 (def-package! prettier-js
   :commands (prettier-js-mode)

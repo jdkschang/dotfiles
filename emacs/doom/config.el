@@ -36,7 +36,6 @@
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
-
 (def-package! parinfer
   :bind (("C-," . parinfer-toggle-mode))
   :hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
@@ -66,23 +65,11 @@
   (add-hook 'js2-mode-hook #'eslintd-fix-mode)
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   ;; Indent shit
-  (setq js2-basic-offset 2)
-  (set-pretty-symbols! '(js2-mode web-mode rjsx-mode) nil)
-  (set-pretty-symbols! '(js2-mode web-mode rjsx-mode)
-    ;; Functional
-    :def "function"
-    :lambda "() =>"
-    :composition "compose"
-    ;; Types
-    :null "null"
-    :true "true" :false "false"
-    ;; Flow
-    :not "!"
-    :and "&&" :or "||"
-    :for "for"
-    :return "return"
-    ;; Other
-    :yield "import"))
+  (setq js2-basic-offset 2))
+
+(after! rjsx-mode
+  (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
+  (set-pretty-symbols! '(js2-mode web-mode rjsx-mode) nil))
 
 
 (defun enable-minor-mode (my-pair)

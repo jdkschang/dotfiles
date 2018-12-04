@@ -29,10 +29,10 @@
       doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
       doom-unicode-font (font-spec :family "Operator Mono SSm Lig"))
 
-(defun my-theme-customizations ()
+(defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))
 
-(add-hook 'doom-load-theme-hook #'my-theme-customizations)
+(add-hook 'doom-load-theme-hook #'+jdkschang/italicize-comments)
 
 ;; Dash highlighting
 (after! dash (dash-enable-font-lock))

@@ -73,7 +73,7 @@
        ;; elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        ;; go                ; the hipster dialect
-       ;; (haskell +dante)  ; a language that's lazier than I am
+       (haskell +dante)  ; a language that's lazier than I am
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
        markdown          ; writing docs for people to ignore
@@ -85,7 +85,7 @@
         +export          ; Exporting org to whatever you want
         +present)        ; Emacs for presentations
        ;; php               ; perl's insecure younger brother
-       ;; python            ; beautiful is better than ugly
+       python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
@@ -113,7 +113,7 @@
         +cpp
         +ocaml
         +java
-        ;; +python
+        +python
         +sh)
 
        :config

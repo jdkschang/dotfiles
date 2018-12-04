@@ -23,7 +23,7 @@
        :ui
        doom
        doom-dashboard
-       doom-modeline
+       modeline
        doom-quit
        evil-goggles
        hl-todo           ; highlight TODO/FIXME/NOTE tags

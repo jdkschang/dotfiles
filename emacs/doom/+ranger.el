@@ -5,10 +5,4 @@
   :config
   (set-popup-rule! "^\\*ranger" :ignore t))
 
-(map!
- (:leader
-   (:prefix "a"
-    :desc "Ranger" :n "r" #'ranger
-    :desc "Deer":n "d" #'deer)))
-
 (add-hook! dired-mode #'ranger-override-dired-fn) ;; Override dired-mode so it uses deer

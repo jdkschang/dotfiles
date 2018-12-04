@@ -36,7 +36,6 @@
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
-
 (def-package! parinfer
   :bind (("C-," . parinfer-toggle-mode))
   :hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
@@ -68,7 +67,7 @@
   ;; Indent shit
   (setq js2-basic-offset 2)
 	(set-pretty-symbols! '(js2-mode web-mode rjsx-mode) nil)
-	(set-pretty-symbols! 'rjsx-mode
+	(set-pretty-symbols! '(js2-mode web-mode rjsx-mode)
 		:def "function"
 		:lambda "() =>"
 		:composition "compose"
@@ -77,8 +76,7 @@
 		:not "!"
 		:and "&&" :or "||"
 		:for "for"
-		:import nil
-		:return nil
+		:import "import"
 		:yield nil))
 
 

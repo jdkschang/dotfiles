@@ -8,9 +8,11 @@
 ;; Make Doom shut up about recentf-cleanup
 (advice-add #'recentf-cleanup :around #'doom*shut-up)
 
-(setq-default
- user-full-name    "Dmitri Chang"
- user-mail-address "jdkschang@protonmail.com")
+(setq-default user-full-name    "Dmitri Chang"
+							user-mail-address "jdkschang@protonmail.com"
+							fill-column 100
+							doom-leader-key "SPC"
+							doom-localleader-key ",")
 
 ;; whitespace-mode
 ;; http://stackoverflow.com/questions/6378831/emacs-globally-enable-whitespace-mode
@@ -92,6 +94,16 @@
   (add-hook! 'helm-find-files-after-init-hook
     (map! :map helm-find-files-map
           "<DEL>" #'helm-find-files-up-one-level)))
+
+;;; Fixes
+
+;; I dislike Emacs asking me if I'm sure I want to quit with sub-processes running.
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  (cl-letf (((symbol-function #'process-list) (lambda ())))
+		ad-do-it))
+
+;; Create a new workspace when switching projects.
+(setq +workspaces-on-switch-project-behavior t)
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

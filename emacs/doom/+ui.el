@@ -20,14 +20,13 @@
 
 (set-frame-parameter nil 'alpha transparent)
 
-;; Line Numbers
-(setq display-line-numbers-type 'relative)
-
 ;; Font
 (setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)
       doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 28)
       doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
-      doom-unicode-font (font-spec :family "Operator Mono SSm Lig"))
+      doom-unicode-font (font-spec :family "Operator Mono SSm Lig")
+			;; Line Numbers
+			display-line-numbers-type 'relative)
 
 (defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))

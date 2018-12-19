@@ -4,6 +4,8 @@
 export PATH=""
 # Default path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+# Add openssl dependency (C/C++)
+export PATH="/usr/local/opt/openssl/bin"
 
 # Add brew coreutils
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"

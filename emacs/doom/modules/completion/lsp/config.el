@@ -44,7 +44,7 @@
   (setq cquery-extra-init-params '(:index (:comments 2)
                                           :cacheFormat "msgpack"
                                           :completion (:detailedLabel t))
-				(cquery-use-default-rainbow-sem-highlight)
+				; (cquery-use-default-rainbow-sem-highlight)
 				cquery-sem-highlight-method 'overlay) ;; set to 'font-lock if highlighting slowly
   (defun +setup-cquery ()
     (setq-local company-transformers nil)

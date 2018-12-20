@@ -42,3 +42,4 @@
 
   (when (featurep! +sh)
     (package! company-shell :disable t)))
+

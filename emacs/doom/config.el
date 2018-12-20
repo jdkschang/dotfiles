@@ -72,7 +72,6 @@
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   (set-pretty-symbols! '(rjsx-mode) nil))
 
-
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename matches the regexp.
   MY-PAIR is a cons cell (regexp . minor-mode)."
@@ -93,6 +92,13 @@
   (add-hook! 'helm-find-files-after-init-hook
     (map! :map helm-find-files-map
           "<DEL>" #'helm-find-files-up-one-level)))
+
+;; company :: c/c++ fix
+;; https://github.com/hlissner/doom-emacs/issues/935
+(use-package company
+	:init
+	(global-company-mode 1))
+(set-company-backend! '(c-mode c++-mode objc-mode) 'company-lsp)
 
 ;;; Fixes
 

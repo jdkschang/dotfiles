@@ -11,7 +11,7 @@
 (setq-default user-full-name    "Dmitri Chang"
 							user-mail-address "jdkschang@protonmail.com"
 							fill-column 100
-							doom-leader-key "SPC"
+							;; doom-leader-key "SPC"
 							doom-localleader-key ",")
 
 ;; whitespace-mode

@@ -11,14 +11,18 @@
      :desc "Deer" :n "d" #'deer)
    ;; origami folds
    (:prefix "z"
+     ; :map origami-mode-map
      :desc "origami-recursively-toggle-node" :nv "z" #'origami-recursively-toggle-node
      :desc "origami-recursively-toggle-node" :i "C-z" #'origami-recursively-toggle-node
      :desc "origami-toggle-node" :nv "z" #'origami-toggle-node
      :desc "origami-toggle-node" :i "C-Z" #'origami-toggle-node
      :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node))
 
+
  ;; toggle transparency
  (:gnvime "M-u" #'+jdkschang/toggle-transparency)
+ ;; comments
+ (:ne "M-/" #'comment-or-uncomment-region)
 
  (:n "C-h" #'evil-window-left)
  (:n "C-j" #'evil-window-down)

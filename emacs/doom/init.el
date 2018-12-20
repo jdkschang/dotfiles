@@ -64,7 +64,7 @@
        upload            ; map local to remote projects via ssh/ftp
 
        :lang
-       (cc +irony)       ; C/C++/Obj-C madness
+       cc                ; C/C++/Obj-C madness
        clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
@@ -116,10 +116,6 @@
         +sh)
 
        :config
-       ;; For literate config users. This will tangle+compile a config.org
-       ;; literate config in your `doom-private-dir' whenever it changes.
-                                        ;literate
-
        ;; The default module sets reasonable defaults for Emacs. It also
        ;; provides a Spacemacs-inspired keybinding scheme, a custom yasnippet
        ;; library, and additional ex commands for evil-mode. Use it as a

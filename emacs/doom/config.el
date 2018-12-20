@@ -65,11 +65,12 @@
   (add-hook 'js2-mode-hook #'eslintd-fix-mode)
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
   ;; Indent shit
+  (set-pretty-symbols! '(js2-mode) nil)
   (setq js2-basic-offset 2))
 
 (after! rjsx-mode
   (setq flycheck-javascript-standard-executable "~/.nvm/versions/node/v8.11.4/bin/standard")
-  (set-pretty-symbols! '(js2-mode web-mode rjsx-mode) nil))
+  (set-pretty-symbols! '(rjsx-mode) nil))
 
 
 (defun enable-minor-mode (my-pair)

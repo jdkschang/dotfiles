@@ -95,10 +95,10 @@
 
 ;; company :: c/c++ fix
 ;; https://github.com/hlissner/doom-emacs/issues/935
-(use-package company
-	:init
-	(global-company-mode 1))
-(set-company-backend! '(c-mode c++-mode objc-mode) 'company-lsp)
+;; (use-package company
+;; 	:init
+;; 	(global-company-mode 1))
+;; (set-company-backend! '(c-mode c++-mode objc-mode) 'company-lsp)
 
 ;;; Fixes
 

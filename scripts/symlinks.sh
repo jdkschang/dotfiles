@@ -26,6 +26,7 @@ symlink_dotfile gitignore
 symlink_dotfile gitmessage
 symlink_dotfile hushlogin
 symlink_dotfile khdrc
+ln -sfv $(grealpath shpotify) "$HOME/.shpotify.cfg"
 symlink_dotfile stylelintrc
 symlink_dotfile tern-project
 symlink_dotfile tmux.conf

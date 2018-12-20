@@ -38,14 +38,15 @@
   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls")))
 
 (def-package! cquery
-  :when (featurep! +cpp)
+  :when (featurep! :lang cc)
   :hook ((c-mode c++-mode objc-mode) . +setup-cquery)
   :init
-  (setq cquery-extra-init-params '(:index (:comments 2)
-                                          :cacheFormat "msgpack"
-                                          :completion (:detailedLabel t))
-				; ( cquery-use-default-rainbow-sem-highlight t )
-				cquery-sem-highlight-method 'overlay) ;; set to 'font-lock if highlighting slowly
+  (setq cquery-executable "/usr/local/bin/cquery"
+				cquery-extra-init-params '(:index (:comments 2)
+																					:cacheFormat "msgpack"
+																					:completion (:detailedLabel t))
+																				; ( cquery-use-default-rainbow-sem-highlight t )
+				cquery-sem-highlight-method 'font-lock) ;; set to 'font-lock if highlighting slowly
   (defun +setup-cquery ()
     (setq-local company-transformers nil)
     (setq-local company-lsp-cache-candidates nil)

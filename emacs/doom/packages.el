@@ -21,3 +21,5 @@
 
 ;; Better folds
 (package! origami)
+(package! move-text)
+(package! org-fancy-priorities)

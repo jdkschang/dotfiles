@@ -11,7 +11,7 @@
 (setq-default user-full-name    "Dmitri Chang"
 							user-mail-address "jdkschang@protonmail.com"
 							fill-column 100
-							;; doom-leader-key "SPC"
+							doom-leader-key "SPC"
 							doom-localleader-key ",")
 
 ;; whitespace-mode
@@ -92,13 +92,6 @@
 	(add-hook! 'helm-find-files-after-init-hook
 		(map! :map helm-find-files-map
 					"<DEL>" #'helm-find-files-up-one-level)))
-
-;; company :: c/c++ fix
-;; https://github.com/hlissner/doom-emacs/issues/935
-;; (use-package company
-;; 	:init
-;; 	(global-company-mode 1))
-;; (set-company-backend! '(c-mode c++-mode objc-mode) 'company-lsp)
 
 ;;; Fixes
 

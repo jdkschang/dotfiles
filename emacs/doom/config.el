@@ -107,7 +107,7 @@
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
 (load! "+theme")
 (load! "+macos")
-(load! "+ranger") ;; File manager stuff
-(load! "+reason") ;; ReasonML stuff
+; (load! "+ranger") ;; File manager stuff
+; (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")

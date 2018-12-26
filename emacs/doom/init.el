@@ -60,7 +60,7 @@
        password-store    ; password manager for nerds
        pdf               ; pdf enhancements
        prodigy           ; FIXME managing external services & code builders
-       tmux              ; an API for interacting with tmux
+       ;; tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
 
        :lang
@@ -72,11 +72,11 @@
        ;; elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        ;; go                ; the hipster dialect
-       (haskell +dante)  ; a language that's lazier than I am
+       ;; (haskell +dante)  ; a language that's lazier than I am
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
        markdown          ; writing docs for people to ignore
-       ocaml             ; an objective camel
+       ;; ocaml             ; an objective camel
        (org              ; organize your plain life in plain text
         +attach          ; custom attachment system
         +babel           ; running code in org
@@ -86,9 +86,9 @@
        ;; php               ; perl's insecure younger brother
        python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
-       rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
-       swift             ; who asked for emoji variables?
+       ;; swift             ; who asked for emoji variables?
        web               ; the tubes
 
        ;; Applications are complex and opinionated modules that transform Emacs
@@ -106,11 +106,11 @@
        :completion
        (lsp
         ;; +javascript
-        +go
+        ;;+go
         +css
-        +rust
+        ;;+rust
         +cpp
-        +ocaml
+        ;;+ocaml
         +java
         +python
         +sh)

@@ -16,7 +16,7 @@
 
 ;; whitespace-mode
 ;; http://stackoverflow.com/questions/6378831/emacs-globally-enable-whitespace-mode
-(global-whitespace-mode 1)
+;; (global-whitespace-mode 1)
 ;; http://ergoemacs.org/emacs/whitespace-mode.html
 ;; http://ergoemacs.org/emacs/emacs_delete_trailing_whitespace.html
 (setq whitespace-style (quote

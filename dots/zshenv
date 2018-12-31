@@ -11,6 +11,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 # Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
+# VS Code
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 # GO
 export GOPATH="$HOME/go"

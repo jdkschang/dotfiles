@@ -19,9 +19,9 @@
      :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node))
 
  ;; toggle transparency
- (:gnvime "s-u" #'+jdkschang/toggle-transparency)
+ (:gnvime "M-u" #'+jdkschang/toggle-transparency)
  ;; comments
- (:ne "s-/" #'comment-or-uncomment-region)
+ (:ne "M-/" #'comment-or-uncomment-region)
 
  (:when (featurep! :feature workspaces)
    :nmvi "s-t" #'+workspace/new

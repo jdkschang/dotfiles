@@ -151,6 +151,9 @@ alias update_gems='sudo gem update --system; sudo gem update'
 alias update_os='sudo softwareupdate -i -a'
 alias update_all='update_brew && update_npm && update_gems && update_os'
 
+# spotify
+alias sp='spotify'
+
 # vagrant
 alias vup="vagrant up"
 alias vupp="vagrant up --provision"

@@ -9,7 +9,7 @@
 (defvar dark-theme 'doom-peacock) ; doom-one doom-molokai doom-opera doom-city-lights
 
 ;; System agnostic default theme choice goes here:
-(setq doom-theme dark-theme)
+(setq doom-theme light-theme)
 
 ;; hotswap between themes
 (defun +jdkschang/toggle-theme ()

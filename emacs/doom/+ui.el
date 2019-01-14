@@ -18,19 +18,18 @@
 
 	 (t (message "Can't toggle transparency."))))
 
-(set-frame-parameter nil 'alpha transparent)
+(set-frame-parameter nil 'alpha solid)
 
 ;; Font
 (setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)
       doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 28)
-      doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
+      ;; doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
       doom-unicode-font (font-spec :family "Operator Mono SSm Lig")
 			;; Line Numbers
 			display-line-numbers-type 'relative)
 
 (defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))
-
 (add-hook 'doom-load-theme-hook #'+jdkschang/italicize-comments)
 
 ;; Dash highlighting

@@ -6,9 +6,9 @@
    (:prefix "t"
      :desc "toggle-theme" :n "t" #'+jdkschang/toggle-theme)
    ;; ranger
-   ;; (:prefix "a"
-   ;;   :desc "Ranger" :n "r" #'ranger
-   ;;   :desc "Deer" :n "d" #'deer)
+   (:prefix "a"
+     :desc "Ranger" :n "r" #'ranger
+     :desc "Deer" :n "d" #'deer)
    ;; origami folds
    (:prefix "z"
                                         ; :map origami-mode-map
@@ -19,9 +19,18 @@
      :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node))
 
  ;; toggle transparency
- (:gnvime "M-u" #'+jdkschang/toggle-transparency)
+ :gnvime "M-u" #'+jdkschang/toggle-transparency
  ;; comments
- (:ne "M-/" #'comment-or-uncomment-region)
+ :ne "M-/" #'comment-or-uncomment-region
+ ;; henrik's
+ :m "M-j" '+default:multi-next-line
+ :m "M-k" '+default:multi-previous-line
+
+ ;; window navigation
+ :n "C-h" 'evil-window-left
+ :n "C-j" 'evil-window-down
+ :n "C-k" 'evil-window-up
+ :n "C-l" 'evil-window-right
 
  (:when (featurep! :feature workspaces)
    :nmvi "s-t" #'+workspace/new
@@ -34,9 +43,3 @@
    :nmvi "s-7" (λ! (+workspace/switch-to 6))
    :nmvi "s-8" (λ! (+workspace/switch-to 7))
    :nmvi "s-9" (λ! (+workspace/switch-to 8))))
-
-
- ;; (:n "C-h" #'evil-window-left)
- ;; (:n "C-j" #'evil-window-down)
- ;; (:n "C-k" #'evil-window-up)
- ;; (:n "C-l" #'evil-window-right))

@@ -16,6 +16,9 @@ alias dc="cd ~/Dropbox/Docs"
 alias dl="cd ~/Downloads"
 alias df="cd ~/dotfiles"
 
+# Security GPG
+alias gpg="gpg2"
+
 alias h="history"
 alias jo="jobs"
 alias j="z"

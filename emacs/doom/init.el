@@ -104,16 +104,16 @@
         +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :completion
-       (lsp
+       ;; (lsp
         ;; +javascript
         ;;+go
-        +css
+        ;; +css
         ;;+rust
-        +cpp
+        ;; +cpp
         ;;+ocaml
-        +java
-        +python
-        +sh)
+        ;; +java
+        ;; +python
+        ;; +sh)
 
        :config
        ;; The default module sets reasonable defaults for Emacs. It also

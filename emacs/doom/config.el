@@ -21,15 +21,28 @@
 							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
 							+format-on-save-enabled-modes '(not emacs-lisp-mode))
 
-(add-to-list 'org-modules 'org-habit t)
+; (add-to-list 'org-modules 'org-habit t)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
+
+; (use-package moody
+;   :config
+;   (setq x-underline-at-descent-line t)
+;   (moody-replace-mode-line-buffer-identification)
+;   (moody-replace-vc-mode))
 
 ;; Load snippets
 (after! yasnippet
 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
+; (def-package! ivy-yasnippet
+;   :commands (ivy-yasnippet)
+;   :config
+;   (map!
+;    (:leader
+;      (:prefix "s"
+;        :desc "Ivy-yasnippet" :n "y" #'ivy-yasnippet))))
 ;; (def-package! parinfer
 ;; 	:bind (("C-," . parinfer-toggle-mode))
 ;; 	:hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
@@ -97,6 +110,9 @@
 	 "gc"  "magit-commit"
 	 "rg"  "rg --color=always $*"))
 
+	;; remove modeline in eshell buffers
+	; (add-hook 'eshell-mode-hook #'hide-mode-line-mode))
+
 ;;;
 ;;; Fixes
 
@@ -113,6 +129,7 @@
 (load! "+theme")
 (load! "+macos")
 (load! "+ranger") ;; File manager stuff
+; (load! "+tramp")
 																				; (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")

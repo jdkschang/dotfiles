@@ -20,6 +20,3 @@
 (package! origami)
 (package! move-text)
 
-
-;; mode-line ribbons
-; (package! moody)

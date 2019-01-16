@@ -3,23 +3,21 @@
 (setq-default
  org-babel-load-languages '((ledger . t)))
 
-(setq +org-directory (expand-file-name "~/Dropbox/org/")
-			org-agenda-files (list org-directory)
-			org-ellipsis " ▼ "
-
-			;; The standard unicode characters are usually misaligned depending on the
-			;; font. This bugs me. Personally, markdown #-marks for headlines are more
-			;; elegant.
-			org-bullets-bullet-list '("#")
-
-			+todo-file "~/Dropbox/org/todo.org"
-			+daypage-path "~/Dropbox/org/days/")
-
 (after! org
 	(setq
-	 org-archive-location
-	 (concat (+org-directory "archive.org") "::* From %s")
-	 ;; org-default-notes-file (expand-file-name "notes.org" org-directory)
+	 org-directory (expand-file-name "~/Dropbox/org/")
+	 org-agenda-files (list org-directory)
+	 org-ellipsis " ▼ "
+
+	 ;; The standard unicode characters are usually misaligned depending on the
+	 ;; font. This bugs me. Personally, markdown #-marks for headlines are more
+	 ;; elegant.
+	 org-bullets-bullet-list '("#")
+
+	 +todo-file (expand-file-name "todo.org" org-directory)
+	 +daypage-path (expand-file-name "days/" org-directory)
+	 org-archive-location (concat (expand-file-name "archive.org" org-directory) "::* From %s")
+	 org-default-notes-file (expand-file-name "notes.org" org-directory)
 	 org-export-with-toc nil
 	 ;; log time when things are marked as done
 	 org-log-done 'time)

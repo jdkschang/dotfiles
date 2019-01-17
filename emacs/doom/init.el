@@ -14,13 +14,13 @@
 
        :completion
        (company +auto)
-       (ivy +fuzzy)
+       (ivy +fuzzy +childframe)
 
        :ui
        doom
        doom-dashboard
        modeline
-       ;; doom-quit
+       doom-quit
        evil-goggles
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        nav-flash         ; blink the current line after jumping
@@ -29,20 +29,19 @@
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        (pretty-code +fira)
-       ;; pretty-code
 
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
 
        :editor
-       format
+       (format +onsave)
        multiple-cursors  ; editing in many places at once
        ;; parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
 
        :emacs
-       (dired +ranger)             ; making dired pretty [functional]
+       (dired +icons +ranger) ; making dired pretty [functional]
        ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
        hideshow          ; basic code-folding support
@@ -53,18 +52,18 @@
        :tools
        editorconfig
        ;; gist              ; interacting with github gists
-       macos             ; MacOS-specific commands
-       make              ; run make tasks from Emacs
-       magit             ; a git porcelain for Emacs
-       password-store    ; password manager for nerds
-       pdf               ; pdf enhancements
+       macos
+       ;; make              ; run make tasks from Emacs
+       magit
+       password-store
+       pdf
        ;; prodigy           ; FIXME managing external services & code builders
        ;; tmux              ; an API for interacting with tmux
        ;; upload            ; map local to remote projects via ssh/ftp
 
        :lang
        (cc +irony +rtags)                ; C/C++/Obj-C madness
-       ;; clojure           ; java with a lisp
+       clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age
@@ -85,7 +84,7 @@
        ;; php               ; perl's insecure younger brother
        (python +pyenv)            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
-       rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
        ;; swift             ; who asked for emoji variables?
        web               ; the tubes
@@ -100,5 +99,4 @@
         +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :config
-       (default +bindings +snippets +smartparens)
-			 literate)
+       (default +bindings +snippets +smartparens))

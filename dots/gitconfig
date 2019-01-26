@@ -140,8 +140,8 @@
 	trustExitCode = true
 [user]
 	email = 6375175+jdkschang@users.noreply.github.com
-	signingKey = D1BDD1F5AA60F93E
-[github]
-	user = jdkschang
+	signingKey = BBE941966B02C766
+[commit]
+	gpgSign = true
 [gpg]
-	program = gpg2
+	program = gpg

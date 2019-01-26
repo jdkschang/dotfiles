@@ -12,12 +12,18 @@
 	 ;; The standard unicode characters are usually misaligned depending on the
 	 ;; font. This bugs me. Personally, markdown #-marks for headlines are more
 	 ;; elegant.
-	 org-bullets-bullet-list '("#")
+	 ;; org-bullets-bullet-list '("#")
 
-	 +todo-file (expand-file-name "todo.org" org-directory)
+	 +todo-file (expand-file-name "inbox.org" org-directory)
 	 +daypage-path (expand-file-name "days/" org-directory)
 	 org-archive-location (concat (expand-file-name "archive.org" org-directory) "::* From %s")
 	 org-default-notes-file (expand-file-name "notes.org" org-directory)
+	 org-capture-templates '(("t" "Todo [inbox]" entry
+														(file+headline "~/Dropbox/org/inbox.org" "Tasks")
+														"* TODO %i%?")
+													 ("T" "Tickler" entry
+														(file+headline "~/Dropbox/org/tickler.org" "Tickler")
+														"* %i%? \n %U"))
 	 org-export-with-toc nil
 	 ;; log time when things are marked as done
 	 org-log-done 'time)

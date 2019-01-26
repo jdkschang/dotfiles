@@ -14,7 +14,7 @@
 
        :completion
        (company +auto)
-       (ivy +fuzzy +childframe)
+       (ivy +fuzzy)
 
        :ui
        doom

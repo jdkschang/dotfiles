@@ -54,10 +54,10 @@
 	 :desc "Schedule" :nve "C-c C-s" #'org-schedule
 	 :desc "Deadline" :nve "C-c C-d" #'org-deadline
 
-	 :desc "org-shiftdown" :nve "S-j" #'org-shiftdown
-	 :desc "org-shiftup" :nve "S-k" #'org-shiftup
-	 :desc "org-shiftleft" :nve "S-h" #'org-shiftleft
-	 :desc "org-shiftright" :nve "S-l" #'org-shiftright
+	 :desc "org-shiftdown" :nve "J" #'org-shiftdown
+	 :desc "org-shiftup" :nve "K" #'org-shiftup
+	 :desc "org-shiftleft" :nve "H" #'org-shiftleft
+	 :desc "org-shiftright" :nve "L" #'org-shiftright
 
 	 (:leader
 		 ;; main todo <SPC O>

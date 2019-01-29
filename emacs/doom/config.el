@@ -17,32 +17,51 @@
 							evil-shift-width 4
 							tab-width 4
 
-							;; <gs SPC> works across all visible windows
-							;; useful for jumping around the screen
-							avy-all-windows t
-
 							+workspaces-switch-project-function #'ignore
 							;; Create a new workspace when switching projects.
 							+workspaces-on-switch-project-behavior t
 							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
 							+format-on-save-enabled-modes '(not emacs-lisp-mode))
 
-(add-to-list 'org-modules 'org-habit t)
+;; <gs SPC> works across all visible windows
+;; useful for jumping around the screen
+(setq avy-all-windows t)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
+(add-hook 'prog-mode-hook #'golden-ratio-mode)
+
+;; setup company-perscient
+(def-package! company-prescient
+	:after company
+	:hook (company-mode . company-prescient-mode))
+
+;; setup company ui
+(after! company
+	(setq company-tooltip-limit 5
+				company-tooltip-minimum-width 80
+				company-tooltip-minimum 5
+				company-backends
+				'(company-capf company-dabbrev company-files company-yasnippet)
+				company-global-modes '(not comint-mode erc-mode message-mode help-mode gud-mode)))
+
+;; emacs/term
+;; set fish as my default shell
+(after! multi-term
+	(setq multi-term-program "/usr/local/bin/fish"))
+
+;; lang/sh
+;; setup flycheck-checkbashisms
+;; flycheck checker for checking files beginning with #!/bin/sh
+;; which also contain code exclusive to bash requires: checkbashism
+(def-package! flycheck-checkbashisms
+  :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
+  :after sh-mode
+  :hook (flycheck-mode . flycheck-checkbashisms-setup))
 
 ;; Load snippets
 (after! yasnippet
 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
-
-(def-package! ivy-yasnippet
-  :commands (ivy-yasnippet)
-  :config
-  (map!
-   (:leader
-     (:prefix "s"
-       :desc "Ivy-yasnippet" :n "y" #'ivy-yasnippet))))
 
 ;; (def-package! parinfer
 ;; 	:bind (("C-," . parinfer-toggle-mode))
@@ -122,7 +141,7 @@
 (load! "+theme")
 (load! "+macos")
 (load! "+ranger") ;; File manager stuff
-; (load! "+tramp")
+(load! "+tramp")
 																				; (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")

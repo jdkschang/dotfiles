@@ -9,9 +9,5 @@ function fish_title
     set prompt "$current_folder $pure_symbol_horizontal_bar $_"
   end
 
-  if test -n "$INSIDE_EMACS"
-    true
-  else
-    echo $prompt
-  end
+  echo $prompt
 end

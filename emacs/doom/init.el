@@ -1,20 +1,22 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
+(setenv "SHELL" "/usr/local/bin/fish")
+(setq explicit-shell-file-name "/usr/local/bin/fish")
+
 (doom! :feature
-                                        ;debugger          ; FIXME stepping through code, to help you add bugs
        eval              ; run code, run (also, repls)
        (evil +everywhere); come to the dark side, we have cookies
-       (lookup +docsets) ; helps you navigate your code and documentation
+       (lookup +devdocs +docsets) ; helps you navigate your code and documentation
        file-templates    ; auto-snippets for empty files
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
-       (syntax-checker +childframe)   ; tasing you for every semicolon you forget
+       syntax-checker    ; tasing you for every semicolon you forget
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
        (company +auto)
-       (helm +fuzzy +childframe)
+       (helm +fuzzy)
 
        :ui
        doom
@@ -46,20 +48,19 @@
        electric          ; smarter, keyword-based electric-indent
        hideshow          ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
-       ;; term              ; terminals in Emacs
+       term              ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
        editorconfig
        ;; gist              ; interacting with github gists
        macos
-       ;; make              ; run make tasks from Emacs
        magit
        password-store
        pdf
-       ;; prodigy           ; FIXME managing external services & code builders
-       ;; tmux              ; an API for interacting with tmux
-       ;; upload            ; map local to remote projects via ssh/ftp
+			 rgb
+       tmux              ; an API for interacting with tmux
+       upload            ; map local to remote projects via ssh/ftp
 
        :lang
        (cc +irony +rtags)                ; C/C++/Obj-C madness
@@ -74,7 +75,6 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
        markdown          ; writing docs for people to ignore
-       ;; ocaml             ; an objective camel
        (org              ; organize your plain life in plain text
         +attach          ; custom attachment system
         +babel           ; running code in org
@@ -82,11 +82,10 @@
         +export          ; Exporting org to whatever you want
         +present)        ; Emacs for presentations
        ;; php               ; perl's insecure younger brother
-       (python +pyenv)            ; beautiful is better than ugly
+       (python +conda +pyenv)            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
        ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
-       ;; swift             ; who asked for emoji variables?
        web               ; the tubes
 
        ;; Applications are complex and opinionated modules that transform Emacs
@@ -94,9 +93,7 @@
        ;; should be loaded late.
        :app
        irc               ; how neckbeards socialize
-       (write            ; emacs as a word processor (latex + org + markdown)
-        +wordnut         ; wordnet (wn) search
-        +langtool)       ; a proofreader (grammar/style check) for Emacs
+			 regex
 
        :config
        ;; The default module sets reasonable defaults for Emacs. It also

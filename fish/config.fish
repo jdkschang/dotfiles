@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
-set -g -x LC_ALL en_US.utf8
-set -g -x LC_LANG en_US.utf8
-set -g -x LANG en_US.utf8
+set -g -x LC_ALL en_US.UTF-8
+set -g -x LC_LANG en_US.UTF-8
+set -g -x LANG en_US.UTF-8
 
 # Set hybrid keybindings (Emacs + Vim)
 set -U fish_key_bindings fish_hybrid_key_bindings
@@ -25,11 +25,9 @@ set -U FZF_DEFAULT_OPTS "--reverse --color=16,fg+:2,bg+:0,hl:4,hl+:4,prompt:4,po
 set -U FZF_COMPLETE 1
 
 # Set default fzf commands
+# set -U FZF_FIND_FILE_COMMAND "command fd -H -t f -L -p --ignore-file /home/brett/.config/git/ignore \$dir"
+# set -U FZF_OPEN_COMMAND "command fd -H -t f -L -p --ignore-file /home/brett/.config/git/ignore \$dir"
 set -U FZF_FIND_FILE_COMMAND "command fd -H -t f -L -p \$dir"
 set -U FZF_OPEN_COMMAND "command fd -H -t f -L -p \$dir"
 set -U FZF_CD_COMMAND "command fd -t d -d 5 -L -p \$dir"
 set -U FZF_CD_WITH_HIDDEN_COMMAND "command fd -H -t d -d 5 -L -p \$dir"
-# set -U FZF_FIND_FILE_COMMAND "command fd -H -t f -L -p --ignore-file /home/brett/.config/git/ignore \$dir"
-# set -U FZF_OPEN_COMMAND "command fd -H -t f -L -p --ignore-file /home/brett/.config/git/ignore \$dir"
-# set -U FZF_CD_COMMAND "command fd -t d -d 5 -L -p \$dir"
-# set -U FZF_CD_WITH_HIDDEN_COMMAND "command fd -H -t d -d 5 -L -p \$dir"

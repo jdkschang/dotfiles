@@ -6,9 +6,8 @@ abbr "chmox" "chmod +x"
 abbr "scu" "systemctl --user"
 abbr "sc" "sudo systemctl"
 
-
 # Navigation
-abbr "..." cd ../.."
+abbr "..." "cd ../.."
 abbr "...." "cd ../../.."
 abbr "....." "cd ../../../.."
 
@@ -19,7 +18,7 @@ abbr "rwa" " cd ~/Projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
-abbr "df" "cd ~/dotfiles"
+abbr "dfs" "cd ~/dotfiles"
 
 abbr "h" "history"
 abbr "jo" "jobs"
@@ -35,6 +34,9 @@ abbr "bsrc" "brew services restart chunkwm"
 abbr "bssc" "brew services stop chunkwm"
 abbr "bsrs" "brew services restart skhd"
 abbr "bsss" "brew services stop skhd"
+
+# Git
+abbr "g" "git"
 
 # tmux
 abbr "tmux" "env TERM=xterm-256color-it tmux -2"

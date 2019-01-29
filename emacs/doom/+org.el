@@ -22,7 +22,6 @@
 	 +daypage-path (expand-file-name "days/" org-directory)
 
 	 org-archive-location (concat (expand-file-name "archive.org" org-directory) "::* From %s")
-	 ;; org-default-notes-file (expand-file-name "notes.org" org-directory)
 	 org-capture-templates '(("t" "Todo [inbox]" entry
 														(file+headline +inbox "Tasks")
 														"* TODO %i%?")
@@ -46,7 +45,7 @@
 	 org-log-done 'time)
 
 	(map!
-	 :desc "Enter new header" :nve "S-RET" #'org-insert-heading-respect-content
+	 ; :desc "Enter new header" :map evil-org-mode-map :nvie "s-return" #'evil-org-org-insert-heading-respect-content-below
 	 :desc "Create/Edit Todo" :nve "C-c t" #'org-todo
 	 :desc "Store Link" :nve "C-c l" #'org-store-link
 	 :desc "Insert Link" :nve "C-c C-l" #'org-insert-link

@@ -20,7 +20,7 @@ function __fish_gopass_uses_command
 end
 
 function __fish_gopass_print_gpg_keys
-  gpg2 --list-keys | grep uid | sed 's/.*&lt;\(.*\)>/\1/'
+  gpg --list-keys | grep uid | sed 's/.*&lt;\(.*\)>/\1/'
 end
 
 function __fish_gopass_print_entries

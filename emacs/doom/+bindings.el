@@ -24,12 +24,12 @@
 		 :desc "eshell" :n "E" #'+eshell/open))
 
  ;; toggle transparency
- :gnvime "M-u" #'+jdkschang/toggle-transparency
+ :gnvime "s-u" #'+jdkschang/toggle-transparency
  ;; comments
  :ne "M-/" #'comment-or-uncomment-region
  ;; henrik's
- :m "M-j" '+default:multi-next-line
- :m "M-k" '+default:multi-previous-line
+ :m "s-j" '+default:multi-next-line
+ :m "s-k" '+default:multi-previous-line
 
  ;; window navigation
  :n "C-h" 'evil-window-left

@@ -3,6 +3,8 @@
 (after! magit
 	(magit-wip-after-save-mode t)
 	(magit-wip-after-apply-mode t)
+	(magit-define-popup-option 'magit-rebase-popup
+		?S "Sign using gpg" "--gpg-sign=" #'magit-read-gpg-secret-key)
 	(setq magit-save-repository-buffers nil
 				magit-repository-directories '(("~/Dropbox/Projects/" . 2)
 																			 ("~/Projects/" . 2)

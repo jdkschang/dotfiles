@@ -18,10 +18,12 @@
 							tab-width 4
 
 							+workspaces-switch-project-function #'ignore
+							;; Create a new workspace when switching projects.
+							+workspaces-on-switch-project-behavior t
 							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
 							+format-on-save-enabled-modes '(not emacs-lisp-mode))
 
-; (add-to-list 'org-modules 'org-habit t)
+(add-to-list 'org-modules 'org-habit t)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
@@ -30,13 +32,14 @@
 (after! yasnippet
 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
-; (def-package! ivy-yasnippet
-;   :commands (ivy-yasnippet)
-;   :config
-;   (map!
-;    (:leader
-;      (:prefix "s"
-;        :desc "Ivy-yasnippet" :n "y" #'ivy-yasnippet))))
+(def-package! ivy-yasnippet
+  :commands (ivy-yasnippet)
+  :config
+  (map!
+   (:leader
+     (:prefix "s"
+       :desc "Ivy-yasnippet" :n "y" #'ivy-yasnippet))))
+
 ;; (def-package! parinfer
 ;; 	:bind (("C-," . parinfer-toggle-mode))
 ;; 	:hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
@@ -87,12 +90,6 @@
 				web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
 				web-mode-auto-close-style 3)) ;; RJSX-mode style closing
 
-;; (after! helm
-;;   ;; I want backspace to go up a level, like ivy
-;;   (add-hook! 'helm-find-files-after-init-hook
-;;     (map! :map helm-find-files-map
-;;           "<DEL>" #'helm-find-files-up-one-level)))
-
 ;; ;; emacs/eshell
 (after! eshell
 	(set-eshell-alias!
@@ -102,10 +99,10 @@
 	 "gl"  "(call-interactively 'magit-log-current)"
 	 "gs"  "magit-status"
 	 "gc"  "magit-commit"
-	 "rg"  "rg --color=always $*"))
+	 "rg"  "rg --color=always $*")
 
 	;; remove modeline in eshell buffers
-	; (add-hook 'eshell-mode-hook #'hide-mode-line-mode))
+	(add-hook 'eshell-mode-hook #'hide-mode-line-mode))
 
 ;;;
 ;;; Fixes
@@ -115,8 +112,6 @@
 ;; 	(cl-letf (((symbol-function #'process-list) (lambda ())))
 		;; ad-do-it))
 
-;; Create a new workspace when switching projects.
-(setq +workspaces-on-switch-project-behavior t)
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

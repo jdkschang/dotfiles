@@ -17,6 +17,10 @@
 							evil-shift-width 4
 							tab-width 4
 
+							;; <gs SPC> works across all visible windows
+							;; useful for jumping around the screen
+							avy-all-windows t
+
 							+workspaces-switch-project-function #'ignore
 							;; Create a new workspace when switching projects.
 							+workspaces-on-switch-project-behavior t

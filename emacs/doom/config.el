@@ -12,34 +12,28 @@
 							user-mail-address "jdkschang@protonmail.com"
 							fill-column 100
 							doom-leader-key "SPC"
-							doom-localleader-key ",")
+							doom-localleader-key ","
 
-;; whitespace-mode
-;; http://stackoverflow.com/questions/6378831/emacs-globally-enable-whitespace-mode
-;; (global-whitespace-mode 1)
-;; http://ergoemacs.org/emacs/whitespace-mode.html
-;; http://ergoemacs.org/emacs/emacs_delete_trailing_whitespace.html
-(setq whitespace-style (quote
-												(face tabs trailing empty)))
+							evil-shift-width 4
+							tab-width 4
 
+							+workspaces-switch-project-function #'ignore
+							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
+							+format-on-save-enabled-modes '(not emacs-lisp-mode))
 
-(setq-default evil-shift-width 2 ;; I normally use 2wide for my projects.
-							tab-width 2)
-
-(delq 'rg +helm-project-search-engines) ;; rg is kinda buggy, and i prefer ag
+(add-to-list 'org-modules 'org-habit t)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-;; (add-hook 'prog-mode-hook #'parinfer-toggle-mode)
 (add-hook 'prog-mode-hook #'global-origami-mode)
 
 ;; Load snippets
 (after! yasnippet
 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
-(def-package! parinfer
-	:bind (("C-," . parinfer-toggle-mode))
-	:hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
-	:config (setq parinfer-extensions '(defaults pretty-parens evil paredit)))
+;; (def-package! parinfer
+;; 	:bind (("C-," . parinfer-toggle-mode))
+;; 	:hook ((clojure-mode emacs-lisp-mode common-lisp-mode) . parinfer-mode)
+;; 	:config (setq parinfer-extensions '(defaults pretty-parens evil paredit)))
 
 (def-package! prettier-js
 	:commands (prettier-js-mode)
@@ -58,7 +52,6 @@
 (after! typescript-mode
 	(add-hook 'typescript-mode-hook #'flycheck-mode)
 	(setq typescript-indent-level 2))
-
 
 (after! js2-mode
 	;; use eslintd-fix so when i save it fixes dumb shit
@@ -87,18 +80,30 @@
 				web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
 				web-mode-auto-close-style 3)) ;; RJSX-mode style closing
 
-(after! helm
-	;; I want backspace to go up a level, like ivy
-	(add-hook! 'helm-find-files-after-init-hook
-		(map! :map helm-find-files-map
-					"<DEL>" #'helm-find-files-up-one-level)))
+;; (after! helm
+;;   ;; I want backspace to go up a level, like ivy
+;;   (add-hook! 'helm-find-files-after-init-hook
+;;     (map! :map helm-find-files-map
+;;           "<DEL>" #'helm-find-files-up-one-level)))
+
+;; ;; emacs/eshell
+(after! eshell
+	(set-eshell-alias!
+	 "f"   "find-file $1"
+	 "l"   "ls -lh"
+	 "d"   "dired $1"
+	 "gl"  "(call-interactively 'magit-log-current)"
+	 "gs"  "magit-status"
+	 "gc"  "magit-commit"
+	 "rg"  "rg --color=always $*"))
+
 ;;;
 ;;; Fixes
 
 ;; I dislike Emacs asking me if I'm sure I want to quit with sub-processes running.
-(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-	(cl-letf (((symbol-function #'process-list) (lambda ())))
-		ad-do-it))
+;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+;; 	(cl-letf (((symbol-function #'process-list) (lambda ())))
+		;; ad-do-it))
 
 ;; Create a new workspace when switching projects.
 (setq +workspaces-on-switch-project-behavior t)
@@ -107,7 +112,7 @@
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
 (load! "+theme")
 (load! "+macos")
-; (load! "+ranger") ;; File manager stuff
-; (load! "+reason") ;; ReasonML stuff
+(load! "+ranger") ;; File manager stuff
+																				; (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")

@@ -3,30 +3,38 @@
 (setq-default
  org-babel-load-languages '((ledger . t)))
 
-(setq org-directory (expand-file-name "~/Dropbox/org/")
+(setq +org-directory (expand-file-name "~/Dropbox/org/")
 			org-agenda-files (list org-directory)
-      org-ellipsis " ▼ "
+			org-ellipsis " ▼ "
 
-      ;; The standard unicode characters are usually misaligned depending on the
-      ;; font. This bugs me. Personally, markdown #-marks for headlines are more
-      ;; elegant.
-      org-bullets-bullet-list '("#")
+			;; The standard unicode characters are usually misaligned depending on the
+			;; font. This bugs me. Personally, markdown #-marks for headlines are more
+			;; elegant.
+			org-bullets-bullet-list '("#")
 
 			+todo-file "~/Dropbox/org/todo.org"
 			+daypage-path "~/Dropbox/org/days/")
 
 (after! org
-	(map! :map evil-org-mode-map
-				:localleader
-				:desc "Create/Edit Todo" :nve "o" #'org-todo
-				:desc "Schedule" :nve "s" #'org-schedule
-				:desc "Deadline" :nve "d" #'org-deadline
-				:desc "Refile" :nve "r" #'org-refile
-				:desc "Filter" :nve "f" #'org-match-sparse-tree
-				:desc "Tag heading" :nve "t" #'org-set-tags-command)
-	;; The standard unicode characters are usually misaligned depending on the font.
-	;; This bugs me. Personally, markdown #-marks for headlines are more elegant.
-	;; (setq org-bullets-bullet-list '("#"))
+	(setq
+	 org-archive-location
+	 (concat (+org-directory "archive.org") "::* From %s")
+	 ;; org-default-notes-file (expand-file-name "notes.org" org-directory)
+	 org-export-with-toc nil
+	 ;; log time when things are marked as done
+	 org-log-done 'time)
+
+
+	(map!
+	 ;; :map evil-org-mode-map
+	 (:localleader
+		 :desc "Create/Edit Todo" :nve "o" #'org-todo
+		 :desc "Schedule" :nve "s" #'org-schedule
+		 :desc "Deadline" :nve "d" #'org-deadline
+		 :desc "Refile" :nve "r" #'org-refile
+		 :desc "Filter" :nve "f" #'org-match-sparse-tree
+		 :desc "Tag heading" :nve "t" #'org-set-tags-command)
+	 :desc "Capture" :nve "C-c c" #'org-capture)
 
 	;; Normally its only like 3 lines tall, too hard to see anything.
 	(set-popup-rule! "^\\*Org Agenda"
@@ -62,9 +70,7 @@
 (map! :leader
 			(:prefix "o"
 				:desc "Org Agenda" :nvm "a" #'org-agenda-list
-				:desc "Org Agenda and Notes" :nvm "A" #'+show-agenda)
-			(:when (featurep! :completion helm)
-				:nv "X" #'helm-org-capture-templates))
+				:desc "Org Agenda and Notes" :nvm "A" #'+show-agenda))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Daypage stuff

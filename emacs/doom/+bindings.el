@@ -16,7 +16,12 @@
      :desc "origami-recursively-toggle-node" :i "C-z" #'origami-recursively-toggle-node
      :desc "origami-toggle-node" :nv "z" #'origami-toggle-node
      :desc "origami-toggle-node" :i "C-Z" #'origami-toggle-node
-     :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node))
+     :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node)
+	 (:prefix "n"
+		 :desc "Browse project notes" :n "p" #'+jdkschang/find-notes-for-project)
+	 (:prefix "o"
+		 :desc "eshell in popup" :n "e" #'+eshell/open-popup
+		 :desc "eshell" :n "E" #'+eshell/open))
 
  ;; toggle transparency
  :gnvime "M-u" #'+jdkschang/toggle-transparency

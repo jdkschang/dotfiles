@@ -4,8 +4,8 @@
 	(magit-wip-after-save-mode t)
 	(magit-wip-after-apply-mode t)
 	(setq magit-save-repository-buffers nil
-				magit-repository-directories '(("~/Dropbox/Projects/" . 3)
-																			 ("~/Projects/" . 3)
+				magit-repository-directories '(("~/Dropbox/Projects/" . 2)
+																			 ("~/Projects/" . 2)
 																			 ("~/dotfiles/" . 0))
 				magit-commit-arguments '("--gpg-sign=15158DA03649A630")
 				magit-rebase-arguments '("--autostash" "--gpg-sign=15158DA03649A630")

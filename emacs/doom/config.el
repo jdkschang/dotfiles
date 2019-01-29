@@ -26,12 +26,6 @@
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
 
-; (use-package moody
-;   :config
-;   (setq x-underline-at-descent-line t)
-;   (moody-replace-mode-line-buffer-identification)
-;   (moody-replace-vc-mode))
-
 ;; Load snippets
 (after! yasnippet
 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))

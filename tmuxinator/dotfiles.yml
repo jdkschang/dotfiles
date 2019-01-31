@@ -1,9 +1,0 @@
-# ~/.tmuxinator/dotfiles.yml
-
-name: dotfiles
-root: ~/dotfiles
-startup_window: nvim
-
-windows:
-  - nvim: nvim
-  - git:

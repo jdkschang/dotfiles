@@ -20,7 +20,7 @@
   let maplocalleader = ' '
 
   " setting general behaviors
-  set background=dark   " tell vim what the background color looks like
+  set background=light  " tell vim what the background color looks like
   set backspace=2       " Backspace deletes like most programs in insert mode
   set history=200       " how many : commands to save in history
   set ruler             " show the cursor position all the time
@@ -442,7 +442,7 @@
   " ----------------------------------------------------------------------------
   if s:has_plugin('vim-airline')
     let g:airline#extensions#branch#enabled = 1
-    let g:airline_theme='ayu_mirage'
+    let g:airline_theme='solarized'
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tmuxline#enabled = 0
     let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -562,15 +562,16 @@
 " }}}
 
 " Load Plugins {{{
-  if filereadable(expand('~/.vimrc.bundles'))
-    source ~/.vimrc.bundles
+  if filereadable(expand('~/.config/vim/vimrc.bundles'))
+    source ~/.config/vim/vimrc.bundles
   endif
 " }}}
 
 " General Config {{{
   " Theme (light | mirage | dark)
-  let ayucolor="dark"
-  colo ayu
+  " let ayucolor="dark"
+  " colo ayu
+  colo solarized
 
   " hi Comment cterm=italic
   hi Comment gui=italic
@@ -584,11 +585,11 @@
       endif
     endfun
     " edit vimrc
-    nnoremap <silent> <leader>vr :call OpenConfigFile($MYVIMRC)<cr>
-    nnoremap <silent> <leader>vb :call OpenConfigFile('~/.vimrc.bundles')<cr>
+    nnoremap <silent> <leader>vr :call OpenConfigFile(~/.config/vim/vimrc)<cr>
+    nnoremap <silent> <leader>vb :call OpenConfigFile('~/.config/vim/vimrc.bundles')<cr>
     " reload vimrc
-    nnoremap <leader>so :source $MYVIMRC<cr>
-    nnoremap <leader>r :source $MYVIMRC<cr>
+    nnoremap <leader>so :source ~/.config/vim/vimrc<cr>
+    nnoremap <leader>r :source ~/.config/vim/vimrc<cr>
     inoremap jk <ESC>
 
 

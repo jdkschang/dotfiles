@@ -39,7 +39,7 @@ abbr "bsss" "brew services stop skhd"
 abbr "g" "git"
 
 # tmux
-abbr "tmux" "env TERM=xterm-256color-it tmux -2"
+alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/.tmux.conf"
 abbr "tls" "tmux ls"
 abbr "tnew" "tmux new -s"
 abbr "tkill" "tmux kill-session -t"

@@ -58,7 +58,7 @@
        magit
        password-store
        pdf
-			 rgb
+			 ;; rgb
        tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
 
@@ -85,7 +85,7 @@
        (python +conda +pyenv)            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
        ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
-       (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
+       (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        web               ; the tubes
 
        ;; Applications are complex and opinionated modules that transform Emacs

@@ -1,5 +1,5 @@
 # PATH
-# ---------------------------------------------------------------
+#j---------------------------------------------------------------
 
 export PATH=""
 # Default path
@@ -17,10 +17,6 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 # GO
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
-
-# https://github.com/ingydotnet/git-hub
-export PATH="$HOME/git-hub/lib:$PATH"
-export MANPATH="$HOME/git-hub/man:$MANPATH"
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"

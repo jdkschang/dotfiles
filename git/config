@@ -1,3 +1,47 @@
+;; Personal Info {{{
+
+[user]
+  name = Jonathan D. Chang
+  email = 6375175+jdkschang@users.noreply.github.com
+  signingKey = 15158DA03649A630
+[github]
+  user = jdkschang
+
+;; }}}
+;; {{{
+
+[core]
+  filemode = true
+  quotepath = false
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesFile = ~/.config/git/ignore
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+[hub]
+  protocol = ssh
+
+[http]
+  sslVerify
+
+;; }}}
+;; Commands {{{
+
+[help]
+  autocorrect = 1
+
+[fetch]
+  prune = true
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
+
+[rebase]
+  autoStash = true
+
+;; }}}
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -48,33 +92,11 @@
   latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
-[commit]
-  template = ~/.gitmessage
-	gpgSign = true
-
-[core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of
-	# a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-	# Make `git rebase` safer on OS X
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-	editor = nvim
-  pager = zsh -lc 'diff-so-fancy | less --tabs=2 -R'
+  whitespace = fix
 
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
-	diff = true
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -94,9 +116,6 @@
   newNormal = "green bold"
   newHighlight = "green bold 22"
 
-[help]
-	autocorrect = 1
-
 # URL shorthands
 [url "git@github.com:jdkschang/"]
 	insteadOf = "jdkschang:"
@@ -110,14 +129,8 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-[fetch]
-  prune = true
-[rebase]
-  autosquash = true
-[push]
-	default = simple
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.config/git/config.local
 [diff]
   tool = Kaleidoscope
 [difftool]
@@ -133,12 +146,8 @@
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
-[user]
-	email = 6375175+jdkschang@users.noreply.github.com
-	signingKey = 15158DA03649A630
 [commit]
-	gpgSign = true
+  template = ~/.config/git/message
+  gpgSign = true
 [gpg]
-	program = gpg
-[github]
-	user = jdkschang
+	program = /usr/local/bin/gpg

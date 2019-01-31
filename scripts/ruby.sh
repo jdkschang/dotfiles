@@ -1,3 +1,5 @@
+#!/bin/zsh/
+
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
 
 echo "Installing ruby ..."

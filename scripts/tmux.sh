@@ -10,7 +10,8 @@ session_gc ()
   tmux send-keys 'rwa' C-m
   tmux split-window -h
   tmux send-keys 'rwa' C-m
-  tmux send-keys 'y start' C-m
+  tmux send-keys 'yarn' C-m
+  tmux send-keys 'yarn start' C-m
   tmux split-window -v
   tmux send-keys 'rwa' C-m
 }
@@ -19,8 +20,9 @@ session_base ()
 {
   tmux new-session -d -s base
   tmux neww -k -n config -t base:1
-  tmux send-keys 'df' C-m
+  tmux send-keys 'dfs' C-m
   tmux split-window -h
+  tmux send-keys 'cd ~/.emacs.d'
   tmux neww -k -n main -t base:2
   tmux send-keys 'proj' C-m
   tmux split-window -h

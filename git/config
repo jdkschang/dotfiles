@@ -3,7 +3,7 @@
 [user]
   name = Jonathan D. Chang
   email = 6375175+jdkschang@users.noreply.github.com
-  signingKey = 15158DA03649A630
+; signingKey = 704A05F567070F95
 [github]
   user = jdkschang
 
@@ -18,7 +18,7 @@
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [hub]
-  protocol = gpg
+  protocol = ssh
 
 [http]
   sslVerify
@@ -87,7 +87,7 @@
   st = status
   me = merge
   dm = log --oneline --decorate --color --graph head ^master
-  standup = log --since='yesterday' --author='Jonathan D Chang'
+  standup = log --since='yesterday' --author='Jonathan D. Chang'
   lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
   latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
 
@@ -129,8 +129,8 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-[include]
-  path = ~/.config/git/config.local
+;[include]
+;  path = ~/.config/git/config.local
 [diff]
   tool = Kaleidoscope
 [difftool]
@@ -148,6 +148,6 @@
   trustExitCode = true
 [commit]
   template = ~/.config/git/message
-  gpgSign = true
-[gpg]
-	program = /usr/local/bin/gpg
+;   gpgSign = true
+; [gpg]
+;   program = gpg

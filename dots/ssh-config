@@ -5,7 +5,7 @@ Host *
 # Personal GitHub
 Host github.com
   HostName github.com
-  PreferredAuthentications publickey
+  PreferredAuthentications publickey,keyboard-interactive,password
   IdentityFile ~/.ssh/github-personal
 
 # Work

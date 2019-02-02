@@ -39,7 +39,8 @@
 
 [help]
   autocorrect = 1
-
+[branch]
+	autosetuprebase = always
 [fetch]
   prune = true
 

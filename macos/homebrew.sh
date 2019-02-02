@@ -25,16 +25,15 @@ brew install gnu-sed --with-default-names
 brew install curl --with-openssl
 brew link curl --force
 
-# Install zsh
-brew install zsh
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-
 # less highlighting
 brew install source-highlight
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
+
+# emacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
 
 # neovim
 brew install python3
@@ -56,18 +55,13 @@ brew install urlview
 # git
 brew install cdiff
 brew install git
-brew install scmpuff
 
 # Install more recent versions of some OS X tools.
 brew tap homebrew/dupes
 brew install grep --with-default-names
 
-# Ruby
-brew install rbenv
-brew install ruby-build
-
 # Window manager
-brew install koekeishiya/formulae/khd
+brew install koekeishiya/formulae/skhd
 brew tap crisidev/homebrew-chunkwm
 brew install chunkwm
 
@@ -84,5 +78,14 @@ brew install python
 brew install neofetch
 brew install redis
 brew install thefuck
+brew install bat # super cat
+brew install ledger # cli finance
+brew install gnupg # secure sign
+brew install ncdu # prettier du (diskutil)
+brew install shpotify # cli spotify
+brew install tdlr # dummy for descriptions
+brew install tree
+brew install yarn
+brew install youtube-dl
 
 brew cleanup

@@ -1,9 +1,8 @@
-#!/bin/sh
-SESSIONS="base gc"
+#!/usr/local/bin/fish
 
-# Configure your sessions here
-session_gc ()
-{
+set SESSIONS base gc
+
+function session_gc
   tmux new-session -d -s gc
   tmux neww -k -n geesee -t gc:1
   tmux send-keys 'rwa' C-m
@@ -13,10 +12,9 @@ session_gc ()
   tmux send-keys 'yarn start' C-m
   tmux split-window -v
   tmux send-keys 'rwa' C-m
-}
+end
 
-session_base ()
-{
+function session_base
   tmux new-session -d -s base
   tmux neww -k -n config -t base:1
   tmux send-keys 'dfl' C-m
@@ -28,22 +26,21 @@ session_base ()
   tmux send-keys 'proj' C-m
   tmux split-window -v
   tmux send-keys 'proj' C-m
-}
+end
 
-has_session () {
-  tmux has -t $1 2>/dev/null
-}
+function has_session -d 'check if session exists'
+  tmux has -t $argv[1] ^ /dev/null
+end
 
-except () {
-  if [ "$?" -eq 1 ] ; then
-    $1
-  fi
-}
+function except -d 'if has session errored then run session init script'
+  if [ $status -eq 1 ]
+    $argv[1]
+  end
+end
 
 #MAIN
 for x in $SESSIONS
-do
-  echo "$x"
+  echo $x
   has_session $x
   except session_$x
-done
+end

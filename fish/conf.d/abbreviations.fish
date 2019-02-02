@@ -16,6 +16,8 @@ abbr "ec" "~/bin/emacsclient"
 abbr "..." "cd ../.."
 abbr "...." "cd ../../.."
 abbr "....." "cd ../../../.."
+abbr "l" "la"
+abbr "ll" "ll -a"
 
 # Projects
 abbr "proj" "cd ~/Dropbox/org/projects/"
@@ -24,8 +26,8 @@ abbr "rwa" " cd ~/Dropbox/org/projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
-abbr "dwl" "cd $XDG_DOWNLOAD_DIR/dwl"
-abbr "dfl" "cd ~/Dropbox/org/projects/dotfiles"
+abbr "dwl" 'cd $XDG_DOWNLOAD_DIR/dwl' # single quotes preserves string
+abbr "dfl" 'cd $DOTFILES'             # so that the variable is evaluated on exec
 
 abbr "h" "history"
 abbr "jo" "jobs"
@@ -63,3 +65,6 @@ abbr "nu" "npm uninstall"
 abbr "nus" "npm uninstall --save"
 abbr "nud" "npm uninstall --save-dev"
 abbr "nug" "npm uninstall --global"
+
+# misc
+alias "cat" "bat"

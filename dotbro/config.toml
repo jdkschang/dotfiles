@@ -34,10 +34,10 @@ backup = "$HOME/.dotfiles~"
 "vim/vimrc.bundles" = ".config/vim/vimrc.bundles"
 
 # Doom Emacs
-"emacs/doom" = ".doom.d"
+"doom" = ".doom.d"
 "emacs.d" = ".emacs.d"
 
 # Tmux
-"tmux/tmux.conf" = ".config/tmux/.tmux.conf"
+"tmux/tmux.conf" = ".config/tmux/tmux.conf"
 "tmux/tmux.theme.conf" = ".config/tmux/tmux.theme.conf"
 

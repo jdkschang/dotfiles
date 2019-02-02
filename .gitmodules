@@ -2,3 +2,6 @@
 	path = emacs.d
 	url = git@github.com:hlissner/doom-emacs.git
 	branch = develop
+[submodule "doom"]
+	path = doom
+	url = git@github.com:jdkschang/doom-emacs-private.git

@@ -27,4 +27,3 @@ brew cask install deluge
 # https://github.com/caskroom/homebrew-fonts
 brew tap caskroom/fonts
 brew cask install caskroom/fonts/font-hack
-brew cask install caskroom/fonts/font-hack-nerd-font

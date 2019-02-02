@@ -2,6 +2,7 @@
 set -x XDG_CACHE_HOME "$HOME/var/cache"
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_DATA_HOME "$HOME/usr/share"
+
 set -x XDG_DESKTOP_DIR "$HOME/usr/dsk"
 set -x XDG_DOWNLOAD_DIR "$HOME/tmp"
 set -x XDG_DOCUMENTS_DIR "$HOME/usr/doc"
@@ -14,6 +15,9 @@ set -x GHQ_ROOT "$HOME/src"
 set -x GOPATH "$HOME/go"
 set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gpg"
+
+set -x IKIGAI "$HOME/Dropbox/org/projects"
+set -x DOTFILES "$IKIGAI/dotfiles"
 
 # GPG
 set -x GPG_TTY (tty)

@@ -1,20 +1,19 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR FZF_CD_COMMAND:command\x20fd\x20\x2dt\x20d\x20\x2dd\x205\x20\x2dL\x20\x2dp\x20\x24dir
-SETUVAR FZF_CD_WITH_HIDDEN_COMMAND:command\x20fd\x20\x2dH\x20\x2dt\x20d\x20\x2dd\x205\x20\x2dL\x20\x2dp\x20\x24dir
-SETUVAR FZF_COMPLETE:1
-SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dreverse\x20\x2d\x2dcolor\x3d16\x2cfg\x2b\x3a2\x2cbg\x2b\x3a0\x2chl\x3a4\x2chl\x2b\x3a4\x2cprompt\x3a4\x2cpointer\x3a8
-SETUVAR FZF_FIND_FILE_COMMAND:command\x20fd\x20\x2dH\x20\x2dt\x20f\x20\x2dL\x20\x2dp\x20\x2d\x2dignore\x2dfile\x20/home/jchang/\x2econfig/git/ignore\x20\x24dir
-SETUVAR FZF_LEGACY_KEYBINDINGS:0
-SETUVAR FZF_OPEN_COMMAND:command\x20fd\x20\x2dH\x20\x2dt\x20f\x20\x2dL\x20\x2dp\x20\x2d\x2dignore\x2dfile\x20/home/jchang/\x2econfig/git/ignore\x20\x24dir
+SETUVAR FZF_CD_COMMAND:command\x20ag\x20\x2dl\x20\x2d\x2dhidden\x20\x5c\x24dir
+SETUVAR FZF_COMPLETE:2
+SETUVAR --export FZF_DEFAULT_COMMAND:command\x20ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x7e/\x2econfig/git/ignore\x20\x5c\x24dir
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x2040\x25
+SETUVAR FZF_ENABLE_OPEN_PREVIEW:1
+SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/jchang/usr/share/z/data
-SETUVAR Z_DATA_DIR:/Users/jchang/usr/share/z
-SETUVAR Z_EXCLUDE:/Users/jchang
+SETUVAR Z_DATA:/Users/dmitri/usr/share/z/data
+SETUVAR Z_DATA_DIR:/Users/dmitri/usr/share/z
+SETUVAR Z_EXCLUDE:/Users/dmitri
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
@@ -30,13 +29,16 @@ SETUVAR _fish_abbr_bstart:brew\x20services\x20start
 SETUVAR _fish_abbr_bstop:brew\x20services\x20stop
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_chmox:chmod\x20\x2bx
-SETUVAR _fish_abbr_dfs:cd\x20\x7e/dotfiles
+SETUVAR _fish_abbr_dfl:cd\x20\x24DOTFILES
 SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
+SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
 SETUVAR _fish_abbr_e:emacs\x20\x2dnw
-SETUVAR _fish_abbr_ec:TERM\x3dxterm\x2d256color\x2dit\x20emacsclient
+SETUVAR _fish_abbr_ec:emacsclient
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
+SETUVAR _fish_abbr_l:la
+SETUVAR _fish_abbr_ll:ll\x20\x2da
 SETUVAR _fish_abbr_ni:npm\x20install
 SETUVAR _fish_abbr_nid:npm\x20install\x20\x2d\x2dsave\x2ddev
 SETUVAR _fish_abbr_nig:npm\x20install\x20\x2d\x2dglobal
@@ -45,9 +47,10 @@ SETUVAR _fish_abbr_nu:npm\x20uninstall
 SETUVAR _fish_abbr_nud:npm\x20uninstall\x20\x2d\x2dsave\x2ddev
 SETUVAR _fish_abbr_nug:npm\x20uninstall\x20\x2d\x2dglobal
 SETUVAR _fish_abbr_nus:npm\x20uninstall\x20\x2d\x2dsave
-SETUVAR _fish_abbr_proj:cd\x20\x7e/Dropbox/Projects/
+SETUVAR _fish_abbr_p:pbpaste
+SETUVAR _fish_abbr_proj:cd\x20\x7e/Dropbox/org/projects/
 SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects/
-SETUVAR _fish_abbr_rwa:\x20cd\x20\x7e/Projects/react\x2dweb\x2dapp
+SETUVAR _fish_abbr_rwa:\x20cd\x20\x7e/Dropbox/org/projects/react\x2dweb\x2dapp
 SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_sc:sudo\x20systemctl
 SETUVAR _fish_abbr_scu:systemctl\x20\x2d\x2duser
@@ -56,9 +59,9 @@ SETUVAR _fish_abbr_tatt:new\x2dtmux\x2dfrom\x2ddir\x2dname
 SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tkill:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tls:tmux\x20ls
-SETUVAR _fish_abbr_tmux:env\x20TERM\x3dxterm\x2d256color\x2dit\x20tmux\x20\x2d2
 SETUVAR _fish_abbr_tnew:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_v:nvim
+SETUVAR _fish_abbr_y:pbcopy
 SETUVAR cmd_duration:0
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_history_current:\x2d\x2dbold
@@ -66,10 +69,7 @@ SETUVAR fish_color_host:normal
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_hybrid_key_bindings
+SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_abbreviations:s\x20sudo\x1ec\x20clear\x1ev\x20nvim\x1echmox\x20chmod\x20\x2bx\x1exi\x20xbps\x2dinstall\x1exs\x20xbps\x2dquery\x20\x2dRs\x1exr\x20xbps\x2dremove\x1exra\x20xbps\x2dremove\x20\x2dR
-SETUVAR fish_user_paths:/Users/jchang/bin\x1e/Users/jchang/\x2eemacs\x2ed/bin\x1e/Users/jchang/\x2envm/versions/node/v8\x2e11\x2e4/bin\x1e/bin\x1e/usr/bin\x1e/usr/local/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/usr/local/opt/coreutils/libexec/gnubin\x1e/Users/jchang/usr/share/cargo/bin\x1e/Users/jchang/\x2econfig/gpg
-SETUVAR fisher_active_prompt:\x1d
+SETUVAR fish_user_paths:/Users/dmitri/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/usr/local/opt/coreutils/libexec/gnubin\x1e/Users/dmitri/\x2eemacs\x2ed/bin\x1e/Users/dmitri/\x2econfig/nvm/11\x2e9\x2e0/bin\x1e/Users/dmitri/usr/share/cargo/bin
 SETUVAR grc_plugin_execs:cat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eip\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff
-SETUVAR pure_version:1\x2e13\x2e0

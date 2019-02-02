@@ -1,0 +1,43 @@
+# Dotbro configuration file.
+#
+# Some points:
+# - Almost all options have default value.
+# - You can use $ENV_VARIABLE in paths.
+
+[directories]
+
+# Directory of your dotfiles repository.
+# Default: directory of this config.
+dotfiles = "$HOME/Dropbox/org/projects/dotfiles"
+
+# Destination directory - your dotfiles will be linked there.
+# Default: $HOME
+destination = "$HOME"
+
+# Backup directory - your original files will be backuped there.
+# Default: $HOME/.dotfiles
+backup = "$HOME/.dotfiles~"
+
+[mapping]
+# "bat" = ".config/bat"
+"dotbro" = ".config/dotbro"
+"bin" = "bin"
+
+"fish" = ".config/fish"
+"git" = ".config/git"
+"htop" = ".config/htop"
+# "ranger" = ".config/ranger"
+
+# Editors
+# Vim
+"vim/vimrc" = ".config/nvim/init.vim"
+"vim/vimrc.bundles" = ".config/vim/vimrc.bundles"
+
+# Doom Emacs
+"doom" = ".doom.d"
+"emacs.d" = ".emacs.d"
+
+# Tmux
+"tmux/tmux.conf" = ".config/tmux/tmux.conf"
+"tmux/tmux.theme.conf" = ".config/tmux/tmux.theme.conf"
+

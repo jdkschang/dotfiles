@@ -1,42 +1,41 @@
-# .dotfiles
+# dotfiles
 
-Mac config and setup steps.
+<p align="center">
+  <a href="https://xkcd.com/1319/">
+    <img src="https://imgs.xkcd.com/comics/automation.png" />
+  </a>
+</p>
 
-![](https://cl.ly/pibU/Image%202018-02-22%20at%2010.12.26%20pm.png)
+## System info
+* browser: `Firefox`
+* editor: `Emacs`
+* os: `macOS`
+* shell: `Fish`
+* terminal editor: `Neovim`
+* terminal font: `Operator Mono SSm Lig`
+* terminal: `iTerm2`
+* window manager: `chunkwm`
 
-## First steps
+## Installation
+Set `DOTFILES` to whatever you want.
+I personally use `~/etc`.
+Make sure the enviroment variables `$XDG_CONFIG_HOME` and `$XDG_DATA_HOME` are
+set.
 
-[Install](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) command line developer tools:
-
+### Dependencies
+* git 
+* Go (required for installation)
+* Dotbro (installed with install.sh, is used to symlink files)
+``` shell
+export DOTFILES="${HOME}/etc"
+git clone git://github.com/Brettm12345/dotfiles "$DOTFILES"
+eval "$DOTFILES"/install.sh
 ```
-make
-```
-
-Clone dotfiles to home directory
-
-```
-git clone https://github.com/jdkschang/dotfiles.git
-```
-
-## Install
-
-Run install script:
-
-```
-./install.sh
-```
-
-Set macOS defaults:
-
-```
-./scripts/macos.sh
-```
-
-When complete, open new terminal window to trigger `zgen` plugin downloads.
 
 ## Credit
-[junegunn](https://github.com/junegunn/dotfiles)
+[Brettm12345](https://github.com/Brettm12345/dotfiles)
+[ar1a](https://github.com/ar1a/dotfiles)
+[hlissner](https://github.com/hlissner/doom-emacs-private)
 [dkarter](https://github.com/dkarter/dotfiles)
 [jackfranklin](https://github.com/jackfranklin/dotfiles)
 [simonsmith](https://github.com/simonsmith/dotfiles)
-

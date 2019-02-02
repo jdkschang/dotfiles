@@ -1,38 +1,31 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
-    "jquery": true
+      "es6": true,
+      "jquery": true
   },
-	  "extends": [
-	  "airbnb"
-	  ],
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
-    }
-  },
-  "rules": {
-  "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
-  , "rest-spread-spacing": ["error", "never"],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "named": "always",
-        "asyncArrow": "ignore"
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
       }
-    ]
-  }
+    },
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        , "rest-spread-spacing": ["error", "never"],
+        "linebreak-style": [
+          "error",
+        "unix"
+        ],
+        "comma-dangle": [ "error", "never" ],
+        "space-before-function-paren": [ "error",
+        {
+          "anonymous": "always",
+          "named": "always",
+          "asyncArrow": "ignore"
+        }
+        ]
+    }
 }

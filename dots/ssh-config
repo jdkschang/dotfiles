@@ -4,6 +4,19 @@ Host *
 
 # Personal GitHub
 Host github.com
- HostName github.com
- PreferredAuthentications publickey
- IdentityFile ~/.ssh/github-personal
+  HostName github.com
+  PreferredAuthentications publickey,keyboard-interactive,password
+  IdentityFile ~/.ssh/github-personal
+
+# Work
+Host gc-local
+  Hostname 192.168.10.44
+  User jchang
+  LocalForward 3000 192.168.10.44:3000
+
+Host geesee
+  Hostname 192.168.10.44
+  User jchang
+
+Host *
+  User dmitri

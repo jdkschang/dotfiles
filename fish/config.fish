@@ -15,17 +15,16 @@ set -U grc_plugin_execs cat cvs df diff dig gcc g++ ip make mount mtr netstat pi
 # Disable greeting
 set -U fish_greeting
 
-# Enable new fzf keybinds
-set -U FZF_LEGACY_KEYBINDINGS 0
-
-# Set fzf default options
-set -U FZF_DEFAULT_OPTS "--reverse --color=16,fg+:2,bg+:0,hl:4,hl+:4,prompt:4,pointer:8"
-
+# FZF
 # Enable fzf tab completion
-set -U FZF_COMPLETE 1
+set -U FZF_COMPLETE 2
+# Enable preview window open command
+set -U FZF_ENABLE_OPEN_PREVIEW 1
 
-# Set default fzf commands
-set -U FZF_FIND_FILE_COMMAND "command fd -H -t f -L -p --ignore-file ~/.config/git/ignore \$dir"
-set -U FZF_OPEN_COMMAND "command fd -H -t f -L -p --ignore-file ~/.config/git/ignore \$dir"
-set -U FZF_CD_COMMAND "command fd -t d -d 5 -L -p \$dir"
-set -U FZF_CD_WITH_HIDDEN_COMMAND "command fd -H -t d -d 5 -L -p \$dir"
+set -U FZF_DEFAULT_COMMAND 'command ag --hidden --ignore ~/.config/git/ignore \$dir'
+set -U FZF_DEFAULT_OPTS '--multi --inline-info --height 40%'
+
+set -x FZF_FIND_FILE_COMMAND 'command ag -l --hidden --ignore ~/.config/git/ignore \$dir'
+set -x FZF_FIND_FILE_OPTS "--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+set -U FZF_CD_COMMAND 'command ag -l --hidden \$dir'

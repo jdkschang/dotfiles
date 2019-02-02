@@ -1,10 +1,16 @@
 # General
 abbr "s" "sudo"
 abbr "c" "clear"
-abbr "v" "nvim"
+abbr "y" "pbcopy"
+abbr "p" "pbpaste"
+
 abbr "chmox" "chmod +x"
 abbr "scu" "systemctl --user"
 abbr "sc" "sudo systemctl"
+
+# Editor
+abbr "v" "nvim"
+abbr "ec" "~/bin/emacsclient"
 
 # Navigation
 abbr "..." "cd ../.."
@@ -12,18 +18,19 @@ abbr "...." "cd ../../.."
 abbr "....." "cd ../../../.."
 
 # Projects
-abbr "proj" "cd ~/Dropbox/Projects/"
+abbr "proj" "cd ~/Dropbox/org/projects/"
 abbr "projgc" "cd ~/Projects/"
-abbr "rwa" " cd ~/Projects/react-web-app"
+abbr "rwa" " cd ~/Dropbox/org/projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
-abbr "dfs" "cd ~/dotfiles"
+abbr "dwl" "cd $XDG_DOWNLOAD_DIR/dwl"
+abbr "dfl" "cd ~/Dropbox/org/projects/dotfiles"
 
 abbr "h" "history"
 abbr "jo" "jobs"
 abbr "e" "emacs -nw"
-abbr "ec" "TERM=xterm-256color-it emacsclient"
+abbr "ec" "emacsclient"
 
 # Services
 abbr "bstart" "brew services start"

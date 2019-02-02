@@ -3,12 +3,16 @@
 [user]
   name = Jonathan D. Chang
   email = 6375175+jdkschang@users.noreply.github.com
-; signingKey = 704A05F567070F95
+  signingKey = 703A05F567070F95
+
 [github]
   user = jdkschang
 
+[include]
+  path = ~/.config/git/config.local
+
 ;; }}}
-;; {{{
+;; Main {{{
 
 [core]
   filemode = true
@@ -17,11 +21,18 @@
   excludesFile = ~/.config/git/ignore
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-[hub]
-  protocol = ssh
+; [hub]
+  ; protocol = ssh
 
 [http]
   sslVerify
+
+[commit]
+  template = ~/.config/git/message
+  gpgSign = true
+
+[gpg]
+  program = gpg
 
 ;; }}}
 ;; Commands {{{
@@ -42,58 +53,80 @@
   autoStash = true
 
 ;; }}}
+;; Aliases {{{
+
 [alias]
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	# list aliases
+	la = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1 => \\2/' | grep -v 'alias'| awk 'BEGIN { FS = \"=>\" }{ printf(\"%-20s=>%s\\n\", $1,$2)}'|sort"
+
+  # Status & History
 	# View the current working tree status using the short format
 	s = status -s
+	st = status
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  ll = log --graph --date=relative --topo-order --pretty='format:%C(yellow)%h%C(yellow)%d %Cblue%ar %Cgreenby %an%Creset -- %s'
+  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
+	hist = log --all --stat --graph
+
+  standup = log --since='yesterday' --author='Jonathan D. Chang'
+  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
+
+  # Commits
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+  c = commit
+	# Commit all changes
+	ca = !git add -A && git commit -av
+	# Amend to the last commit
+	amend = commit --amend -C HEAD
+
+	# get desc of current repo
+	desc = !git config --get "branch.$(git rev-parse --abbrev-ref HEAD).description"
+	# show authors
+	authors = "!f() { git log --no-merges --pretty='format:%<(26)%an <%ae>' --author \"$*\" | sort | uniq; }; f"
+	# Credit an author on the last commit
+	cauthor = "!f() { git commit --amend --no-edit --author \"$1 <$2>\" -C HEAD; }; f"
+
+	# Diffs
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
+	wc = whatchanged --abbrev-commit --date=relative --date-order --pretty='format:%Cgreen%h %Cblue%ar %Credby %an%Creset -- %s' -n 45
 	# Clone a repository including all submodules
-	c = clone --recursive
-	# Commit all changes
-	ca = !git add -A && git commit -av
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
+	cl = clone --recursive
+
+	# Branches
+	b = branch
+	# list branches 
+	br = branch -a
+	# list branches sorted by last modified
+	brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+  # Delete all branches that were merged into the current branch
+	brd = "!sh -c \"git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\""
+  # Delete all branches that were merged into master
+  brdm = "!sh -c \"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\""
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	brs = branch -a
 	remotes = remote -v
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
-	# Find tags containing commit
-	ft = "!f() { git describe --always --contains $1; }; f"
-	# Find commits by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-	# Remove branches that have already been merged with master
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
-	wc = whatchanged --abbrev-commit --date=relative --date-order --pretty='format:%Cgreen%h %Cblue%ar %Credby %an%Creset -- %s' -n 45
-  ll = log --graph --date=relative --topo-order --pretty='format:%C(yellow)%h%C(yellow)%d %Cblue%ar %Cgreenby %an%Creset -- %s'
 
   co = checkout
-  b = branch
-  ci = commit
-  st = status
+	# Switch to a branch, creating it if necessary
+	go = checkout -B
+
+	# unstage all changes
+	unstage = reset HEAD --
+
+	# Rebase/ Merge
+	# Interactive rebase with the given number of latest commits
+	reb = "!git rebase -i `git merge-base HEAD master`"
+	# dry run: Test merge for conflicts
+  mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
   me = merge
-  dm = log --oneline --decorate --color --graph head ^master
-  standup = log --since='yesterday' --author='Jonathan D. Chang'
-  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
-  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
 
-[apply]
-  whitespace = fix
-
+;; }}}
+;; Color {{{
 [color]
 	ui = auto
 
@@ -101,20 +134,25 @@
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
 [color "status"]
 	added = green
 	changed = red
 	untracked = cyan
+
 [color "diff-highlight"]
   oldNormal = "red bold"
   oldHighlight = "red bold 52"
   newNormal = "green bold"
   newHighlight = "green bold 22"
+
+;; }}}
 
 # URL shorthands
 [url "git@github.com:jdkschang/"]
@@ -123,14 +161,7 @@
 	pushInsteadOf = "git://github.com/"
 [url "https://github.com/"]
 	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-;[include]
-;  path = ~/.config/git/config.local
+
 [diff]
   tool = Kaleidoscope
 [difftool]
@@ -146,8 +177,3 @@
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
-[commit]
-  template = ~/.config/git/message
-;   gpgSign = true
-; [gpg]
-;   program = gpg

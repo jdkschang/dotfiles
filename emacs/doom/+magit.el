@@ -1,17 +1,18 @@
 ;;; ~/dotfiles/dots/emacs/doom/+magit.el -*- lexical-binding: t; -*-
 
 (after! magit
+	(magit-todos-mode nil)
 	(magit-wip-after-save-mode t)
 	(magit-wip-after-apply-mode t)
 	(magit-define-popup-option 'magit-rebase-popup
 		?S "Sign using gpg" "--gpg-sign=" #'magit-read-gpg-secret-key)
 	(setq magit-save-repository-buffers nil
 				magit-repository-directories '(("~/Dropbox/Projects/" . 2)
-																			 ("~/Projects/" . 2)
-																			 ("~/dotfiles/" . 0))
-				magit-commit-arguments '("--gpg-sign=15158DA03649A630")
-				magit-rebase-arguments '("--autostash" "--gpg-sign=15158DA03649A630")
-				magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=15158DA03649A630")
+																			 ("~/Projects/" . 2))
+																			 ;; ("~/dotfiles/" . 0))
+				magit-commit-arguments '("--gpg-sign=703A05F567070F95")
+				magit-rebase-arguments '("--autostash" "--gpg-sign=703A05F567070F95")
+				magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=703A05F567070F95")
 				;; magit-commit-arguments '("--gpg-sign=D1BDD1F5AA60F93E")
 				;; magit-rebase-arguments '("--autostash" "--gpg-sign=D1BDD1F5AA60F93E")
 				;; magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=D1BDD1F5AA60F93E")

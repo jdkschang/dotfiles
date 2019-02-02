@@ -1,5 +1,4 @@
 #!/bin/sh
-
 SESSIONS="base gc"
 
 # Configure your sessions here
@@ -20,9 +19,9 @@ session_base ()
 {
   tmux new-session -d -s base
   tmux neww -k -n config -t base:1
-  tmux send-keys 'dfs' C-m
+  tmux send-keys 'dfl' C-m
   tmux split-window -h
-  tmux send-keys 'cd ~/.emacs.d'
+  tmux send-keys 'cd ~/.emacs.d' C-m
   tmux neww -k -n main -t base:2
   tmux send-keys 'proj' C-m
   tmux split-window -h

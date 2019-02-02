@@ -585,11 +585,11 @@
       endif
     endfun
     " edit vimrc
-    nnoremap <silent> <leader>vr :call OpenConfigFile(~/.config/vim/vimrc)<cr>
+    nnoremap <silent> <leader>vr :call OpenConfigFile(~/.config/nvim/init.vim)<cr>
     nnoremap <silent> <leader>vb :call OpenConfigFile('~/.config/vim/vimrc.bundles')<cr>
     " reload vimrc
-    nnoremap <leader>so :source ~/.config/vim/vimrc<cr>
-    nnoremap <leader>r :source ~/.config/vim/vimrc<cr>
+    nnoremap <leader>so :source ~/.config/nvim/init.vim<cr>
+    nnoremap <leader>r :source ~/.config/nvim/init.vim<cr>
     inoremap jk <ESC>
 
 

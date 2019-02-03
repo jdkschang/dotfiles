@@ -20,8 +20,9 @@ abbr "l" "la"
 abbr "ll" "ll -a"
 
 # Projects
-abbr "proj" "cd ~/Dropbox/org/projects/"
-abbr "projgc" "cd ~/Projects/"
+abbr "proj" "cd ~/Dropbox/org/projects"
+abbr "projgc" "cd ~/Projects"
+abbr "emc" "cd ~/.emacs.d"
 abbr "rwa" " cd ~/Dropbox/org/projects/react-web-app"
 
 # Shortcuts

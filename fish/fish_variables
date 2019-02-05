@@ -34,6 +34,7 @@ SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
 SETUVAR _fish_abbr_e:emacs\x20\x2dnw
 SETUVAR _fish_abbr_ec:emacsclient
+SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
@@ -48,8 +49,8 @@ SETUVAR _fish_abbr_nud:npm\x20uninstall\x20\x2d\x2dsave\x2ddev
 SETUVAR _fish_abbr_nug:npm\x20uninstall\x20\x2d\x2dglobal
 SETUVAR _fish_abbr_nus:npm\x20uninstall\x20\x2d\x2dsave
 SETUVAR _fish_abbr_p:pbpaste
-SETUVAR _fish_abbr_proj:cd\x20\x7e/Dropbox/org/projects/
-SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects/
+SETUVAR _fish_abbr_proj:cd\x20\x7e/Dropbox/org/projects
+SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects
 SETUVAR _fish_abbr_rwa:\x20cd\x20\x7e/Dropbox/org/projects/react\x2dweb\x2dapp
 SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_sc:sudo\x20systemctl

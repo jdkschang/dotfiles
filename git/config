@@ -21,15 +21,15 @@
   excludesFile = ~/.config/git/ignore
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-; [hub]
-  ; protocol = ssh
+[hub]
+  protocol = ssh
 
 [http]
   sslVerify
 
 [commit]
   template = ~/.config/git/message
-  gpgSign = true
+  # gpgSign = true
 
 [gpg]
   program = gpg

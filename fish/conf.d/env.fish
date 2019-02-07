@@ -16,7 +16,7 @@ set -x GOPATH "$HOME/go"
 set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gpg"
 
-set -x IKIGAI "$HOME/Dropbox/org/projects"
+set -x IKIGAI "$HOME/org/projects"
 set -x DOTFILES "$IKIGAI/dotfiles"
 
 # GPG
@@ -26,7 +26,7 @@ set -x GPG_TTY (tty)
 set -x BROWSER "firefox"
 # set -x EDITOR "emacsclient -c"
 set -x EDITOR "nvim"
-set -x MANPAGER "nvim -c 'set ft=man' -"
+# set -x MANPAGER "nvim -c 'set ft=man' -"
 set -x SHELL "/usr/local/bin/fish"
 # set -x IMGVIEW "sxiv -b"
 # set -x VIDPLAY "mpv"

@@ -10,7 +10,8 @@ abbr "sc" "sudo systemctl"
 
 # Editor
 abbr "v" "nvim"
-abbr "ec" "~/bin/emacsclient"
+abbr "e" "emacs -nw"
+abbr "ec" "~/bin/emacsclient -c"
 
 # Navigation
 abbr "..." "cd ../.."
@@ -20,10 +21,11 @@ abbr "l" "la"
 abbr "ll" "ll -a"
 
 # Projects
-abbr "proj" "cd ~/Dropbox/org/projects"
+abbr "proj" "cd $IKIGAI"
 abbr "projgc" "cd ~/Projects"
 abbr "emc" "cd ~/.emacs.d"
-abbr "rwa" " cd ~/Dropbox/org/projects/react-web-app"
+abbr "doom" "cd $IKIGAI/doom"
+abbr "rwa" " cd $IKIGAI/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
@@ -32,8 +34,6 @@ abbr "dfl" 'cd $DOTFILES'             # so that the variable is evaluated on exe
 
 abbr "h" "history"
 abbr "jo" "jobs"
-abbr "e" "emacs -nw"
-abbr "ec" "emacsclient"
 
 # Services
 abbr "bstart" "brew services start"
@@ -49,7 +49,7 @@ abbr "bsss" "brew services stop skhd"
 abbr "g" "git"
 
 # tmux
-alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/.tmux.conf"
+alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/tmux.conf"
 abbr "tls" "tmux ls"
 abbr "tnew" "tmux new -s"
 abbr "tkill" "tmux kill-session -t"

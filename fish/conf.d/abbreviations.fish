@@ -21,11 +21,11 @@ abbr "l" "la"
 abbr "ll" "ll -a"
 
 # Projects
-abbr "proj" "cd $IKIGAI"
-abbr "projgc" "cd ~/Projects"
-abbr "emc" "cd ~/.emacs.d"
-abbr "doom" "cd $IKIGAI/doom"
-abbr "rwa" " cd $IKIGAI/react-web-app"
+abbr "proj" 'cd $IKIGAI'
+abbr "projgc" 'cd ~/Projects'
+abbr "emc" 'cd ~/.emacs.d'
+abbr "doom" 'cd $IKIGAI/doom'
+abbr "rwa" ' cd $IKIGAI/react-web-app'
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"

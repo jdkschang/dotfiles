@@ -59,6 +59,9 @@
 [alias]
 	# list aliases
 	la = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1 => \\2/' | grep -v 'alias'| awk 'BEGIN { FS = \"=>\" }{ printf(\"%-20s=>%s\\n\", $1,$2)}'|sort"
+	sdiff = "!git diff && git submodule foreach 'git diff'"
+	spush = push --recurse-submodules=on-demand
+	supdate = submodule update --remote --rebase
 
   # Status & History
 	# View the current working tree status using the short format

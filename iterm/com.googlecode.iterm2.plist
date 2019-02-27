@@ -3881,11 +3881,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>264 743 700 622 0 0 2880 1597 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>12 1099 796 486 0 0 2880 1597 </string>
+	<string>2892 1133 918 452 2880 -540 3840 2137 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>12 12 2855 1573 0 0 2880 1597 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>12 12 2855 1573 0 0 2880 1597 </string>
+	<string>2892 -528 3815 2113 2880 -540 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>785 210 570 452 0 0 2560 1418 </string>
 	<key>NeverWarnAboutShortLivedSessions_30C5CF67-EE52-4F44-B934-4D4D252F0239</key>
@@ -5514,7 +5514,7 @@
 			<key>Rows</key>
 			<integer>57</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>-1</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
@@ -5890,7 +5890,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-10T20:57:24Z</date>
+	<date>2019-02-19T17:14:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

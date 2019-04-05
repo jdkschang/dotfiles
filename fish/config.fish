@@ -4,7 +4,8 @@ set -g -x LC_LANG en_US.UTF-8
 set -g -x LANG en_US.UTF-8
 
 # Set hybrid keybindings (Emacs + Vim)
-set -U fish_key_bindings fish_hybrid_key_bindings
+# set -U fish_key_bindings fish_hybrid_key_bindings
+set -U fish_key_bindings fish_vi_key_bindings
 
 # Switch between normal and insert mode with no delay
 set -U cmd_duration 0

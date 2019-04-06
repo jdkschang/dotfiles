@@ -1,56 +1,56 @@
 ;; Personal Info {{{
 
 [user]
-  name = Jonathan D. Chang
-  email = 6375175+jdkschang@users.noreply.github.com
-  signingKey = 703A05F567070F95
+	name = Jonathan D. Chang
+	email = 6375175+jdkschang@users.noreply.github.com
+	signingKey = 703A05F567070F95
 
 [github]
-  user = jdkschang
+	user = jdkschang
 
 [include]
-  path = ~/.config/git/config.local
+	path = ~/.config/git/config.local
 
 ;; }}}
 ;; Main {{{
 
 [core]
-  filemode = true
-  quotepath = false
-  pager = diff-so-fancy | less --tabs=4 -RFX
-  excludesFile = ~/.config/git/ignore
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	filemode = true
+	quotepath = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesFile = ~/.config/git/ignore
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 ; [hub]
-  ; protocol = ssh
+	; protocol = ssh
 
 [http]
-  sslVerify
+	sslVerify
 
 [commit]
-  template = ~/.config/git/message
-  gpgSign = true
+	template = ~/.config/git/message
+	gpgSign = true
 
 [gpg]
-  program = gpg
+	program = gpg
 
 ;; }}}
 ;; Commands {{{
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [fetch]
-  prune = true
+	prune = true
 
 [push]
-  default = current
+	default = current
 
 [pull]
-  rebase = true
+	rebase = true
 
 [rebase]
-  autoStash = true
+	autoStash = true
 
 ;; }}}
 ;; Aliases {{{
@@ -59,21 +59,21 @@
 	# list aliases
 	la = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1 => \\2/' | grep -v 'alias'| awk 'BEGIN { FS = \"=>\" }{ printf(\"%-20s=>%s\\n\", $1,$2)}'|sort"
 
-  # Status & History
+	# Status & History
 	# View the current working tree status using the short format
 	s = status -s
 	st = status
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-  ll = log --graph --date=relative --topo-order --pretty='format:%C(yellow)%h%C(yellow)%d %Cblue%ar %Cgreenby %an%Creset -- %s'
-  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
+	ll = log --graph --date=relative --topo-order --pretty='format:%C(yellow)%h%C(yellow)%d %Cblue%ar %Cgreenby %an%Creset -- %s'
+	lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %C(bold blue)(%cr) %Cred<%an>%Creset' --abbrev-commit
 	hist = log --all --stat --graph
 
-  standup = log --since='yesterday' --author='Jonathan D. Chang'
-  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
+	standup = log --since='yesterday' --author='Jonathan D. Chang'
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
 
-  # Commits
+	# Commits
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-  c = commit
+	c = commit
 	# Commit all changes
 	ca = !git add -A && git commit -av
 	# Amend to the last commit
@@ -97,21 +97,21 @@
 
 	# Branches
 	b = branch
-	# list branches 
+	# list branches
 	br = branch -a
 	# list branches sorted by last modified
 	brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
-  # Delete all branches that were merged into the current branch
+	# Delete all branches that were merged into the current branch
 	brd = "!sh -c \"git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\""
-  # Delete all branches that were merged into master
-  brdm = "!sh -c \"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\""
+	# Delete all branches that were merged into master
+	brdm = "!sh -c \"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\""
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	remotes = remote -v
 
-  co = checkout
+	co = checkout
 	# Switch to a branch, creating it if necessary
 	go = checkout -B
 
@@ -122,8 +122,8 @@
 	# Interactive rebase with the given number of latest commits
 	reb = "!git rebase -i `git merge-base HEAD master`"
 	# dry run: Test merge for conflicts
-  mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
-  me = merge
+	mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
+	me = merge
 
 ;; }}}
 ;; Color {{{
@@ -147,10 +147,10 @@
 	untracked = cyan
 
 [color "diff-highlight"]
-  oldNormal = "red bold"
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
+	oldNormal = "red bold"
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
 
 ;; }}}
 
@@ -163,17 +163,17 @@
 	insteadOf = "github:"
 
 [diff]
-  tool = Kaleidoscope
+	tool = Kaleidoscope
 [difftool]
-  prompt = false
+	prompt = false
 [difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [merge]
-  tool = Kaleidoscope
-  keepBackup = false
+	tool = Kaleidoscope
+	keepBackup = false
 [mergetool]
-  prompt = false
-  keepBackup = false
+	prompt = false
+	keepBackup = false
 [mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true

@@ -16,13 +16,17 @@ abbr "ec" "~/bin/emacsclient"
 abbr "..." "cd ../.."
 abbr "...." "cd ../../.."
 abbr "....." "cd ../../../.."
-abbr "l" "la"
-abbr "ll" "ll -a"
+
+alias "ls" "lsd"
+abbr "l" "ls -l"
+abbr "la" "ls -aF"
+abbr "ll" "ls -alF"
+abbr "lt" "ls --tree"
 
 # Projects
-abbr "proj" "cd ~/Dropbox/org/projects/"
+abbr "proj" "cd ~/org/projects/"
 abbr "projgc" "cd ~/Projects/"
-abbr "rwa" " cd ~/Dropbox/org/projects/react-web-app"
+abbr "rwa" " cd ~/org/projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"

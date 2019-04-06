@@ -4,7 +4,8 @@ set -g -x LC_LANG en_US.UTF-8
 set -g -x LANG en_US.UTF-8
 
 # Set hybrid keybindings (Emacs + Vim)
-set -U fish_key_bindings fish_hybrid_key_bindings
+# set -U fish_key_bindings fish_hybrid_key_bindings
+set -U fish_key_bindings fish_vi_key_bindings
 
 # Switch between normal and insert mode with no delay
 set -U cmd_duration 0
@@ -13,7 +14,7 @@ set -U cmd_duration 0
 set -U grc_plugin_execs cat cvs df diff dig gcc g++ ip make mount mtr netstat ping ps tail traceroute wdiff
 
 # Disable greeting
-set -U fish_greeting
+# set -U fish_greeting
 
 # FZF
 # Enable fzf tab completion

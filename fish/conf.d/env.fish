@@ -16,7 +16,7 @@ set -x GOPATH "$HOME/go"
 set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gpg"
 
-set -x IKIGAI "$HOME/Dropbox/org/projects"
+set -x IKIGAI "$HOME/org/projects"
 set -x DOTFILES "$IKIGAI/dotfiles"
 
 # GPG
@@ -39,7 +39,7 @@ set -x MPD_HOST "localhost"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
 set -x NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
 set -x NODE_ENV "development"
-set -x NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin" 
+set -x NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin"
 
 # Tmux
 set -x TMUX_HOME "$XDG_CONFIG_HOME/tmux"

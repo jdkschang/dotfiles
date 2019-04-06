@@ -8,7 +8,7 @@
 
 # Directory of your dotfiles repository.
 # Default: directory of this config.
-dotfiles = "$HOME/Dropbox/org/projects/dotfiles"
+dotfiles = "$HOME/org/projects/dotfiles"
 
 # Destination directory - your dotfiles will be linked there.
 # Default: $HOME

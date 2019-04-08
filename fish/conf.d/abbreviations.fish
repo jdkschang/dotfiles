@@ -10,7 +10,8 @@ abbr "sc" "sudo systemctl"
 
 # Editor
 abbr "v" "nvim"
-abbr "ec" "~/bin/emacsclient"
+abbr "e" "emacs -nw"
+abbr "ec" "emacsclient"
 
 # Navigation
 abbr "..." "cd ../.."
@@ -32,11 +33,11 @@ abbr "rwa" " cd ~/org/projects/react-web-app"
 abbr "dl" "cd ~/Downloads"
 abbr "dwl" 'cd $XDG_DOWNLOAD_DIR/dwl' # single quotes preserves string
 abbr "dfl" 'cd $DOTFILES'             # so that the variable is evaluated on exec
+abbr "emc" 'cd ~/.emacs.d'
 
 abbr "h" "history"
 abbr "jo" "jobs"
-abbr "e" "emacs -nw"
-abbr "ec" "emacsclient"
+abbr "ki" "pkill"
 
 # Services
 abbr "bstart" "brew services start"

@@ -34,9 +34,11 @@ SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
 SETUVAR _fish_abbr_e:emacs\x20\x2dnw
 SETUVAR _fish_abbr_ec:emacsclient
+SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
+SETUVAR _fish_abbr_ki:pkill
 SETUVAR _fish_abbr_l:ls\x20\x2dl
 SETUVAR _fish_abbr_la:ls\x20\x2daF
 SETUVAR _fish_abbr_ll:ls\x20\x2dalF

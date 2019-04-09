@@ -38,6 +38,7 @@ SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
+SETUVAR _fish_abbr_k:pkill
 SETUVAR _fish_abbr_ki:pkill
 SETUVAR _fish_abbr_l:ls\x20\x2dl
 SETUVAR _fish_abbr_la:ls\x20\x2daF

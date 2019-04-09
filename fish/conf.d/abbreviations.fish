@@ -37,7 +37,7 @@ abbr "emc" 'cd ~/.emacs.d'
 
 abbr "h" "history"
 abbr "jo" "jobs"
-abbr "ki" "pkill"
+abbr "k" "pkill"
 
 # Services
 abbr "bstart" "brew services start"

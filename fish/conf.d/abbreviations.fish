@@ -8,8 +8,14 @@ abbr "chmox" "chmod +x"
 abbr "scu" "systemctl --user"
 abbr "sc" "sudo systemctl"
 
+abbr "mkd" "mkdir -pv"
+abbr "bi" "brew install"
+
+abbr "yt" "youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.$(ext)s'"
+abbr "yta" "yt -x -f bestaudio/best"
+
 # Editor
-abbr "v" "nvim"
+abbr "v" "$EDITOR"
 abbr "e" "emacs -nw"
 abbr "ec" "emacsclient"
 
@@ -53,7 +59,7 @@ abbr "bsss" "brew services stop skhd"
 abbr "g" "git"
 
 # tmux
-alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/.tmux.conf"
+alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/tmux.conf"
 abbr "tls" "tmux ls"
 abbr "tnew" "tmux new -s"
 abbr "tkill" "tmux kill-session -t"

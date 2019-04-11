@@ -24,7 +24,7 @@ set -U GPG_TTY (tty)
 
 # Default programs
 set -x BROWSER "firefox"
-set -U EDITOR "emacsclient -n"
+set -U EDITOR "emacsclient"
 # set -gx MANPAGER "nvim -c 'set ft=man' -"
 set -x SHELL "/usr/local/bin/fish"
 set -x ALTERNATE_EDITOR "" # necessary for emacsclient

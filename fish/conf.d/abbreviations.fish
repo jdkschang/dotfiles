@@ -34,7 +34,7 @@ abbr "lt" "ls --tree"
 # Projects
 abbr "proj" "cd ~/org/projects/"
 abbr "projgc" "cd ~/Projects/"
-abbr "rwa" " cd ~/org/projects/react-web-app"
+abbr "rwa" "cd ~/org/projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"

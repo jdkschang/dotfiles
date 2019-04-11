@@ -20,14 +20,14 @@ set -gx IKIGAI "$HOME/org/projects"
 set -gx DOTFILES "$IKIGAI/dotfiles"
 
 # GPG
-set -x GPG_TTY (tty)
+set -U GPG_TTY (tty)
 
 # Default programs
-set -gx BROWSER "firefox"
-set -gx EDITOR "emacsclient -n"
-set -gx MANPAGER "nvim -c 'set ft=man' -"
-set -gx SHELL "/usr/local/bin/fish"
-set -gx ALTERNATE_EDITOR "" # necessary for emacsclient
+set -x BROWSER "firefox"
+set -U EDITOR "emacsclient -n"
+# set -gx MANPAGER "nvim -c 'set ft=man' -"
+set -x SHELL "/usr/local/bin/fish"
+set -x ALTERNATE_EDITOR "" # necessary for emacsclient
 # set -x IMGVIEW "sxiv -b"
 # set -x VIDPLAY "mpv"
 
@@ -37,10 +37,10 @@ set -x LESS "-F -g -i -M -R -S -w -X -z-4"
 set -x MPD_HOST "localhost"
 
 # Npm
-set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
-set -gx NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
-set -gx NODE_ENV "development"
-set -gx NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin"
+set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
+set -x NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
+set -x NODE_ENV "development"
+set -x NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin"
 
 # Tmux
 set -gx TMUX_HOME "$XDG_CONFIG_HOME/tmux"

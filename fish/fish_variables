@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR FZF_CD_COMMAND:command\x20ag\x20\x2dl\x20\x2d\x2dhidden\x20\x5c\x24dir
 SETUVAR FZF_COMPLETE:2
-SETUVAR --export FZF_DEFAULT_COMMAND:command\x20ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x7e/\x2econfig/git/ignore\x20\x5c\x24dir
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x2040\x25
+SETUVAR --export FZF_DEFAULT_COMMAND:ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x2egit\x20\x2dg
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x3d40\x25\x20\x2d\x2dmin\x2dheight\x3d15\x20\x2d\x2dreverse
 SETUVAR FZF_ENABLE_OPEN_PREVIEW:1
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
@@ -33,9 +33,10 @@ SETUVAR _fish_abbr_chmox:chmod\x20\x2bx
 SETUVAR _fish_abbr_dfl:cd\x20\x24DOTFILES
 SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
-SETUVAR _fish_abbr_e:emacs\x20\x2dnw
-SETUVAR _fish_abbr_ec:emacsclient
+SETUVAR _fish_abbr_e:emacsclient\x20\x2dn
+SETUVAR _fish_abbr_ec:emacsclient\x20\x2dn\x20\x2dc
 SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
+SETUVAR _fish_abbr_et:emacsclient\x20\x2dn\x20\x2dw
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
@@ -67,8 +68,10 @@ SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tkill:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tls:tmux\x20ls
 SETUVAR _fish_abbr_tnew:tmux\x20new\x20\x2ds
-SETUVAR _fish_abbr_v:nvim
+SETUVAR _fish_abbr_v:emacsclient\x20\x2dn
 SETUVAR _fish_abbr_y:pbcopy
+SETUVAR _fish_abbr_yt:youtube\x2ddl\x20\x2d\x2dadd\x2dmetadata\x20\x2di\x20\x2do\x20\x27\x25\x28upload_date\x29s\x2d\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27
+SETUVAR _fish_abbr_yta:yt\x20\x2dx\x20\x2df\x20bestaudio/best
 SETUVAR cmd_duration:0
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_history_current:\x2d\x2dbold

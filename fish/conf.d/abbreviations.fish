@@ -11,7 +11,7 @@ abbr "sc" "sudo systemctl"
 abbr "mkd" "mkdir -pv"
 abbr "bi" "brew install"
 
-abbr "yt" "youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.$(ext)s'"
+abbr "yt" "youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
 abbr "yta" "yt -x -f bestaudio/best"
 
 # Editor
@@ -77,4 +77,3 @@ abbr "nu" "npm uninstall"
 abbr "nus" "npm uninstall --save"
 abbr "nud" "npm uninstall --save-dev"
 abbr "nug" "npm uninstall --global"
-

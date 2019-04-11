@@ -16,8 +16,9 @@ abbr "yta" "yt -x -f bestaudio/best"
 
 # Editor
 abbr "v" "$EDITOR"
-abbr "e" "emacs -nw"
-abbr "ec" "emacsclient"
+abbr "e" "$EDITOR"
+abbr "ec" "$EDITOR -c"
+abbr "et" "$EDITOR -w"
 
 # Navigation
 abbr "..." "cd ../.."
@@ -77,5 +78,3 @@ abbr "nus" "npm uninstall --save"
 abbr "nud" "npm uninstall --save-dev"
 abbr "nug" "npm uninstall --global"
 
-# misc
-alias "cat" "bat"

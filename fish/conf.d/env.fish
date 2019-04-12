@@ -20,7 +20,7 @@ set -x IKIGAI "$HOME/org/projects"
 set -x DOTFILES "$IKIGAI/dotfiles"
 
 # GPG
-set -U GPG_TTY (tty)
+set -x GPG_TTY (tty)
 
 # Default programs
 set -x BROWSER "firefox"

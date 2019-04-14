@@ -3,8 +3,7 @@
 [user]
 	name = Jonathan D. Chang
 	email = 6375175+jdkschang@users.noreply.github.com
-	# signingKey = 703A05F567070F95
-	signingKey = 809A1C18A92416AA
+	signingKey = A3A9DC06A9B0856F
 
 [github]
 	user = jdkschang

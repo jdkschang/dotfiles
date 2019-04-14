@@ -49,9 +49,6 @@ set -U TMUX_PLUGIN_MANAGER_PATH "$TMUX_HOME/plugins"
 # FZF
 set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g'
 set -x FZF_DEFAULT_OPTS "--multi --inline-info --height=40% --min-height=15 --reverse"
-# set -x FZF_DEFAULT_COMMAND "sh -c 'git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f --ignore-file $XDG_CONFIG_HOME/git/ignore . $HOME'"
-# set -x FZF_DEFAULT_OPTIONS "--cycle --color=16,fg+:2,bg+:0,hl:4,hl+:4,prompt:4,pointer:8 --border"
-
 
 # Skim
 set -x SKIM_DEFAULT_COMMAND "sh -c 'git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f --ignore-file $XDG_CONFIG_HOME/git/ignore . $HOME'"

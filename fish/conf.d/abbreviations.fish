@@ -56,6 +56,9 @@ abbr "bssc" "brew services stop chunkwm"
 abbr "bsrs" "brew services restart skhd"
 abbr "bsss" "brew services stop skhd"
 
+# Spotify
+abbr "sp" "spotify"
+
 # Git
 abbr "g" "git"
 

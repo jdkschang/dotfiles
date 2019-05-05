@@ -77,7 +77,7 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 	# Amend to the last commit
-	amend = commit --amend -C HEAD
+	amend = commit --amend
 
 	# get desc of current repo
 	desc = !git config --get "branch.$(git rev-parse --abbrev-ref HEAD).description"

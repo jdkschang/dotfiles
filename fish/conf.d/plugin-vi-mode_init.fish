@@ -29,7 +29,7 @@ set -g __vi_mode_undo_cmdline_pos 0
 
 # default vi mode
 if test -z $vi_mode_default
-		set -g vi_mode_default vi_mode_insert
+    set -g vi_mode_default vi_mode_insert
 end
 
 # vi:noexpandtab:sw=4:ts=4

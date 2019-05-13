@@ -1,7 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR EDITOR:emacsclient
-SETUVAR FZF_CD_COMMAND:command\x20ag\x20\x2dl\x20\x2d\x2dhidden\x20\x5c\x24dir
 SETUVAR FZF_COMPLETE:2
 SETUVAR --export FZF_DEFAULT_COMMAND:ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x2egit\x20\x2dg
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x3d40\x25\x20\x2d\x2dmin\x2dheight\x3d15\x20\x2d\x2dreverse

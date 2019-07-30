@@ -1,0 +1,58 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Monokai",
+
+    "editor.rulers": [79],
+    "editor.roundedSelection": false,
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 100,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderIndentGuides": true,
+    "editor.suggestSelection": "first",
+    // "editor.fontWeight": "600",
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 0,
+
+    "python.linting.pylintEnabled": true,
+    "python.linting.pep8Enabled": false,
+    "python.pythonPath": "/usr/local/bin/python3",
+
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue"
+    ],
+
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+
+    "[html]": {
+        "editor.tabSize": 2
+    },
+
+    "git.autofetch": true,
+    "terminal.integrated.rendererType": "dom",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.keymap": "alternate",
+    "clang.cxxflags": ["-std=c++11"],
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "files.associations": {
+        "*.cash": "solidity"
+    },
+}

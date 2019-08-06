@@ -1,4 +1,4 @@
-#! /usr/bin/denv bash
+#! /usr/bin/env bash
 
 # ~/.macos — https://mths.be/macos
 DIR=$(dirname "$0")
@@ -19,16 +19,20 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set computer name
-# sudo scutil --set ComputerName rmbp
-# sudo scutil --set LocalHostName rmbp
-# sudo scutil --set HostName rmbp
+sudo scutil --set ComputerName geesee
+sudo scutil --set LocalHostName geesee
+sudo scutil --set HostName geesee
+#sudo scutil --set ComputerName "0x6D746873"
+#sudo scutil --set HostName "0x6D746873"
+#sudo scutil --set LocalHostName "0x6D746873"
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
 # Hide the menu bar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400

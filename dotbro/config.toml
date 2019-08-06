@@ -8,7 +8,7 @@
 
 # Directory of your dotfiles repository.
 # Default: directory of this config.
-dotfiles = "$HOME/org/projects/dotfiles"
+dotfiles = "$HOME/projects/jdkschang/dotfiles"
 
 # Destination directory - your dotfiles will be linked there.
 # Default: $HOME
@@ -26,7 +26,6 @@ backup = "$HOME/.dotfiles~"
 "fish" = ".config/fish"
 "git" = ".config/git"
 "htop" = ".config/htop"
-# "ranger" = ".config/ranger"
 
 # Editors
 # Vim

@@ -12,7 +12,7 @@
 * os: `macOS`
 * shell: `Fish`
 * terminal editor: `Neovim`
-* terminal font: `Operator Mono SSm Lig`
+* terminal font: `IBM Plex Mono`
 * terminal: `iTerm2`
 * window manager: `chunkwm`
 
@@ -23,7 +23,7 @@ Make sure the enviroment variables `$XDG_CONFIG_HOME` and `$XDG_DATA_HOME` are
 set.
 
 ### Dependencies
-* git 
+* git
 * Go (required for installation)
 * Dotbro (installed with install.sh, is used to symlink files)
 ``` shell

@@ -71,6 +71,7 @@ brew install ctags
 brew install direnv
 brew install go
 brew install exa
+brew install lsd
 brew install htop
 brew install httpie
 brew install p7zip

@@ -3,7 +3,7 @@
 [user]
 	name = Jonathan D. Chang
 	email = 6375175+jdkschang@users.noreply.github.com
-	signingKey = A3A9DC06A9B0856F
+	signingKey = F25BE343AF08C240
 
 [github]
 	user = jdkschang
@@ -120,7 +120,9 @@
 
 	# Rebase/ Merge
 	# Interactive rebase with the given number of latest commits
-	reb = "!git rebase -i `git merge-base HEAD master`"
+	# reb = "!git rebase -i `git merge-base HEAD master`"
+	# https://stackoverflow.com/questions/27116671/automatically-stash-save-pop-changes-on-git-rebase
+	reb = "!git rebase -i --autosquash --autostash <tree-ish>"
 	# dry run: Test merge for conflicts
 	mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
 	me = merge

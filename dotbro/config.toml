@@ -26,6 +26,7 @@ backup = "$HOME/.dotfiles~"
 "fish" = ".config/fish"
 "git" = ".config/git"
 "htop" = ".config/htop"
+"dots/ssh-config" = ".ssh/config"
 
 # Editors
 # Vim
@@ -39,3 +40,6 @@ backup = "$HOME/.dotfiles~"
 "tmux/tmux.conf" = ".config/tmux/tmux.conf"
 "tmux/tmux.theme.conf" = ".config/tmux/tmux.theme.conf"
 
+# Chunkwm & skhd
+"dots/chunkwmrc" = ".chunkwmrc"
+"dots/skhdrc" = ".skhdrc"

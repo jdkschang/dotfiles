@@ -35,6 +35,7 @@ SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_chmox:chmod\x20\x2bx
 SETUVAR _fish_abbr_dfl:cd\x20\x24DOTFILES
 SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
+SETUVAR _fish_abbr_doom:cd\x20\x24IKIGAI/doom
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
 SETUVAR _fish_abbr_e:emacsclient\x20\x2dn
 SETUVAR _fish_abbr_ec:emacsclient\x20\x2dnc

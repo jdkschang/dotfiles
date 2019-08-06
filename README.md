@@ -18,7 +18,6 @@
 
 ## Installation
 Set `DOTFILES` to whatever you want.
-I personally use `~/etc`.
 Make sure the enviroment variables `$XDG_CONFIG_HOME` and `$XDG_DATA_HOME` are
 set.
 

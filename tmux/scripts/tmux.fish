@@ -1,18 +1,18 @@
 #!/usr/local/bin/fish
 
-set SESSIONS base gc
+set SESSIONS base
 
-function session_gc
-  tmux new-session -d -s gc
-  tmux neww -k -n geesee -t gc:1
-  tmux send-keys 'rwa' C-m
-  tmux split-window -h
-  tmux send-keys 'rwa' C-m
-  tmux send-keys 'yarn' C-m
-  tmux send-keys 'yarn start' C-m
-  tmux split-window -v
-  tmux send-keys 'rwa' C-m
-end
+# function session_gc
+#   tmux new-session -d -s gc
+#   tmux neww -k -n geesee -t gc:1
+#   tmux send-keys 'rwa' C-m
+#   tmux split-window -h
+#   tmux send-keys 'rwa' C-m
+#   tmux send-keys 'yarn' C-m
+#   tmux send-keys 'yarn start' C-m
+#   tmux split-window -v
+#   tmux send-keys 'rwa' C-m
+# end
 
 function session_base
   tmux new-session -d -s base

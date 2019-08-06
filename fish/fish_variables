@@ -1,18 +1,21 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR FZF_CD_COMMAND:command\x20ag\x20\x2dl\x20\x2d\x2dhidden\x20\x5c\x24dir
+SETUVAR EDITOR:emacsclient
 SETUVAR FZF_COMPLETE:2
-SETUVAR --export FZF_DEFAULT_COMMAND:command\x20ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x7e/\x2econfig/git/ignore\x20\x5c\x24dir
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x2040\x25
+SETUVAR --export FZF_DEFAULT_COMMAND:ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x2egit\x20\x2dg
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dmulti\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dheight\x3d40\x25\x20\x2d\x2dmin\x2dheight\x3d15\x20\x2d\x2dreverse
 SETUVAR FZF_ENABLE_OPEN_PREVIEW:1
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
+SETUVAR --export GPG_TTY:/dev/ttys001
+SETUVAR TMUX_HOME:/Users/dmitri/\x2econfig/tmux
+SETUVAR --path TMUX_PLUGIN_MANAGER_PATH:/Users/dmitri/\x2econfig/tmux/plugins
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/dmitri/usr/share/z/data
-SETUVAR Z_DATA_DIR:/Users/dmitri/usr/share/z
+SETUVAR Z_DATA:/Users/dmitri/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/dmitri/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:/Users/dmitri
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
@@ -20,6 +23,7 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr__2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e
 SETUVAR _fish_abbr__2E_2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e
 SETUVAR _fish_abbr__2E_2E_2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e/\x2e\x2e
+SETUVAR _fish_abbr_bi:brew\x20install
 SETUVAR _fish_abbr_bsrc:brew\x20services\x20restart\x20chunkwm
 SETUVAR _fish_abbr_bsrcs:brew\x20services\x20restart\x20chunkwm\x3b\x20brew\x20services\x20restart\x20skhd\x3b
 SETUVAR _fish_abbr_bsrs:brew\x20services\x20restart\x20skhd
@@ -33,14 +37,20 @@ SETUVAR _fish_abbr_dfl:cd\x20\x24DOTFILES
 SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_doom:cd\x20\x24IKIGAI/doom
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
-SETUVAR _fish_abbr_e:emacs\x20\x2dnw
-SETUVAR _fish_abbr_ec:\x7e/bin/emacsclient\x20\x2dc
+SETUVAR _fish_abbr_e:emacsclient\x20\x2dn
+SETUVAR _fish_abbr_ec:emacsclient\x20\x2dnc
 SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
+SETUVAR _fish_abbr_et:emacsclient\x20\x2dnw
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs
-SETUVAR _fish_abbr_l:la
-SETUVAR _fish_abbr_ll:ll\x20\x2da
+SETUVAR _fish_abbr_k:pkill
+SETUVAR _fish_abbr_ki:pkill
+SETUVAR _fish_abbr_l:ls\x20\x2dl
+SETUVAR _fish_abbr_la:ls\x20\x2daF
+SETUVAR _fish_abbr_ll:ls\x20\x2dalF
+SETUVAR _fish_abbr_lt:ls\x20\x2d\x2dtree
+SETUVAR _fish_abbr_mkd:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_ni:npm\x20install
 SETUVAR _fish_abbr_nid:npm\x20install\x20\x2d\x2dsave\x2ddev
 SETUVAR _fish_abbr_nig:npm\x20install\x20\x2d\x2dglobal
@@ -50,12 +60,13 @@ SETUVAR _fish_abbr_nud:npm\x20uninstall\x20\x2d\x2dsave\x2ddev
 SETUVAR _fish_abbr_nug:npm\x20uninstall\x20\x2d\x2dglobal
 SETUVAR _fish_abbr_nus:npm\x20uninstall\x20\x2d\x2dsave
 SETUVAR _fish_abbr_p:pbpaste
-SETUVAR _fish_abbr_proj:cd\x20\x24IKIGAI
-SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects
-SETUVAR _fish_abbr_rwa:\x20cd\x20\x24IKIGAI/react\x2dweb\x2dapp
+SETUVAR _fish_abbr_proj:cd\x20\x7e/org/projects/
+SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects/
+SETUVAR _fish_abbr_rwa:cd\x20\x7e/org/projects/react\x2dweb\x2dapp
 SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_sc:sudo\x20systemctl
 SETUVAR _fish_abbr_scu:systemctl\x20\x2d\x2duser
+SETUVAR _fish_abbr_sp:spotify
 SETUVAR _fish_abbr_tat:tmux\x20attach\x20\x2dt
 SETUVAR _fish_abbr_tatt:new\x2dtmux\x2dfrom\x2ddir\x2dname
 SETUVAR _fish_abbr_td:tmux\x20detach
@@ -64,6 +75,8 @@ SETUVAR _fish_abbr_tls:tmux\x20ls
 SETUVAR _fish_abbr_tnew:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_y:pbcopy
+SETUVAR _fish_abbr_yt:youtube\x2ddl\x20\x2d\x2dadd\x2dmetadata\x20\x2di\x20\x2do\x20\x27\x25\x28upload_date\x29s\x2d\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27
+SETUVAR _fish_abbr_yta:yt\x20\x2dx\x20\x2df\x20bestaudio/best
 SETUVAR cmd_duration:0
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_history_current:\x2d\x2dbold
@@ -71,7 +84,8 @@ SETUVAR fish_color_host:normal
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_user_paths:/Users/dmitri/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/usr/local/opt/coreutils/libexec/gnubin\x1e/Users/dmitri/\x2eemacs\x2ed/bin\x1e/Users/dmitri/\x2econfig/nvm/11\x2e9\x2e0/bin\x1e/Users/dmitri/usr/share/cargo/bin
 SETUVAR grc_plugin_execs:cat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eip\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff
+SETUVAR pure_version:2\x2e1\x2e8

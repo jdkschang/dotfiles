@@ -8,7 +8,7 @@
 
 # Directory of your dotfiles repository.
 # Default: directory of this config.
-dotfiles = "$HOME/org/projects/dotfiles"
+dotfiles = "$HOME/projects/jdkschang/dotfiles"
 
 # Destination directory - your dotfiles will be linked there.
 # Default: $HOME
@@ -35,7 +35,6 @@ backup = "$HOME/.dotfiles~"
 
 # Doom Emacs
 "doom" = ".config/doom"
-"emacs.d" = ".emacs.d"
 
 # Tmux
 "tmux/tmux.conf" = ".config/tmux/tmux.conf"

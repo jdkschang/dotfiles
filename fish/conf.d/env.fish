@@ -24,10 +24,10 @@ set -x GPG_TTY (tty)
 
 # Default programs
 set -x BROWSER "firefox"
-# set -x EDITOR "emacsclient -c"
-set -x EDITOR "nvim"
-# set -x MANPAGER "nvim -c 'set ft=man' -"
+set -U EDITOR "emacsclient"
+# set -gx MANPAGER "nvim -c 'set ft=man' -"
 set -x SHELL "/usr/local/bin/fish"
+set -x ALTERNATE_EDITOR "" # necessary for emacsclient
 # set -x IMGVIEW "sxiv -b"
 # set -x VIDPLAY "mpv"
 
@@ -40,15 +40,15 @@ set -x MPD_HOST "localhost"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
 set -x NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
 set -x NODE_ENV "development"
-set -x NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin" 
+set -x NPM_DIR "$XDG_CONFIG_HOME/nvm/11.9.0/bin"
 
 # Tmux
-set -x TMUX_HOME "$XDG_CONFIG_HOME/tmux"
-set -x TMUX_PLUGIN_MANAGER_PATH "$TMUX_HOME/plugins"
+set -U TMUX_HOME "$XDG_CONFIG_HOME/tmux"
+set -U TMUX_PLUGIN_MANAGER_PATH "$TMUX_HOME/plugins"
 
 # FZF
-set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
-set -x FZF_DEFAULT_OPTS "--multi --inline-info --height 40%"
+set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g'
+set -x FZF_DEFAULT_OPTS "--multi --inline-info --height=40% --min-height=15 --reverse"
 
 # Skim
 set -x SKIM_DEFAULT_COMMAND "sh -c 'git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f --ignore-file $XDG_CONFIG_HOME/git/ignore . $HOME'"

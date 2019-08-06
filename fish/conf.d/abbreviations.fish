@@ -8,32 +8,43 @@ abbr "chmox" "chmod +x"
 abbr "scu" "systemctl --user"
 abbr "sc" "sudo systemctl"
 
+abbr "mkd" "mkdir -pv"
+abbr "bi" "brew install"
+
+abbr "yt" "youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
+abbr "yta" "yt -x -f bestaudio/best"
+
 # Editor
 abbr "v" "nvim"
-abbr "e" "emacs -nw"
-abbr "ec" "~/bin/emacsclient -c"
+abbr "e" "$EDITOR -n"
+abbr "ec" "$EDITOR -nc"
+abbr "et" "$EDITOR -nw"
 
 # Navigation
 abbr "..." "cd ../.."
 abbr "...." "cd ../../.."
 abbr "....." "cd ../../../.."
-abbr "l" "la"
-abbr "ll" "ll -a"
+
+alias "ls" "lsd"
+abbr "l" "ls -l"
+abbr "la" "ls -aF"
+abbr "ll" "ls -alF"
+abbr "lt" "ls --tree"
 
 # Projects
-abbr "proj" 'cd $IKIGAI'
-abbr "projgc" 'cd ~/Projects'
-abbr "emc" 'cd ~/.emacs.d'
-abbr "doom" 'cd $IKIGAI/doom'
-abbr "rwa" ' cd $IKIGAI/react-web-app'
+abbr "proj" "cd ~/org/projects/"
+abbr "projgc" "cd ~/Projects/"
+abbr "rwa" "cd ~/org/projects/react-web-app"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
 abbr "dwl" 'cd $XDG_DOWNLOAD_DIR/dwl' # single quotes preserves string
 abbr "dfl" 'cd $DOTFILES'             # so that the variable is evaluated on exec
+abbr "emc" 'cd ~/.emacs.d'
 
 abbr "h" "history"
 abbr "jo" "jobs"
+abbr "k" "pkill"
 
 # Services
 abbr "bstart" "brew services start"
@@ -44,6 +55,9 @@ abbr "bsrc" "brew services restart chunkwm"
 abbr "bssc" "brew services stop chunkwm"
 abbr "bsrs" "brew services restart skhd"
 abbr "bsss" "brew services stop skhd"
+
+# Spotify
+abbr "sp" "spotify"
 
 # Git
 abbr "g" "git"
@@ -66,6 +80,3 @@ abbr "nu" "npm uninstall"
 abbr "nus" "npm uninstall --save"
 abbr "nud" "npm uninstall --save-dev"
 abbr "nug" "npm uninstall --global"
-
-# misc
-alias "cat" "bat"

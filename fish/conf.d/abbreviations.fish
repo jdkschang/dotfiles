@@ -15,7 +15,7 @@ abbr "yt" "youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
 abbr "yta" "yt -x -f bestaudio/best"
 
 # Editor
-abbr "v" "$EDITOR -n"
+abbr "v" "nvim"
 abbr "e" "$EDITOR -n"
 abbr "ec" "$EDITOR -nc"
 abbr "et" "$EDITOR -nw"

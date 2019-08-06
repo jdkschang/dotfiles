@@ -72,7 +72,7 @@ SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tkill:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tls:tmux\x20ls
 SETUVAR _fish_abbr_tnew:tmux\x20new\x20\x2ds
-SETUVAR _fish_abbr_v:emacsclient\x20\x2dn
+SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_y:pbcopy
 SETUVAR _fish_abbr_yt:youtube\x2ddl\x20\x2d\x2dadd\x2dmetadata\x20\x2di\x20\x2do\x20\x27\x25\x28upload_date\x29s\x2d\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27
 SETUVAR _fish_abbr_yta:yt\x20\x2dx\x20\x2df\x20bestaudio/best

@@ -68,7 +68,7 @@
 			 ;; (haskell +intero)  ; a language that's lazier than I am
 			 (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
 			  ledger            ; an accounting system in Emacs
-			 (lua +moonscript)
+			;;  (lua +moonscript)
 			 markdown          ; writing docs for people to ignore
 			 (org +present)         ; Emacs for presentations
 			 ;; php               ; perl's insecure younger brother

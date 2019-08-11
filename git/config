@@ -26,7 +26,7 @@
 
 [commit]
 	template = ~/.config/git/message
-	gpgSign = true
+	;; gpgSign = true
 
 [gpg]
 	program = gpg
@@ -54,6 +54,7 @@
 ;; Aliases {{{
 
 [alias]
+	aliases=!git config -l | grep '^alias' | cut -c 7- | sort
 	# list aliases
 	la = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1 => \\2/' | grep -v 'alias'| awk 'BEGIN { FS = \"=>\" }{ printf(\"%-20s=>%s\\n\", $1,$2)}'|sort"
 	sdiff = "!git diff && git submodule foreach 'git diff'"

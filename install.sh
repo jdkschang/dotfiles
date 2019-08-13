@@ -58,7 +58,6 @@ betterDefaults () {
 }
 
 echo "Updating submodules..."
-
 git submodule update --recursive --init
 
 if command -v go > /dev/null 2>&1; then

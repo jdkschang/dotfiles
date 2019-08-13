@@ -12,7 +12,7 @@ brew 'brew-cask-completion'
 
 brew 'coreutils'
 brew 'moreutils'
-brew 'findutils'
+brew 'findutils', args: ['with-default-names']
 
 brew 'cdiff'
 brew 'curl', args: ['with-openssl']
@@ -21,8 +21,8 @@ brew 'direnv'
 brew 'duti'
 brew 'emacs-plus'
 brew 'ffmpeg'
-brew 'findutils', args: ['with-default-names']
 brew 'fish'
+brew 'fnm'
 brew 'fzf'
 brew 'gcc'
 brew 'gdb'

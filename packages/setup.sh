@@ -6,7 +6,7 @@ cd "$DIR"
 
 COMMENT=\#*
 
-. ~/projects/jdkschang/dotfiles/scripts/functions.sh
+. $DIR/scripts/functions.sh
 
 sudo -v
 

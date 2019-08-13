@@ -3,7 +3,7 @@
 DIR=$(dirname "$0")
 cd "$DIR"
 
-. ~/projects/jdkschang/dotfiles/scripts/functions.sh
+. $DIR/scripts/functions.sh
 
 info "Prompting for sudo password..."
 if sudo -v; then

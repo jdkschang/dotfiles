@@ -18,12 +18,12 @@ brew cask install visual-studio-code
 # Mac OS Enhancements
 brew cask install alfred
 brew cask install bartender
-brew cask install keepingyouawake
+# brew cask install keepingyouawake
 
 # Other stuff
-brew cask install deluge
+# brew cask install deluge
 
 # Fonts
 # https://github.com/caskroom/homebrew-fonts
-brew tap caskroom/fonts
-brew cask install caskroom/fonts/font-hack
+# brew tap caskroom/fonts
+# brew cask install caskroom/fonts/font-hack

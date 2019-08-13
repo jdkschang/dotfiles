@@ -1,6 +1,7 @@
-#! /bin/sh
+#! /usr/bin/env bash
 
 DIR=$(dirname "$0")
+COMPNAME=$(scutil --get ComputerName)
 cd "$DIR"
 
 . $DIR/scripts/functions.sh
@@ -22,6 +23,17 @@ elif xcode-select --install &>/dev/null; then
 else
     error "Failed to install XCode command line tools."
 fi
+
+
+info "Setting better defaults for macOS..."
+if [[ "$COMPNAME" == "geesee" ]]; then
+    success "Better defaults have already been set."
+elif source $DIR/macos/macos.sh &>/dev/null; then
+    success "Finished installing XCode command line tools."
+else
+    error "Failed to install XCode command line tools."
+fi
+
 
 info "Installing Homebrew package manager..."
 if brew info &>/dev/null; then

@@ -4,11 +4,9 @@
 DIR=$(dirname "$0")
 cd "$DIR"
 
-echo "directory: $DIR"
+COMMENT=\#*
 
 . ~/projects/jdkschang/dotfiles/scripts/functions.sh
-
-COMMENT=\#*
 
 sudo -v
 

@@ -1,7 +1,6 @@
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
 tap 'buo/cask-upgrade'
 tap 'Schniz/tap'
 tap 'd12frosted/emacs-plus'
@@ -12,10 +11,10 @@ brew 'brew-cask-completion'
 
 brew 'coreutils'
 brew 'moreutils'
-brew 'findutils', args: ['with-default-names']
+brew 'findutils'
 
 brew 'cdiff'
-brew 'curl', args: ['with-openssl']
+brew 'curl'
 brew 'ctags'
 brew 'direnv'
 brew 'duti'
@@ -28,10 +27,10 @@ brew 'gcc'
 brew 'gdb'
 brew 'git'
 brew 'glib'
-brew 'gnu-sed', args: ['with-default-names']
+brew 'gnu-sed'
 brew 'go'
 brew 'gradle'
-brew 'grep', args: ['with-default-names']
+brew 'grep'
 brew 'hub'
 brew 'lua'
 brew 'mas'
@@ -50,7 +49,7 @@ brew 'ssh-copy-id'
 brew 'the_silver_searcher'
 brew 'tmux'
 brew 'urlview'
-brew 'wget', args: ['with-iri']
+brew 'wget'
 brew 'youtube-dl'
 
 brew 'chunkwm'

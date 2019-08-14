@@ -6,28 +6,28 @@
 
 ;; hotswap between transparencies
 (defun +jdkschang/toggle-transparency ()
-	(interactive)
-	(cond
-	 ((eq (frame-parameter nil 'alpha) solid)
-		(message "Toggling to transparent: %s" transparent)
-		(set-frame-parameter nil 'alpha transparent))
+  (interactive)
+  (cond
+   ((eq (frame-parameter nil 'alpha) solid)
+    (message "Toggling to transparent: %s" transparent)
+    (set-frame-parameter nil 'alpha transparent))
 
-	 ((eq (frame-parameter nil 'alpha) transparent)
-		(message "Toggling to solid: %s" solid)
-		(set-frame-parameter nil 'alpha solid))
+   ((eq (frame-parameter nil 'alpha) transparent)
+    (message "Toggling to solid: %s" solid)
+    (set-frame-parameter nil 'alpha solid))
 
-	 (t (message "Can't toggle transparency."))))
+   (t (message "Can't toggle transparency."))))
 
 (set-frame-parameter nil 'alpha solid)
 
 ;; Font
 (setq doom-font (font-spec :family "IBM Plex Mono" :size 12)
-			doom-big-font (font-spec :family "IBM Plex Mono" :size 19)
-			doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :slant 'italic :size 14)
-			display-line-numbers-type 'relative)
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 19)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :slant 'italic :size 14)
+      display-line-numbers-type 'relative)
 
 (defun +jdkschang/italicize-comments ()
-	(set-face-italic 'font-lock-comment-face t))
+  (set-face-italic 'font-lock-comment-face t))
 (add-hook 'doom-load-theme-hook #'+jdkschang/italicize-comments)
 
 ;; Dash highlighting

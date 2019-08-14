@@ -26,7 +26,7 @@
 
 [commit]
 	template = ~/.config/git/message
-	gpgSign = true
+	# gpgSign = true
 
 [gpg]
 	program = gpg

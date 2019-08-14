@@ -10,7 +10,6 @@
 (server-start)
 (setq-default user-full-name    "Jonathan D. Chang"
               user-mail-address "jdkschang@protonmail.com"
-              ;; fill-column 100
 
               doom-localleader-key ","
               ;; evil-shift-width 4
@@ -28,24 +27,17 @@
    (setq x-super-keysym 'meta
          x-meta-keysm 'super))
   ("geesee"
-   (font-put doom-font size: 14)))
-
-;; (when IS-LINUX
-;; 	(font-put doom-font :weight 'semi-light))
-;; ;; (when IS-MAC
-;; 	(setq ns-use-thin-smoothing t)
-;; 	(add-hook 'window-setup-hook #'toggle-frame-maximized))
-
+   (font-put doom-font size: 16)))
 
 ;; <gs SPC> works across all visible windows
 ;; useful for jumping around the screen
 (setq avy-all-windows t)
 
 ;; gpg security
-;; (setenv "GPG_AGENT_INFO" nil)
 (setq auth-sources
-      '((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
+      '((:source "~/.config/gpg/authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
+(pinentry-start)
 
 (defadvice epg--start (around advice-epg-disable-agent disable)
   "Don't allow epg--start to use gpg-agent in plain text
@@ -65,8 +57,6 @@
 
 ;; emacs/term
 ;; set fish as my default shell
-;; (after! multi-term
-;; 	(setq multi-term-program "/usr/local/bin/fish"))
 
 ;; lang/sh
 ;; setup flycheck-checkbashisms

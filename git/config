@@ -26,7 +26,7 @@
 
 [commit]
 	template = ~/.config/git/message
-	# gpgSign = true
+	gpgSign = true
 
 [gpg]
 	program = gpg
@@ -119,6 +119,8 @@
 
 	# unstage all changes
 	unstage = reset HEAD --
+	undo-commit = reset --soft
+	clean = reset --hard
 
 	# Rebase/ Merge
 	# Interactive rebase with the given number of latest commits

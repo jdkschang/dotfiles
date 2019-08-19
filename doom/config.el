@@ -37,7 +37,7 @@
 (setq auth-sources
       '((:source "~/.config/gpg/authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
-(pinentry-start)
+;; (pinentry-start)
 
 (defadvice epg--start (around advice-epg-disable-agent disable)
   "Don't allow epg--start to use gpg-agent in plain text

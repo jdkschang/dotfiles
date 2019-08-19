@@ -14,6 +14,6 @@
         +magit-hub-features t ;; I want the PR/issue stuff too!
         +magit-hub-enable-by-default t))  ;; And I want it on by default!
 
-(after! magithub
-  (setq magithub-preferred-remote-method 'git_url
-        magithub-clone-default-directory "~/src/github.com"))
+;; (after! magithub
+;;   (setq magithub-preferred-remote-method 'git_url
+;;         magithub-clone-default-directory "~/src/github.com"))

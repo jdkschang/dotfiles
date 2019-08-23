@@ -2,15 +2,15 @@
 
 ;;;###autoload
 (defun +jdkschang/find-in-dotfiles ()
-  "Open a file somewhere in ~/dotfiles via a fuzzy filename search."
+  "Open a file somewhere in ~/.dotfiles via a fuzzy filename search."
   (interactive)
-  (doom-project-find-file (expand-file-name "~/org/projects/dotfiles")))
+  (doom-project-find-file (expand-file-name "~/projects/jdkschang/dotfiles")))
 
 ;;;###autoload
 (defun +jdkschang/browse-dotfiles ()
-  "Browse the files in ~/dotfiles."
+  "Browse the files in ~/.dotfiles."
   (interactive)
-  (doom-project-browse (expand-file-name "~/org/projects/dotfiles")))
+  (doom-project-browse (expand-file-name "~/projects/jdkschang/dotfiles")))
 
 ;; (defun +jdkschang/find-notes-for-major-mode (&optional arg)
 ;;   "TODO"

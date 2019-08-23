@@ -21,10 +21,9 @@
 (set-frame-parameter nil 'alpha solid)
 
 ;; Font
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 12)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 19)
-      doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :slant 'italic :size 14)
-      display-line-numbers-type 'relative)
+(setq doom-font (font-spec :family "IBM Plex Mono" :size 16)
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 20)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :slant 'italic :size 18))
 
 (defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))

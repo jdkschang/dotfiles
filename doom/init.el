@@ -2,7 +2,8 @@
 
 (doom! :completion
        (company +auto)
-       (helm +auto +fuzzy)
+       (ivy +childframe
+            +prescient)
 
        :ui
        doom
@@ -27,7 +28,7 @@
        fold
        (format +onsave)
        multiple-cursors
-       ;; parinfer
+       parinfer
        rotate-text       ; cycle region at point between text candidates
        snippets
 
@@ -50,7 +51,7 @@
        eval
        (flycheck +childframe)
        flyspell
-       (lookup +docsets)
+       (lookup +docsets +devdocs)
        lsp
        magit
        macos
@@ -65,12 +66,17 @@
        ;; elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        ;; go                ; the hipster dialect
-       ;; (haskell +intero)  ; a language that's lazier than I am
+       (haskell +intero)  ; a language that's lazier than I am
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
        ;;  (lua +moonscript)
        markdown          ; writing docs for people to ignore
-       (org +present)         ; Emacs for presentations
+       (org +attach
+            +babel
+            +capture
+            +export
+            +present         ; Emacs for presentations
+            +publish)
        ;; php               ; perl's insecure younger brother
        (python +pyenv +lsp)            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
@@ -89,4 +95,4 @@
        ;; provides a Spacemacs-inspired keybinding scheme, a custom yasnippet
        ;; library, and additional ex commands for evil-mode. Use it as a
        ;; reference for your own modules.
-       (default +bindings +smartparens))
+       (default +bindings +snippets +evil-commands +smartparens))

@@ -75,7 +75,6 @@ config.codekit
 .git/
 .cask/
 .local/
-chromium/
 void-packages/
 usr/
 tmp/

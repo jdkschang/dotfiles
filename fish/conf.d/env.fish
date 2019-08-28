@@ -16,8 +16,8 @@ set -x GOPATH "$HOME/go"
 set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gpg"
 
-set -x IKIGAI "$HOME/org/projects"
-set -x DOTFILES "$IKIGAI/dotfiles"
+set -x IKIGAI "$HOME/projects"
+set -x DOTFILES "$IKIGAI/jdkschang/dotfiles"
 
 # GPG
 set -x GPG_TTY (tty)
@@ -61,4 +61,4 @@ set -x LDFLAGS "-L/usr/local/opt/llvm/lib"
 set -x CPPFLAGS "-I/usr/local/opt/llvm/include"
 
 # Path
-set -U fish_user_paths "$HOME/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/opt/coreutils/libexec/gnubin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin"
+set -U fish_user_paths "$HOME/bin" "$HOME/.local/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/opt/findutils/libexec/gnubin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin"

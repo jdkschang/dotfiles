@@ -18,5 +18,5 @@
 ;; Better window sizing
 (package! golden-ratio)
 
-(package! flycheck-moonscript
-  :recipe (:host github :repo "hlissner/emacs-flycheck-moonscript"))
+;; (package! flycheck-moonscript
+;;   :recipe (:host github :repo "hlissner/emacs-flycheck-moonscript"))

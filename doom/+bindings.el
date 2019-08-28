@@ -34,6 +34,8 @@
         :nmvi "s-8" (λ! (+workspace/switch-to 7))
         :nmvi "s-9" (λ! (+workspace/switch-to 8)))
 
+      :nmvi "s-d" #'evil-multiedit-match-symbol-and-next
+
       ;; toggle transparency
       :gnvime "s-u" #'+jdkschang/toggle-transparency
       :n "J" 'evil-join

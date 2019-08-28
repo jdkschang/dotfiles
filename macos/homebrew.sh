@@ -84,7 +84,7 @@ brew install ledger # cli finance
 brew install gnupg # secure sign
 brew install ncdu # prettier du (diskutil)
 brew install shpotify # cli spotify
-brew install tdlr # dummy for descriptions
+brew install tldr # dummy for descriptions
 brew install tree
 brew install yarn
 brew install youtube-dl

@@ -2,8 +2,8 @@
 
 (after! org
   (add-to-list 'org-modules 'org-habit t)
-  (setq
-   org-directory (expand-file-name "~/org/")
+
+  (setq org-directory (expand-file-name "~/Dropbox/org/")
    org-agenda-files (list org-directory)
    org-ellipsis " ⤵ "
 

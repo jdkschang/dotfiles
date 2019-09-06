@@ -38,7 +38,7 @@
 
       ;; toggle transparency
       :gnvime "s-u" #'+jdkschang/toggle-transparency
-      :n "J" 'evil-join
+      :n "J" #'evil-join
 
 
       :leader

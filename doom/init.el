@@ -59,7 +59,7 @@
 
        :lang
        (cc +lsp)                ; C/C++/Obj-C madness
-       ;; clojure           ; java with a lisp
+       clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age

@@ -24,6 +24,7 @@
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 ;; henrik code snippet
+;; patch for workspaces to not load correctly on session reload
 (after! persp-mode
   (remove-hook 'persp-filter-save-buffers-functions #'buffer-live-p)
 
@@ -37,7 +38,7 @@
 
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-(add-hook 'prog-mode-hook #'global-origami-mode)
+;; (add-hook 'prog-mode-hook #'global-origami-mode)
 
 ;; lang/sh
 ;; setup flycheck-checkbashisms

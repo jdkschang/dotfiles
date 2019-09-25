@@ -16,6 +16,9 @@
       ;; lsp-ui-sideline is redundant with eldoc and more invasive
       ;; disable by default
       lsp-ui-sideline-enable nil
+      lsp-enable-indentation nil
+      lsp-enable-on-type-formatting nil
+      lsp-enable-symbol-highlighting nil
 
       +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
       +format-on-save-enabled-modes '(not emacs-lisp-mode))

@@ -1,0 +1,43 @@
+#+TITLE: bootstrap
+
+* Project Clean Install
+** Description
+Given a clean installed macOS, automate installation and set personal configurations:
+- Better defaults
+- Shell
+- Editor
+- Tools
+** Problem
+Transitioning to a newly clean installed machine produces many headaches because
+the user may not have correctly synced their previous hodgepodge of settings to
+the new machine. This includes and is not limited to manipulation of native
+system settings, shell scripts, editor configurations, fonts, etc.
+** Why
+When approaching software development through the perspective of a crafstman:
+- respect the chain of tools enough to persist a consistent behavior across many
+  environments available to the crafstman
+- remove the tediousness of installing each relevant application one by one
+** Success
+Given a clean installed macOS, this project will be considered featured complete
+for v1 when better defaults, shell, editor, and other tools are installed.
+*** install.sh starts process to set up:better macOS defaults
+**** better macOS defaults
+**** shell (iTerm2) and configurations
+**** editor (Emacs) and configurations (Doom)
+**** misc tools (Brewfile, Cask, Mas)
+*** Create directory structure ([[https://wiki.archlinux.org/index.php/XDG_Base_Directory][XDG Base Directory Structure]])
+**** XDG_CONFIG_HOME - $HOME/.config
+**** XDG_CACHE_HOME  - $HOME/.cache
+**** XDG_DATA_HOME   - $HOME/.local/share
+*** Symlink dotfiles
+** Audience
+For macOS users interested in having a consistent development environment
+consisting of Emacs, iTerm2, and a standard XDG directory structure
+** What
+A simple install script will lead the user through a serious of prompts that
+will set up the machine with personal configurations
+** How
+Set up a core install executable file that hosts and prompts other processes
+** Proposed Timeline
+When does it ship and what are the milestones?
+

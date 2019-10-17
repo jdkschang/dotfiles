@@ -1,7 +1,7 @@
 [user]
 	name = Jonathan D. Chang
 	email = jdkschang@protonmail.com
-	signingKey = F25BE343AF08C240
+	signingKey = 50C3D91E4C96CE4A
 
 [core]
 	filemode = true

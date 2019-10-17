@@ -7,7 +7,7 @@
 
 (server-start)
 (setq user-full-name    "Jonathan D. Chang"
-      user-mail-address "jdkschang@protonmail.com"
+      user-mail-address "jdkschang@apple.com"
       epa-file-encrypt-to user-mail-address
 
       ;; On-demand code completion turned off

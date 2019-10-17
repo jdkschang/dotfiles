@@ -9,14 +9,11 @@ Host github.com
   IdentityFile ~/.ssh/github-personal
 
 # Work
-Host gc-local
-  Hostname 192.168.10.48
-  User dmitri
-  LocalForward 3000 192.168.10.48:3000
-
-Host geesee
-  Hostname 192.168.10.48
-  User dmitri
+# Apple
+Host apple.github
+  HostName github.pie.apple.com
+  PreferredAuthentications publickey,keyboard-interactive,password
+  IdentityFile ~/.ssh/apple
 
 Host *
   User dmitri

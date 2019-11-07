@@ -10,11 +10,11 @@
   (cond
    ((eq (frame-parameter nil 'alpha) solid)
     (message "Toggling to transparent: %s" transparent)
-    (set-frame-parameter nil 'alpha transparent))
+    (doom/set-frame-opacity transparent))
 
    ((eq (frame-parameter nil 'alpha) transparent)
     (message "Toggling to solid: %s" solid)
-    (set-frame-parameter nil 'alpha solid))
+    (doom/set-frame-opacity solid))
 
    (t (message "Can't toggle transparency."))))
 

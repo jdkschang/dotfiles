@@ -2,18 +2,18 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
 
+# Work Github
+Host apple
+  HostName github.pie.apple.com
+  PreferredAuthentications publickey,keyboard-interactive,password
+  IdentityFile ~/.ssh/apple
+
 # Personal GitHub
 Host github.com
   HostName github.com
   PreferredAuthentications publickey,keyboard-interactive,password
   IdentityFile ~/.ssh/github-personal
 
-# Work
-# Apple
-Host apple.github
-  HostName github.pie.apple.com
-  PreferredAuthentications publickey,keyboard-interactive,password
-  IdentityFile ~/.ssh/apple
 
 Host *
   User dmitri

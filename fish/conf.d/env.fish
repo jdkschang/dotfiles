@@ -23,7 +23,7 @@ set -x DOTFILES "$IKIGAI/jdkschang/dotfiles"
 set -x GPG_TTY (tty)
 
 # Default programs
-set -x BROWSER "firefox"
+set -x BROWSER "chrome"
 set -U EDITOR "emacsclient"
 # set -gx MANPAGER "nvim -c 'set ft=man' -"
 set -x SHELL "/usr/local/bin/fish"

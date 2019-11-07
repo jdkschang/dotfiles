@@ -13,6 +13,8 @@
       ;; On-demand code completion turned off
       ;; company-idle-delay nil
 
+      doom-large-file-size 1
+
       ;; lsp-ui-sideline is redundant with eldoc and more invasive
       ;; disable by default
       lsp-ui-sideline-enable nil
@@ -39,7 +41,6 @@
 ;; useful for jumping around the screen
 (setq avy-all-windows t)
 
-
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 ;; (add-hook 'prog-mode-hook #'global-origami-mode)
 
@@ -47,7 +48,7 @@
 ;; setup flycheck-checkbashisms
 ;; flycheck checker for checking files beginning with #!/bin/sh
 ;; which also contain code exclusive to bash requires: checkbashism
-(def-package! flycheck-checkbashisms
+(use-package! flycheck-checkbashisms
   :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
   :after sh-mode
   :hook (flycheck-mode . flycheck-checkbashisms-setup))

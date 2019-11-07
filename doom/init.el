@@ -76,6 +76,7 @@
             +capture
             +export
             +present         ; Emacs for presentations
+            +protocol
             +publish)
        ;; php               ; perl's insecure younger brother
        (python +pyenv +lsp)            ; beautiful is better than ugly

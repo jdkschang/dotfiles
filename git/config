@@ -9,8 +9,10 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	whitespace = trailing-space
 
-
 [github]
+	user = jdkschang
+
+[github "api.github.pie.apple.com"]
 	user = jdkschang
 
 [commit]

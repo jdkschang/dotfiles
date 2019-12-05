@@ -9,7 +9,7 @@
        doom
        doom-dashboard
        hl-todo
-       indent-guides
+       ;; indent-guides
        modeline
        nav-flash
        ophints
@@ -35,6 +35,7 @@
        :emacs
        dired
        electric          ; smarter, keyword-based electric-indent
+       ibuffer           ; interactive buffer management
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -48,19 +49,19 @@
        direnv
        docker
        editorconfig
-       eval
+       (eval +overlay)
        (flycheck +childframe)
        flyspell
-       (lookup +docsets +devdocs)
+       (lookup +docsets)
        lsp
        magit
        macos
-       pdf
+       ;; pdf
 
        :lang
        (cc +lsp)                ; C/C++/Obj-C madness
        clojure           ; java with a lisp
-       common-lisp       ; if you've seen one lisp, you've seen them all
+       ;; common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age
        ;; elixir            ; erlang done right
@@ -69,7 +70,7 @@
        (haskell +intero)  ; a language that's lazier than I am
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
-       ;;  (lua +moonscript)
+       (lua +moonscript)
        markdown          ; writing docs for people to ignore
        (org +attach
             +babel
@@ -80,7 +81,7 @@
             +publish)
        ;; php               ; perl's insecure younger brother
        (python +pyenv +lsp)            ; beautiful is better than ugly
-       rest              ; Emacs as a REST client
+       ;; rest              ; Emacs as a REST client
        (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        web               ; the tubes

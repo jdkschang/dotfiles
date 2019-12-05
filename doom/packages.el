@@ -4,9 +4,6 @@
 ;; feature/snippets
 (package! yasnippet-snippets)
 
-;; lang/sh
-(package! flycheck-checkbashisms)
-
 ;; tools/tldr
 (package! tldr)
 
@@ -18,7 +15,7 @@
 ;; Better window sizing
 (package! golden-ratio)
 
-(use-package forge
+(use-package! forge
   :after magit)
 ;; (use-package lsp-python-ms
 ;;   :ensure t

@@ -1,8 +1,10 @@
 ;;; ~/projects/jdkschang/dotfiles/doom/+magit.el -*- lexical-binding: t; -*-
 
 (after! magit
-  (setq magit-save-repository-buffers nil
-        magit-repository-directories '(("~/projects" . 3))
+  (setq magit-repository-directories '(("~/projects" . 2))
+        magit-save-repository-buffers nil
+        ;; don't restore the wconf after quitting magit
+        magit-inhibit-save-previous-winconf t
         transient-values '((magit-commit "--gpg-sign=50C3D91E4C96CE4A")
                            (magit-rebase "--autosquash" "--gpg-sign=50C3D91E4C96CE4A")
                            (magit-pull   "--rebase" "--gpg-sign=50C3D91E4C96CE4A"))

@@ -38,7 +38,9 @@
 	rebase = true
 
 [rebase]
-	autosquash = true
+	autostash = true
+	interactive = true
+	rebase-merges = true
 
 [diff]
 	tool = patience

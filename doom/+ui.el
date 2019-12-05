@@ -18,7 +18,7 @@
 
    (t (message "Can't toggle transparency."))))
 
-(set-frame-parameter nil 'alpha solid)
+(doom/set-frame-opacity transparent)
 
 ;; Font
 (setq doom-font (font-spec :family "IBM Plex Mono" :size 15)
@@ -27,7 +27,6 @@
 
 (defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))
+
 (add-hook 'doom-load-theme-hook #'+jdkschang/italicize-comments)
 
-;; Dash highlighting
-(after! dash (dash-enable-font-lock))

@@ -31,11 +31,14 @@
       ;; useful for jumping around the screen
       avy-all-windows t
 
+      projectile-project-search-path '("~/projects/jdkschang" "~/projects/apple")
+
       +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
       +format-on-save-enabled-modes '(not emacs-lisp-mode))
 
 ;;; Frames/Windows
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
 
 ;; henrik code snippet
 ;; patch for workspaces to not load correctly on session reload

@@ -15,6 +15,7 @@
 ;; Better window sizing
 (package! golden-ratio)
 
+(package! git-timemachine)
 (use-package! forge
   :after magit)
 ;; (use-package lsp-python-ms

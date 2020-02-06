@@ -1,7 +1,10 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
+;; fix for *ERROR*: Symbol's value as variable is void
+;; https://github.com/hlissner/doom-emacs/issues/2479
+(defvar-local projectile-project-root nil)
 (doom! :completion
-       (company +auto)
+       (company +childframe)
        (ivy +childframe
             +prescient)
 
@@ -60,17 +63,17 @@
 
        :lang
        (cc +lsp)                ; C/C++/Obj-C madness
-       clojure           ; java with a lisp
+       ;; clojure           ; java with a lisp
        ;; common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age
        ;; elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses
        ;; go                ; the hipster dialect
-       (haskell +intero)  ; a language that's lazier than I am
+       ;; (haskell +intero)  ; a language that's lazier than I am
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ledger            ; an accounting system in Emacs
-       (lua +moonscript)
+       ;; (lua +moonscript)
        markdown          ; writing docs for people to ignore
        (org +attach
             +babel

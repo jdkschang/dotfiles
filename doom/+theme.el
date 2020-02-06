@@ -17,7 +17,7 @@
 
 ;; Setting light & dark themes
 (defvar light-theme 'doom-solarized-light) ; doom-nord-light doom-one-light doom-solarized-light
-(defvar dark-theme 'doom-gruvbox) ; doom-one doom-molokai doom-opera
+(defvar dark-theme 'doom-Iosvkem) ; doom-one doom-molokai doom-opera doom-Iosvkem doom-gruvbox
                                         ; doom-city-lights doom-peacock doom-fairy-floss
 
 ;; System agnostic default theme choice goes here:

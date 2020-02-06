@@ -55,6 +55,38 @@
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
+;; Trying to be more friendly for .ts & .tsx files
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(after! typescript-mode
+  (require 'web-mode)
+  (add-hook 'typescript-mode-hook #'flycheck-mode))
+
+(setq +set-eslint-checker nil)
+(after! lsp-ui
+  ;; for w/e reason this is running twice
+  (setq lsp-ui-sideline-show-hover t)
+  (when (not +set-eslint-checker)
+    (progn
+      (setq +set-eslint-checker t)
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-next-checker 'lsp-ui '(warning . javascript-eslint)))))
+
+(after! web-mode
+  (add-hook 'web-mode-hook #'flycheck-mode)
+  (setq web-mode-markup-indent-offset 4
+        web-mode-code-indent-offset 4
+        web-mode-enable-auto-quoting nil
+        web-mode-auto-close-style 2))
+
+(after! lsp
+  ;; These take up a lot of space on my big font size
+  (setq lsp-ui-sideline-show-code-actions nil
+        lsp-ui-sideline-show-diagnostics nil
+        lsp-signature-render-all nil))
+
+(after! web-mode
+  (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
+  (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

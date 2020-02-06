@@ -21,9 +21,9 @@
 (doom/set-frame-opacity transparent)
 
 ;; Font
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 15)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 20)
-      doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :slant 'italic :size 17))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 20)
+      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :slant 'italic :size 17))
 
 (defun +jdkschang/italicize-comments ()
   (set-face-italic 'font-lock-comment-face t))

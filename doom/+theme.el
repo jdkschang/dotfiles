@@ -21,7 +21,7 @@
                                         ; doom-city-lights doom-peacock doom-fairy-floss
 
 ;; System agnostic default theme choice goes here:
-(setq doom-theme light-theme)
+(setq doom-theme dark-theme)
 
 ;; hotswap between themes
 (defun +jdkschang/toggle-theme ()

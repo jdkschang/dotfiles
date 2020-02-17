@@ -43,6 +43,34 @@
    ;; log time when things are marked as done
    org-log-done 'time)
 
+  (appendq! +pretty-code-symbols
+            '(:checkbox   "☐"
+              :pending    "◼"
+              :checkedbox "☑"
+              :results "🠶"
+              :property "☸"
+              :option "⌥"
+              :title "𝙏"
+              :author "𝘼"
+              :date "𝘿"
+              :begin_quote "❮"
+              :end_quote "❯"
+              :em_dash "—"))
+  (set-pretty-symbols! 'org-mode
+    :merge t
+    :checkbox   "[ ]"
+    :pending    "[-]"
+    :checkedbox "[X]"
+    :results "#+RESULTS:"
+    :property "#+PROPERTY:"
+    :option "#+OPTION:"
+    :title "#+TITLE:"
+    :author "#+AUTHOR:"
+    :date "#+DATE:"
+    :begin_quote "#+BEGIN_QUOTE"
+    :end_quote "#+END_QUOTE"
+    :em_dash "---")
+
   (map!
    :desc "Create/Edit Todo" :nve "C-c t" #'org-todo
    :desc "Store Link" :nve "C-c l" #'org-store-link
@@ -114,3 +142,5 @@
   (interactive)
   "Opens the GTD file"
   (find-file +gtd))
+
+(plist-put +pretty-code-symbols :name "⁍")

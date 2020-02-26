@@ -86,16 +86,7 @@
 
    (:leader
      ;; main todo <SPC O>
-     :desc "Open Inbox" :nvm "I" #'+open-inbox
-     :desc "Open GTD" :nvm "G" #'+open-gtd)
-   ;; daypage <SPC n o/O>
-   ;;  (:prefix "n"
-   ;; 	 :nv "o" #'todays-daypage
-   ;; 	 :nv "O" #'find-daypage)
-   ;; agenda <SPC o a/A>
-   ;;  (:prefix "o"
-   ;; 	 :desc "Org Agenda" :nvm "a" #'org-agenda-list
-   ;; 	 :desc "Org Agenda and Notes" :nvm "A" #'+show-agenda))
+     :desc "Open Inbox" :nvm "I" #'+open-inbox)
 
    (:localleader
      :map evil-org-mode-map
@@ -138,9 +129,5 @@
   "Opens the Inbox"
   (find-file +inbox))
 
-(defun +open-gtd ()
-  (interactive)
-  "Opens the GTD file"
-  (find-file +gtd))
 
 (plist-put +pretty-code-symbols :name "⁍")

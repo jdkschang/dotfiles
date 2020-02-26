@@ -13,6 +13,7 @@
       company-idle-delay nil
 
       doom-large-file-size 1
+      doom-scratch-buffer-major-mode 'org-mode
 
       ;; lsp-ui-sideline is redundant with eldoc and more invasive
       ;; disable by default
@@ -39,6 +40,11 @@
 ;;; Frames/Windows
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
+(use-package! zetteldeft
+  :after deft)
+
+(use-package! forge
+  :after magit)
 
 ;; henrik code snippet
 ;; patch for workspaces to not load correctly on session reload

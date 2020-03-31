@@ -33,12 +33,13 @@ abbr "lt" "ls --tree"
 
 # Projects
 abbr "proj" "cd ~/projects/"
-abbr "rwa" "cd ~/projects/react-web-app"
+abbr "popf" "cd ~/projects/apple/population-frontend/population"
+abbr "popb" "cd ~/projects/apple/population-backend/population"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"
 abbr "dwl" 'cd $XDG_DOWNLOAD_DIR/dwl' # single quotes preserves string
-abbr "dfl" 'cd $DOTFILES'             # so that the variable is evaluated on exec
+abbr "dfl" 'cd $DOTFILES' # so that the variable is evaluated on exec
 abbr "emc" 'cd ~/.emacs.d'
 
 abbr "h" "history"
@@ -79,3 +80,6 @@ abbr "nu" "npm uninstall"
 abbr "nus" "npm uninstall --save"
 abbr "nud" "npm uninstall --save-dev"
 abbr "nug" "npm uninstall --global"
+
+# python
+abbr "pap" "pyenv activate pop"

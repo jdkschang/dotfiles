@@ -46,6 +46,12 @@
 (use-package! forge
   :after magit)
 
+;; (use-package! lsp-python-ms
+;;   :ensure t
+;;   :hook (python-mode . (lambda ()
+;;                          (require 'lsp-python-ms
+;;                                   (lsp)))))
+
 ;; henrik code snippet
 ;; patch for workspaces to not load correctly on session reload
 (after! persp-mode

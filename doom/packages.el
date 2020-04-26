@@ -10,6 +10,7 @@
 ;; Better folds
 (package! origami)
 
+(package! emojify)
 (package! move-text)
 
 ;; Better window sizing

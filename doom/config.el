@@ -62,6 +62,7 @@
   (add-hook 'persp-filter-save-buffers-functions #'+workspaces-dead-buffer-p))
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
+(add-hook 'after-init-hook #'global-emojify-mode) ;; Enable emojis
 
 ;; Load snippets
 (after! yasnippet

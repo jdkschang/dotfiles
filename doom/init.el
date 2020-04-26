@@ -35,6 +35,10 @@
        rotate-text       ; cycle region at point between text candidates
        snippets
 
+       :checkers
+       (syntax +childframe)
+       spell
+
        :emacs
        dired
        electric          ; smarter, keyword-based electric-indent
@@ -53,11 +57,9 @@
        docker
        editorconfig
        (eval +overlay)
-       (flycheck +childframe)
-       flyspell
        (lookup +docsets)
        lsp
-       magit
+       (magit +forge)
        macos
        ;; pdf
 

@@ -43,8 +43,8 @@
 (use-package! zetteldeft
   :after deft)
 
-(use-package! forge
-  :after magit)
+;; (use-package! forge
+  ;; :after magit)
 
 ;; (use-package! lsp-python-ms
 ;;   :ensure t

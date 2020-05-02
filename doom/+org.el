@@ -37,7 +37,7 @@
                                  "DONE(d)"
                                  "CANCELLED(c)"))
    org-agenda-custom-commands '(("o" "At the Office" tags-todo "@work"
-                                 ((org-agenda-overriding-header "Geesee:")
+                                 ((org-agenda-overriding-header "Apple:")
                                   (org-agenda-skip-function #'+jdkschang/org-agenda-skip-all-siblings-but-first))))
    ;; org-export-with-toc nil
    ;; log time when things are marked as done

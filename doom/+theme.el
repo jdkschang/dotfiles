@@ -6,14 +6,11 @@
 ;;;;;
 
 ;; (load-theme 'doom-ayu-light)
-
 (doom-themes-visual-bell-config)
 
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
 (doom-themes-org-config)
-
-
 
 ;; Setting light & dark themes
 (defvar light-theme 'doom-solarized-light) ; doom-nord-light doom-one-light doom-solarized-light
@@ -21,7 +18,7 @@
                                         ; doom-city-lights doom-peacock doom-fairy-floss
 
 ;; System agnostic default theme choice goes here:
-(setq doom-theme dark-theme)
+(setq doom-theme light-theme)
 
 ;; hotswap between themes
 (defun +jdkschang/toggle-theme ()

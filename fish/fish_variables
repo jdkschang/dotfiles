@@ -20,6 +20,7 @@ SETUVAR Z_EXCLUDE:/Users/dmitri
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e
 SETUVAR _fish_abbr__2E_2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e
 SETUVAR _fish_abbr__2E_2E_2E_2E_2E_:cd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e/\x2e\x2e
@@ -62,6 +63,7 @@ SETUVAR _fish_abbr_p:pbpaste
 SETUVAR _fish_abbr_pap:pyenv\x20activate\x20pop
 SETUVAR _fish_abbr_popb:cd\x20\x7e/projects/apple/population\x2dbackend/population
 SETUVAR _fish_abbr_popf:cd\x20\x7e/projects/apple/population\x2dfrontend/population
+SETUVAR _fish_abbr_popr:cd\x20\x7e/projects/apple/resources/population
 SETUVAR _fish_abbr_proj:cd\x20\x7e/projects/
 SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects/
 SETUVAR _fish_abbr_rwa:cd\x20\x7e/projects/react\x2dweb\x2dapp
@@ -84,6 +86,7 @@ SETUVAR cmd_duration:0
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_greeting:\x1d

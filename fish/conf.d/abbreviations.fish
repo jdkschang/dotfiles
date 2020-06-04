@@ -35,6 +35,7 @@ abbr "lt" "ls --tree"
 abbr "proj" "cd ~/projects/"
 abbr "popf" "cd ~/projects/apple/population-frontend/population"
 abbr "popb" "cd ~/projects/apple/population-backend/population"
+abbr "popr" "cd ~/projects/apple/resources/population"
 
 # Shortcuts
 abbr "dl" "cd ~/Downloads"

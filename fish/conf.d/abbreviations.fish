@@ -85,3 +85,6 @@ abbr "nug" "npm uninstall --global"
 
 # python
 abbr "pap" "pyenv activate pop"
+
+# terraform
+abbr "tf" "terraform"

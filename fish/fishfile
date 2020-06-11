@@ -6,3 +6,4 @@ edc/bass
 barnybug/docker-fish-completion
 fisherman/pipenv
 rafaelrinaldi/pure
+oh-my-fish/plugin-aws

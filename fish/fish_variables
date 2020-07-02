@@ -76,6 +76,10 @@ SETUVAR _fish_abbr_tat:tmux\x20attach\x20\x2dt
 SETUVAR _fish_abbr_tatt:new\x2dtmux\x2dfrom\x2ddir\x2dname
 SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tf:terraform
+SETUVAR _fish_abbr_tfa:terraform\x20apply
+SETUVAR _fish_abbr_tfaa:terraform\x20apply\x20\x2dauto\x2dapprove
+SETUVAR _fish_abbr_tfd:terraform\x20destroy
+SETUVAR _fish_abbr_tfda:terraform\x20destroy\x20\x2dauto\x2dapprove
 SETUVAR _fish_abbr_tinit:source\x20\x24DOTFILES/tmux/scripts/tmux\x2efish
 SETUVAR _fish_abbr_tkill:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tls:tmux\x20ls

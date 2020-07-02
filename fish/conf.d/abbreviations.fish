@@ -17,8 +17,8 @@ abbr "yta" "yt -x -f bestaudio/best"
 # Editor
 abbr "v" "nvim"
 abbr "e" "$EDITOR -n"
-abbr "ec" "$EDITOR -nc"
-abbr "et" "$EDITOR -nw"
+# abbr "ec" "$EDITOR -nc"
+# abbr "et" "$EDITOR -nw"
 
 # Navigation
 abbr "..." "cd ../.."
@@ -88,3 +88,7 @@ abbr "pap" "pyenv activate pop"
 
 # terraform
 abbr "tf" "terraform"
+abbr "tfa" "terraform apply"
+abbr "tfaa" "terraform apply -auto-approve"
+abbr "tfd" "terraform destroy"
+abbr "tfda" "terraform destroy -auto-approve"

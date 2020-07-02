@@ -8,6 +8,9 @@
       :n "C-k" #'evil-window-up
       :n "C-l" #'evil-window-right
 
+      :n [mouse-8] #'better-jumper-jump-backward
+      :n [mouse-9] #'better-jumper-jump-forward
+
       (:map vterm-mode-map
         ;; Easier window movement
         :i "C-h" #'evil-window-left
@@ -40,6 +43,8 @@
       :gnvime "s-u" #'+jdkschang/toggle-transparency
       :n "J" #'evil-join
 
+      (:map evil-window-map
+        "SPC" #'rotate-layout)
 
       :leader
       "`" #'evil-switch-to-windows-last-buffer

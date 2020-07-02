@@ -5,13 +5,18 @@
       user-mail-address "jdkschang@apple.com"
       epa-file-encrypt-to user-mail-address
 
-      ;; Line numbers are pretty slow all around. The performance boost of
-      ;; disabling them outweighs utility of keeping them on.
-      display-line-numbers-type nil
+      auth-sources '("~/.authinfo.gpg")
+      auth-source-cache-expiry nil
+      display-line-numbers-type 'relative
 
-      ;; On-demand code completion turned off
-      company-idle-delay nil
+      undo-limit 80000000 ; Raise undo-limit to 80Mb
+      evil-want-fine-undo t
+      auto-save-default t
+      inhibit-compacting-font-caches t
+      truncate-string-ellipsis "…"
 
+      doom-fallback-buffer-name "► Doom"
+      +doom-dashboard-name "► Doom"
       doom-large-file-size 1
       doom-scratch-buffer-major-mode 'org-mode
 
@@ -28,6 +33,9 @@
       mode-line-default-help-echo nil
       show-help-function nil
 
+      +ivy-buffer-preview t
+      ivy-read-action-function #'ivy-hydra-read-action
+      ivy-sort-max-size 50000
       ;; <gs SPC> works across all visible windows
       ;; useful for jumping around the screen
       avy-all-windows t
@@ -37,12 +45,49 @@
       +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
       +format-on-save-enabled-modes '(not emacs-lisp-mode))
 
+(setq-default
+ delete-by-moving-to-trash t
+ tab-width 4
+ uniquify-buffer-name-style 'forward
+ window-combination-resize t
+ x-stretch-cursor t
+ major-mode 'org-mode)
+
+
 ;;; Frames/Windows
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+(delete-selection-mode 1)                         ; Replace selection when inserting text
+(display-time-mode 1)                             ; Enable time in the mode-line
+(unless (equal "Battery status not avalible"
+               (battery))
+  (display-battery-mode 1))                       ; On laptops it's nice to know how much power you have
+(global-subword-mode 1)                           ; Iterate through CamelCase words
+
 
 (use-package! zetteldeft
   :after deft)
 
+(after! company
+  ;; On-demand code completion turned off
+  (setq company-idle-delay 0.5
+       company-minimum-prefix-length 2
+       company-show-numbers t)
+
+  (add-hook 'evil-normal-state-entry-hook #'company-abort))
+
+(set-company-backend! '(text-mode
+                        markdown-mode
+                        gfm-mode)
+  '(:seperate company-ispell
+              company-files
+              company-yasnippet))
+
+(setq-default history-length 1000)
+(setq-default prescient-history-length 1000)
+
+(after! lsp-python-ms
+  (set-lsp-priority! 'mspyls 1))
 
 ;; henrik code snippet
 ;; patch for workspaces to not load correctly on session reload
@@ -92,6 +137,47 @@
 (after! web-mode
   (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
   (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
+
+(add-hook! (gfm-mode markdown-mode) #'mixed-pitch-mode)
+
+(after! flyspell (require 'flyspell-lazy) (flyspell-lazy-mode 1))
+
+(use-package! info-colors
+  :commands (info-colors-fontify-node))
+
+(add-hook 'Info-selection-hook 'info-colors-fontify-node)
+
+(add-hook 'Info-mode-hook #'mixed-pitch-mode)
+
+(setq ledger-mode-should-check-version nil
+      ledger-report-links-in-register nil
+      ledger-binary-path "hledger")
+
+(setq authinfo-keywords
+      '(("^#.*" . font-lock-comment-face)
+        ("^\\(machine\\) \\([^ \t\n]+\\)"
+         (1 font-lock-variable-name-face)
+         (2 font-lock-builtin-face))
+        ("\\(login\\) \\([^ \t\n]+\\)"
+         (1 font-lock-keyword-face)
+         (2 font-lock-string-face))
+        ("\\(password\\) \\([^ \t\n]+\\)"
+         (1 font-lock-constant-face)
+         (2 font-lock-doc-face))
+        ("\\(port\\) \\([^ \t\n]+\\)"
+         (1 font-lock-type-face)
+         (2 font-lock-type-face))))
+
+(define-derived-mode authinfo-mode fundamental-mode "authinfo"
+  "Major mode for editing the authinfo file."
+  (font-lock-add-keywords nil authinfo-keywords)
+  (setq-local comment-start "#")
+  (setq-local comment-end ""))
+
+(provide 'authinfo-mode)
+(use-package! authinfo-mode
+  :mode ("authinfo\\.gpg\\'" . authinfo-mode))
+
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.

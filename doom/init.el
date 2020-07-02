@@ -5,8 +5,10 @@
 (defvar-local projectile-project-root nil)
 (doom! :completion
        (company +childframe)
-       (ivy +childframe
-            +prescient)
+       (ivy
+        +icons
+        +childframe
+        +prescient)
 
        :ui
        doom
@@ -18,12 +20,13 @@
        ophints
        treemacs
        (popup +all +defaults)
-       (pretty-code +fira)
+       pretty-code
 
        vc-gutter
        vi-tilde-fringe
-       window-select
+       (window-select +numbers)
        workspaces
+       zen
 
        :editor
        (evil +everywhere)
@@ -38,30 +41,38 @@
        :checkers
        (syntax +childframe)
        spell
+       grammar
 
        :emacs
-       dired
+       (dired +icons)
        electric          ; smarter, keyword-based electric-indent
-       ibuffer           ; interactive buffer management
+       (ibuffer +icons)  ; interactive buffer management
+       (undo +tree)      ; persistent, smarter undo 
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell
+       ;; eshell
        ;; shell
        ;; term
        vterm
 
        :tools
+       ansible
        ;; debugger
        direnv
        docker
-       editorconfig
+       ;; editorconfig
        (eval +overlay)
-       (lookup +docsets)
+       (lookup +dictionary
+               +docsets)
        lsp
        (magit +forge)
        macos
-       ;; pdf
+       make
+       pdf
+       rgb                  ; creating color string
+       terraform
+       upload               ; map local to remote projects via ssh/ftp
 
        :lang
        (cc +lsp)                ; C/C++/Obj-C madness
@@ -77,19 +88,22 @@
        ledger            ; an accounting system in Emacs
        ;; (lua +moonscript)
        markdown          ; writing docs for people to ignore
-       (org +attach
+       (org
+        ;; +attach
             +babel
             +capture
+            +dragndrop
+            +gnuplot
             +export
             +present         ; Emacs for presentations
-            +protocol
-            +publish)
+            +roam)
        ;; php               ; perl's insecure younger brother
        (python +pyenv +lsp)            ; beautiful is better than ugly
        ;; rest              ; Emacs as a REST client
        (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        web               ; the tubes
+       yaml
 
        ;; Applications are complex and opinionated modules that transform Emacs
        ;; toward a specific purpose. They may have additional dependencies and
@@ -102,18 +116,4 @@
        ;; provides a Spacemacs-inspired keybinding scheme, a custom yasnippet
        ;; library, and additional ex commands for evil-mode. Use it as a
        ;; reference for your own modules.
-       (default +bindings +snippets +evil-commands +smartparens))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("7c1f16d06b3fc4afcb0fc432f13192cf1877bddc9866f3a19a6c54cf651a96c1" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+       (default +bindings +smartparens))

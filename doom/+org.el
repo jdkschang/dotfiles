@@ -1,77 +1,109 @@
 ;;;  -*- lexical-binding: t; -*-
 
 (after! org
-  (add-to-list 'org-modules 'org-habit t)
+  (setq org-directory (expand-file-name "~/.org")   ; let's put files here
+        org-use-property-inheritance t              ; it's convenient to have properties inherited
+        org-log-done 'time                          ; having the time recorded sounds convenient
+        org-list-allow-alphabetical t               ; have a. A. a) A) list bullets
+        org-export-in-background t                  ; run export processes in external emacs process
+        org-catch-invisible-edits 'smart            ; try not to accidently do weird stuff in invisible regions
 
-  (setq org-directory (expand-file-name "~/Dropbox/org/")
-   org-agenda-files (list org-directory)
-   org-ellipsis " ⤵ "
+        org-agenda-files (list org-directory)
+        org-ellipsis " ⤵ "
+        org-priority-highest ?A
+        org-priority-lowest ?E
+        org-priority-faces
+        '((?A . 'all-the-icons-red)
+          (?B . 'all-the-icons-orange)
+          (?C . 'all-the-icons-yellow)
+          (?D . 'all-the-icons-green)
+          (?E . 'all-the-icons-blue))
 
-   ;; The standard unicode characters are usually misaligned depending on the
-   ;; font. This bugs me. Personally, markdown #-marks for headlines are more
-   ;; elegant.
-   org-bullets-bullet-list '("#")
+        ;; The standard unicode characters are usually misaligned depending on the
+        ;; font. This bugs me. Personally, markdown #-marks for headlines are more
+        ;; elegant.
+        org-bullets-bullet-list '("#")
 
-   +inbox (expand-file-name "inbox.org" org-directory)
-   +gtd (expand-file-name "gtd.org" org-directory)
-   +someday (expand-file-name "someday.org" org-directory)
-   +tickler (expand-file-name "tickler.org" org-directory)
-   +ref (expand-file-name "reference.org" org-directory)
-   +daypage-path (expand-file-name "days/" org-directory)
+        org-todo-keywords '((sequence "TODO(t)"
+                                      "STARTED(s)"
+                                      "WAITING(w)"
+                                      "|"
+                                      "DONE(d)"
+                                      "CANCELLED(c)"))
 
-   org-archive-location (concat (expand-file-name "archive.org" org-directory) "::* From %s")
-   org-capture-templates '(("t" "Todo [inbox]" entry
-                            (file+headline +inbox "Tasks")
-                            "* TODO %i%?")
-                           ("T" "Tickler" entry
-                            (file+headline +tickler "Tickler")
-                            "* %i%? \n %U"))
-   org-refile-targets '((+gtd :maxlevel . 3)
-                        (+someday :level . 1)
-                        (+tickler :maxlevel . 2)
-                        (+ref :maxlevel . 3))
-   org-todo-keywords '((sequence "TODO(t)"
-                                 "STARTED(s)"
-                                 "WAITING(w)"
-                                 "|"
-                                 "DONE(d)"
-                                 "CANCELLED(c)"))
-   org-agenda-custom-commands '(("o" "At the Office" tags-todo "@work"
-                                 ((org-agenda-overriding-header "Apple:")
-                                  (org-agenda-skip-function #'+jdkschang/org-agenda-skip-all-siblings-but-first))))
-   ;; org-export-with-toc nil
-   ;; log time when things are marked as done
-   org-log-done 'time)
+        org-babel-default-header-args '((:session . "none")
+                                        (:results . "replace")
+                                        (:exports . "code")
+                                        (:cache . "no")
+                                        (:noweb . "no")
+                                        (:hlines . "no")
+                                        (:tangle . "no")
+                                        (:comments . "link"))
+
+        org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+")))
+
+  (custom-set-faces!
+      '(org-document-title :height 1.2))
 
   (appendq! +pretty-code-symbols
             '(:checkbox   "☐"
               :pending    "◼"
               :checkedbox "☑"
-              :results "🠶"
-              :property "☸"
-              :option "⌥"
-              :title "𝙏"
+              :list_property "∷"
+              :results       "🠶"
+              :property      "☸"
+              :properties    "⚙"
+              :end           "∎"
+              :options       "⌥"
+              :title         "𝙏"
+              :subtitle      "𝙩"
               :author "𝘼"
               :date "𝘿"
               :begin_quote "❮"
               :end_quote "❯"
+              :begin_export  "⯮"
+              :end_export    "⯬"
+              :priority_a   ,(propertize "⚑" 'face 'all-the-icons-red)
+              :priority_b   ,(propertize "⬆" 'face 'all-the-icons-orange)
+              :priority_c   ,(propertize "■" 'face 'all-the-icons-yellow)
+              :priority_d   ,(propertize "⬇" 'face 'all-the-icons-green)
+              :priority_e   ,(propertize "❓" 'face 'all-the-icons-blue)
               :em_dash "—"))
   (set-pretty-symbols! 'org-mode
     :merge t
-    :checkbox   "[ ]"
-    :pending    "[-]"
-    :checkedbox "[X]"
-    :results "#+RESULTS:"
-    :property "#+PROPERTY:"
-    :option "#+OPTION:"
-    :title "#+TITLE:"
-    :author "#+AUTHOR:"
-    :date "#+DATE:"
-    :begin_quote "#+BEGIN_QUOTE"
-    :end_quote "#+END_QUOTE"
-    :em_dash "---")
+    :checkbox      "[ ]"
+    :pending       "[-]"
+    :checkedbox    "[X]"
+    :list_property "::"
+    :results       "#+RESULTS:"
+    :property      "#+PROPERTY:"
+    :property      ":PROPERTIES:"
+    :end           ":END:"
+    :options       "#+OPTIONS:"
+    :title         "#+TITLE:"
+    :subtitle      "#+SUBTITLE:"
+    :author        "#+AUTHOR:"
+    :date          "#+DATE:"
+    :begin_quote   "#+BEGIN_QUOTE"
+    :end_quote     "#+END_QUOTE"
+    :begin_export  "#+BEGIN_EXPORT"
+    :end_export    "#+END_EXPORT"
+    :priority_a    "[#A]"
+    :priority_b    "[#B]"
+    :priority_c    "[#C]"
+    :priority_d    "[#D]"
+    :priority_e    "[#E]"
+    :em_dash "---"))
+(plist-put +pretty-code-symbols :name "⁍")
 
-  (map!
+(map! :map evil-org-mode-map
+      :after evil-org
+      :n "g <up>" #'org-backward-heading-same-level
+      :n "g <down>" #'org-forward-heading-same-level
+      :n "g <left>" #'org-up-element
+      :n "g <right>" #'org-down-element)
+
+(map!
    :desc "Create/Edit Todo" :nve "C-c t" #'org-todo
    :desc "Store Link" :nve "C-c l" #'org-store-link
    :desc "Insert Link" :nve "C-c C-l" #'org-insert-link
@@ -84,10 +116,6 @@
    :desc "org-shiftleft" :nve "H" #'org-shiftleft
    :desc "org-shiftright" :nve "L" #'org-shiftright
 
-   (:leader
-     ;; main todo <SPC O>
-     :desc "Open Inbox" :nvm "I" #'+open-inbox)
-
    (:localleader
      :map evil-org-mode-map
      :desc "Create/Edit Todo" :nve "C-t" #'org-todo
@@ -99,35 +127,3 @@
      :desc "Filter" :nve "f" #'org-match-sparse-tree
      :desc "Tag heading" :nve "t" #'org-set-tags-command))
 
-  ;; Normally its only like 3 lines tall, too hard to see anything.
-  (set-popup-rule! "^\\*Org Agenda"
-    :size 15
-    :quit t
-    :select t
-    :parameters
-    '((transient))))
-
-
-(defun +jdkschang/org-agenda-skip-all-siblings-but-first ()
-  "Skip all but the first non-done entry."
-  (let (should-skip-entry)
-    (unless (+jdkschang/org-current-is-todo)
-      (setq should-skip-entry t))
-    (save-excursion
-      (while (and (not should-skip-entry) (org-goto-sibling t))
-        (when (+jdkschang/org-current-is-todo)
-          (setq should-skip-entry t))))
-    (when should-skip-entry
-      (or (outline-next-heading)
-          (goto-char (point-max))))))
-
-(defun +jdkschang/org-current-is-todo ()
-  (string= "TODO" (org-get-todo-state)))
-
-(defun +open-inbox ()
-  (interactive)
-  "Opens the Inbox"
-  (find-file +inbox))
-
-
-(plist-put +pretty-code-symbols :name "⁍")

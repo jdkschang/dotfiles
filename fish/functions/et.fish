@@ -19,4 +19,6 @@
 # -t starts in terminal, since I won't be using the gui
 # can also pass in -n if you want to have the shell return right away
 
-exec emacsclient -a "" -t "$@"
+function et
+    emacsclient -a "" -t $argv
+end

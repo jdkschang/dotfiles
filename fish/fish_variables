@@ -10,7 +10,7 @@ SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
-SETUVAR --export GPG_TTY:not\x20a\x20tty
+SETUVAR --export GPG_TTY:/dev/ttys003
 SETUVAR TMUX_HOME:/Users/dmitri/\x2econfig/tmux
 SETUVAR --path TMUX_PLUGIN_MANAGER_PATH:/Users/dmitri/\x2econfig/tmux/plugins
 SETUVAR ZO_CMD:zo
@@ -39,9 +39,8 @@ SETUVAR _fish_abbr_dfl:cd\x20\x24DOTFILES
 SETUVAR _fish_abbr_dl:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_dwl:cd\x20\x24XDG_DOWNLOAD_DIR/dwl
 SETUVAR _fish_abbr_e:emacsclient\x20\x2dn
-SETUVAR _fish_abbr_ec:emacsclient\x20\x2dnc
 SETUVAR _fish_abbr_emc:cd\x20\x7e/\x2eemacs\x2ed
-SETUVAR _fish_abbr_et:emacsclient\x20\x2dnw
+SETUVAR _fish_abbr_et:emacsclient\x20\x2dn\x20\x2dt\x20
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_h:history
 SETUVAR _fish_abbr_jo:jobs

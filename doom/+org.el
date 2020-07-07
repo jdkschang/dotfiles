@@ -1,7 +1,11 @@
 ;;;  -*- lexical-binding: t; -*-
 
 (after! org
-  (setq org-directory (expand-file-name "~/.org")   ; let's put files here
+  (setq org_notes "~/Dropbox/3 Resources/org-roam"
+        org-directory org_notes                     ; let's put files here
+        deft-directory org_notes                     ; let's put files here
+        org-roam-directory org_notes                     ; let's put files here
+        org-default-notes-file (concat org_notes "/inbox.org")
         org-use-property-inheritance t              ; it's convenient to have properties inherited
         org-log-done 'time                          ; having the time recorded sounds convenient
         org-list-allow-alphabetical t               ; have a. A. a) A) list bullets
@@ -40,7 +44,25 @@
                                         (:tangle . "no")
                                         (:comments . "link"))
 
-        org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+")))
+        org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
+        org-todo-state-tags-triggers
+        (quote (("CANCELLED" ("CANCELLED" . t))
+                ("WAITING" ("WAITING" . t))
+                ("HOLD" ("WAITING") ("HOLD" . t))
+                (done ("WAITING") ("HOLD"))
+                ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+                ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+                ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+
+  (map! :map evil-org-mode-map
+      :after evil-org
+      :n "g <up>" #'org-backward-heading-same-level
+      :n "g <down>" #'org-forward-heading-same-level
+      :n "g <left>" #'org-up-element
+      :n "g <right>" #'org-down-element)
+  (map! :map org-mode-map
+        :n "M-j" #'org-metadown
+        :n "M-k" #'org-metaup)
 
   (custom-set-faces!
       '(org-document-title :height 1.2))
@@ -96,12 +118,7 @@
     :em_dash "---"))
 (plist-put +pretty-code-symbols :name "⁍")
 
-(map! :map evil-org-mode-map
-      :after evil-org
-      :n "g <up>" #'org-backward-heading-same-level
-      :n "g <down>" #'org-forward-heading-same-level
-      :n "g <left>" #'org-up-element
-      :n "g <right>" #'org-down-element)
+
 
 (map!
    :desc "Create/Edit Todo" :nve "C-c t" #'org-todo
@@ -127,3 +144,5 @@
      :desc "Filter" :nve "f" #'org-match-sparse-tree
      :desc "Tag heading" :nve "t" #'org-set-tags-command))
 
+
+(load! "+org-roam")

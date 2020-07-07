@@ -65,9 +65,6 @@
 (global-subword-mode 1)                           ; Iterate through CamelCase words
 
 
-(use-package! zetteldeft
-  :after deft)
-
 (after! company
   ;; On-demand code completion turned off
   (setq company-idle-delay 0.5

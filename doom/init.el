@@ -88,8 +88,7 @@
        ledger            ; an accounting system in Emacs
        ;; (lua +moonscript)
        markdown          ; writing docs for people to ignore
-       (org
-        ;; +attach
+       (org +attach
             +babel
             +capture
             +dragndrop

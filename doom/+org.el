@@ -26,7 +26,7 @@
         ;; The standard unicode characters are usually misaligned depending on the
         ;; font. This bugs me. Personally, markdown #-marks for headlines are more
         ;; elegant.
-        org-bullets-bullet-list '("#")
+        ;; org-bullets-bullet-list '("#")
 
         org-todo-keywords '((sequence "TODO(t)"
                                       "STARTED(s)"
@@ -54,21 +54,21 @@
                 ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
                 ("DONE" ("WAITING") ("CANCELLED") ("HOLD"))))
         org-capture-templates
-        (quote (("t" "todo" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+        (quote (("t" "todo" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-                ("r" "respond" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ("r" "respond" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-                ("n" "note" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ("n" "note" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-                ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-                  "* %?\n%U\n" :clock-in t :clock-resume t)
-                ("w" "org-protocol" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ;; ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
+                  ;; "* %?\n%U\n" :clock-in t :clock-resume t)
+                ("w" "org-protocol" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* TODO Review %c\n%U\n" :immediate-finish t)
-                ("m" "Meeting" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ("m" "Meeting" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-                ("p" "Phone call" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ("p" "Phone call" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-                ("h" "Habit" entry (file "~/Desktop/03-resources/org-roam/todo.org")
+                ("h" "Habit" entry (file "~/Dropbox/3 Resources/org-roam/todo.org")
                   "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
   (map! :map evil-org-mode-map
@@ -134,7 +134,6 @@
     :priority_e    "[#E]"
     :em_dash "---"))
 (plist-put +pretty-code-symbols :name "⁍")
-
 
 
 (map!

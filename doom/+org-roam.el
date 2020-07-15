@@ -8,7 +8,7 @@
            "%?"
            :file-name "websites/${slug}"
            :head "#+TITLE: ${title}
-#+ROAM_KEY: ${ref}
+#+roam_key: ${ref}
 - source :: ${ref}"
            :unnarrowed t)))
   (setq org-roam-capture-templates
@@ -16,14 +16,23 @@
            "%?"
            :file-name "${slug}"
            :head "#+TITLE: ${title}\n"
-           :unnarrowed t))))
+           :unnarrowed t)))
+  (map! :leader
+        :prefix "n"
+        :desc "org-roam" "l" #'org-roam
+        :desc "org-roam-insert" "i" #'org-roam-insert
+        :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer
+        :desc "org-roam-find-file" "f" #'org-roam-find-file
+        :desc "org-roam-show-graph" "g" #'org-roam-show-graph
+        :desc "org-journal-new-entry" "j" #'org-journal-new-entry
+        :desc "org-roam-capture" "c" #'org-roam-capture)
 
-  ;; (setq org-roam-graph-node-extra-config '(("shape"      . "underline")
-  ;;                                          ("style"      . "rounded,filled")
-  ;;                                          ("fillcolor"  . "#EEEEEE")
-  ;;                                          ("color"      . "#C9C9C9")
-  ;;                                          ("fontcolor"  . "#111111")
-  ;;                                          ("fontname"   . "Overpass")))
+  (setq org-roam-graph-node-extra-config '(("shape"      . "underline")
+                                           ("style"      . "rounded,filled")
+                                           ("fillcolor"  . "#EEEEEE")
+                                           ("color"      . "#C9C9C9")
+                                           ("fontcolor"  . "#111111")
+                                           ("fontname"   . "MonoLisa"))))
 
 ;;   (setq +org-roam-graph--html-template
 ;;         (replace-regexp-in-string "%\\([^s]\\)" "%%\\1"
@@ -58,16 +67,16 @@
 ;;                          (funcall callback temp-html)))))))))
 
 
-;; (defadvice! doom-modeline--reformat-roam (orig-fun)
-;;   :around #'doom-modeline-buffer-file-name
-;;   (message "Reformat?")
-;;   (message (buffer-file-name))
-;;   (if (s-contains-p org-roam-directory (or buffer-file-name ""))
-;;       (replace-regexp-in-string
-;;        "\\(?:^\\|.*/\\)\\([0-9]\\{4\\}\\)\\([0-9]\\{2\\}\\)\\([0-9]\\{2\\}\\)[0-9]*-"
-;;        "🢔(\\1-\\2-\\3) "
-;;        (funcall orig-fun))
-;;     (funcall orig-fun)))
+(defadvice! doom-modeline--reformat-roam (orig-fun)
+  :around #'doom-modeline-buffer-file-name
+  (message "Reformat?")
+  (message (buffer-file-name))
+  (if (s-contains-p org-roam-directory (or buffer-file-name ""))
+      (replace-regexp-in-string
+       "\\(?:^\\|.*/\\)\\([0-9]\\{4\\}\\)\\([0-9]\\{2\\}\\)\\([0-9]\\{2\\}\\)[0-9]*-"
+       "🢔(\\1-\\2-\\3) "
+       (funcall orig-fun))
+    (funcall orig-fun)))
 
 (use-package deft
   :after org
@@ -97,7 +106,7 @@
 (use-package org-roam-server
   :ensure t)
 
-(add-hook 'org-roam-server-mode (lambda () (browse-url-chrome "http://localhost:8078")))
+(add-hook 'org-roam-server-mode (lambda () (browse-url-chrome "http://localhost:8080")))
   ;; :after org-roam
   ;; :config
   ;; (setq org-roam-server-host "127.0.0.1"
@@ -131,11 +140,3 @@
                 (buffer-list))))
 
 (setq org-refile-targets '((+org/opened-buffer-files :maxlevel . 9)))
-
-
-(require 'company-org-roam
-    (use-package company-org-roam
-      :when (featurep! :completion company)
-      :after org-roam
-      :config
-      (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev))))

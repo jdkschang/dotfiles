@@ -41,7 +41,4 @@
 (package! org-graph-view :recipe (:host github :repo "alphapapa/org-graph-view") :pin "13314338d7...")
 (package! org-chef :pin "1dd73fd3db...")
 (package! org-roam-server :pin "7617ac01a1...")
-(package! systemd :pin "51c148e09a...")
 (package! org-journal)
-(package! company-org-roam
-   :recipe (:host github :repo "jethrokuan/company-org-roam"))

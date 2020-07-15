@@ -183,3 +183,26 @@
 (load! "+macos")
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(deft-auto-save-interval -1.0)
+ '(deft-default-extension "org" t)
+ '(deft-directory "~/Dropbox/3 Resources/org-roam/")
+ '(deft-recursive t)
+ '(deft-use-filter-string-for-filename t)
+ '(org-journal-date-format "%A, %d %B %Y")
+ '(org-journal-date-prefix "#+TITLE: ")
+ '(org-journal-dir "~/Dropbox/3 Resources/org-roam/")
+ '(org-journal-file-format "%Y-%m-%d.org")
+ '(package-selected-packages '(org-roam-server)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(doom-modeline-buffer-modified ((t (:foreground "orange"))))
+ '(doom-modeline-evil-insert-state ((t (:weight bold :foreground "#339CDB"))))
+ '(org-document-title ((t (:height 1.2)))))

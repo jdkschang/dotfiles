@@ -26,7 +26,7 @@
         ;; The standard unicode characters are usually misaligned depending on the
         ;; font. This bugs me. Personally, markdown #-marks for headlines are more
         ;; elegant.
-        ;; org-bullets-bullet-list '("#")
+        org-bullets-bullet-list '("#")
 
         org-todo-keywords '((sequence "TODO(t)"
                                       "STARTED(s)"
@@ -84,7 +84,7 @@
   (custom-set-faces!
       '(org-document-title :height 1.2))
 
-  (appendq! +pretty-code-symbols
+  (appendq! +ligatures-extra-symbols
             '(:checkbox   "☐"
               :pending    "◼"
               :checkedbox "☑"
@@ -108,7 +108,7 @@
               :priority_d   ,(propertize "⬇" 'face 'all-the-icons-green)
               :priority_e   ,(propertize "❓" 'face 'all-the-icons-blue)
               :em_dash "—"))
-  (set-pretty-symbols! 'org-mode
+  (set-ligatures! 'org-mode
     :merge t
     :checkbox      "[ ]"
     :pending       "[-]"
@@ -133,7 +133,7 @@
     :priority_d    "[#D]"
     :priority_e    "[#E]"
     :em_dash "---"))
-(plist-put +pretty-code-symbols :name "⁍")
+; (plist-put +ligatures-extra-symbols :name "⁍")
 
 
 (map!

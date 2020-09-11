@@ -1,8 +1,9 @@
 ;;; ~/projects/jdkschang/dotfiles/doom/+org-roam.el -*- lexical-binding: t; -*-
-
-(setq org-roam-directory "~/Dropbox/3 Resources/org-roam/")
+(use-package! org-roam-server)
 (after! org-roam
-  (setq org-roam-graph-viewer "/usr/bin/open")
+  (setq org-roam-graph-viewer "/usr/bin/open"
+        org-roam-encrypt-files t)
+
   (setq org-roam-ref-capture-templates
         '(("r" "ref" plain (function org-roam-capture--get-point)
            "%?"
@@ -103,24 +104,35 @@
 (setq httpd-root "/var/www")
 (httpd-start)
 
-(use-package org-roam-server
-  :ensure t)
+(setq org-roam-directory "~/Dropbox/3 Resources/org-roam/")
+;; (use-package org-roam-server
+;;   :ensure t
+;;   :config
+;;   (setq org-roam-server-host "127.0.0.1"
+;;         org-roam-server-port 8080
+;;         org-roam-server-export-inline-images t
+;;         org-roam-server-authenticate nil
+;;         org-roam-server-network-poll t
+;;         org-roam-server-network-arrows nil
+;;         org-roam-server-network-label-truncate t
+;;         org-roam-server-network-label-truncate-length 60
+;;         org-roam-server-network-label-wrap-length 20))
 
-(add-hook 'org-roam-server-mode (lambda () (browse-url-chrome "http://localhost:8080")))
-  ;; :after org-roam
-  ;; :config
-  ;; (setq org-roam-server-host "127.0.0.1"
-  ;;       org-roam-server-port 8078
-  ;;       org-roam-server-export-inline-images t
-  ;;       org-roam-server-authenticate nil
-  ;;       org-roam-server-label-truncate t
-  ;;       org-roam-server-label-truncate-length 60
-  ;;       org-roam-server-label-wrap-length 20)
-  ;; (defun org-roam-server-open ()
-  ;;   "Ensure the server is active, then open the roam graph."
-  ;;   (interactive)
-  ;;   (org-roam-server-mode 1)
-  ;;   (browse-url-xdg-open (format "http://localhost:%d" org-roam-server-port))))
+(add-hook 'org-roam-server-mode (lambda () (browse-url-chrome "http://localhost:8078"))
+  :after org-roam
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8078
+        org-roam-server-export-inline-images t
+        org-roam-server-authenticate nil
+        org-roam-server-label-truncate t
+        org-roam-server-label-truncate-length 60
+        org-roam-server-label-wrap-length 20)
+  (defun org-roam-server-open ()
+    "Ensure the server is active, then open the roam graph."
+    (interactive)
+    (org-roam-server-mode 1)
+    (browse-url-xdg-open (format "http://localhost:%d" org-roam-server-port))))
 
 ;; Refile a heading to another buffer
 ;; Allows you to refile into different files - specifically to

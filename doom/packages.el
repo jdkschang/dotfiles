@@ -40,5 +40,7 @@
 (package! ox-gfm :pin "99f93011b0...")
 (package! org-graph-view :recipe (:host github :repo "alphapapa/org-graph-view") :pin "13314338d7...")
 (package! org-chef :pin "1dd73fd3db...")
-(package! org-roam-server :pin "7617ac01a1...")
+(package! org-roam-server
+  :recipe (:host github :repo "org-roam/org-roam-server"))
 (package! org-journal)
+(package! org-ref)

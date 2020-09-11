@@ -10,6 +10,9 @@
         +childframe
         +prescient)
 
+       :os
+       macos
+
        :ui
        doom
        doom-dashboard
@@ -20,7 +23,8 @@
        ophints
        treemacs
        (popup +all +defaults)
-       pretty-code
+       ;; (ligatures +extra)
+       ligatures
 
        vc-gutter
        vi-tilde-fringe
@@ -67,7 +71,6 @@
                +docsets)
        lsp
        (magit +forge)
-       macos
        make
        pdf
        rgb                  ; creating color string
@@ -76,7 +79,7 @@
 
        :lang
        (cc +lsp)                ; C/C++/Obj-C madness
-       ;; clojure           ; java with a lisp
+       clojure           ; java with a lisp
        ;; common-lisp       ; if you've seen one lisp, you've seen them all
        data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age

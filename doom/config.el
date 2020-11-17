@@ -7,202 +7,116 @@
 
       auth-sources '("~/.authinfo.gpg")
       auth-source-cache-expiry nil
-      display-line-numbers-type 'relative
 
-      undo-limit 80000000 ; Raise undo-limit to 80Mb
-      evil-want-fine-undo t
-      auto-save-default t
-      inhibit-compacting-font-caches t
-      truncate-string-ellipsis "…"
+      ;; Line numbers are pretty slow all around. The performance boost of
+      ;; disabling them outweighs the utility of always keeping them on.
+      display-line-numbers-type nil
 
       doom-fallback-buffer-name "► Doom"
       +doom-dashboard-name "► Doom"
-      doom-large-file-size 1
-      doom-scratch-buffer-major-mode 'org-mode
+      ;; doom-large-file-size 1
+      doom-scratch-initial-major-mode 'lisp-interaction-mode
+      ;; doom-scratch-buffer-major-mode 'org-mode
 
       ;; lsp-ui-sideline is redundant with eldoc and more invasive
       ;; disable by default
       lsp-ui-sideline-enable nil
-      lsp-enable-indentation nil
-      lsp-enable-on-type-formatting nil
       lsp-enable-symbol-highlighting nil
-      lsp-enable-file-watchers nil
 
-      ;; Disable help mouse-overs for mode-line segments (i.e. :help-echo text)
-      ;; Generally unhelpful and adds confusing visual clutter
-      mode-line-default-help-echo nil
-      show-help-function nil
+      evil-ex-substitute-global t
 
-      +ivy-buffer-preview t
-      ivy-read-action-function #'ivy-hydra-read-action
-      ivy-sort-max-size 50000
-      ;; <gs SPC> works across all visible windows
-      ;; useful for jumping around the screen
-      avy-all-windows t
+      projectile-project-search-path '("~/projects/jdkschang" "~/projects/apple"))
 
-      projectile-project-search-path '("~/projects/jdkschang" "~/projects/apple")
-
-      +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
-      +format-on-save-enabled-modes '(not emacs-lisp-mode))
-
-(setq-default
- delete-by-moving-to-trash t
- tab-width 4
- uniquify-buffer-name-style 'forward
- window-combination-resize t
- x-stretch-cursor t
- major-mode 'org-mode)
+(use-package! atomic-chrome
+  :after-call focus-out-hook
+  :config
+  (setq atomic-chrome-default-major-mode 'markdown-mode
+        atomic-chrome-buffer-open-style 'frame)
+  (atomic-chrome-start-server))
 
 
-;;; Frames/Windows
+;;
+;;;; UI
+
+(setq treemacs-width 32
+      doom-theme 'doom-dracula
+      doom-font (font-spec :family "MonoLisa" :size 13)
+      doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic :size 13))
+
+
+;; Prevents some cases of Emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-(delete-selection-mode 1)                         ; Replace selection when inserting text
-(display-time-mode 1)                             ; Enable time in the mode-line
-(unless (equal "Battery status not avalible"
-               (battery))
-  (display-battery-mode 1))                       ; On laptops it's nice to know how much power you have
-(global-subword-mode 1)                           ; Iterate through CamelCase words
+
+;;
+;;; Keybinds
+
+(map! :n [tab] (cmds! (and (featurep! :editor fold)
+                           (save-excursion (end-of-line) (invisible-p (point))))
+                      #'+fold/toggle
+                      (fboundp 'evil-jump-item)
+                      #'evil-jump-item)
+      :v [tab] (cmds! (and (bound-and-true-p yas-minor-mode)
+                           (or (eq evil-visual-selection 'line)
+                               (not (memq (char-after) (list ?\( ?\[ ?\{ ?\} ?\] ?\))))))
+                      #'yas-insert-snippet
+                      (fboundp 'evil-jump-item)
+                      #'evil-jump-item)
+
+      :leader
+      "h L" #'global-keycast-mode
+      "f t" #'find-in-dotfiles
+      "f T" #'browse-dotfiles)
 
 
-(after! company
-  ;; On-demand code completion turned off
-  (setq company-idle-delay 0.5
-       company-minimum-prefix-length 2
-       company-show-numbers t)
+;;
+;;; Modules
 
-  (add-hook 'evil-normal-state-entry-hook #'company-abort))
+(after! ivy
+  ;; I prefer search matching to be ordered; it's more precise
+  (add-to-list 'ivy-re-builders-alist '(counsel-projectile-find-file . ivy--regex-plus)))
 
-(set-company-backend! '(text-mode
-                        markdown-mode
-                        gfm-mode)
-  '(:seperate company-ispell
-              company-files
-              company-yasnippet))
-
-(setq-default history-length 1000)
-(setq-default prescient-history-length 1000)
-
-(after! lsp-python-ms
-  (set-lsp-priority! 'mspyls 1))
-
-;; henrik code snippet
-;; patch for workspaces to not load correctly on session reload
-(after! persp-mode
-  (remove-hook 'persp-filter-save-buffers-functions #'buffer-live-p)
-
-  (defun +workspaces-dead-buffer-p (buf)
-    (not (buffer-live-p buf)))
-  (add-hook 'persp-filter-save-buffers-functions #'+workspaces-dead-buffer-p))
-
-(add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-(add-hook 'after-init-hook #'global-emojify-mode) ;; Enable emojis
-
-;; Load snippets
-(after! yasnippet
-  (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
-
-;; Trying to be more friendly for .ts & .tsx files
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-(after! typescript-mode
-  (require 'web-mode)
-  (add-hook 'typescript-mode-hook #'flycheck-mode))
-
-(setq +set-eslint-checker nil)
-(after! lsp-ui
-  ;; for w/e reason this is running twice
-  (setq lsp-ui-sideline-show-hover t)
-  (when (not +set-eslint-checker)
-    (progn
-      (setq +set-eslint-checker t)
-      (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-next-checker 'lsp-ui '(warning . javascript-eslint)))))
-
-(after! web-mode
-  (add-hook 'web-mode-hook #'flycheck-mode)
-  (setq web-mode-markup-indent-offset 4
-        web-mode-code-indent-offset 4
-        web-mode-enable-auto-quoting nil
-        web-mode-auto-close-style 2))
-
-(after! lsp
-  ;; These take up a lot of space on my big font size
-  (setq lsp-ui-sideline-show-code-actions nil
-        lsp-ui-sideline-show-diagnostics nil
-        lsp-signature-render-all nil))
-
-(after! web-mode
-  (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
-  (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
-
-(add-hook! (gfm-mode markdown-mode) #'mixed-pitch-mode)
-
-(after! flyspell (require 'flyspell-lazy) (flyspell-lazy-mode 1))
-
-(use-package! info-colors
-  :commands (info-colors-fontify-node))
-
-(add-hook 'Info-selection-hook 'info-colors-fontify-node)
-
-(add-hook 'Info-mode-hook #'mixed-pitch-mode)
-
-(setq ledger-mode-should-check-version nil
-      ledger-report-links-in-register nil
-      ledger-binary-path "hledger")
-
-(setq authinfo-keywords
-      '(("^#.*" . font-lock-comment-face)
-        ("^\\(machine\\) \\([^ \t\n]+\\)"
-         (1 font-lock-variable-name-face)
-         (2 font-lock-builtin-face))
-        ("\\(login\\) \\([^ \t\n]+\\)"
-         (1 font-lock-keyword-face)
-         (2 font-lock-string-face))
-        ("\\(password\\) \\([^ \t\n]+\\)"
-         (1 font-lock-constant-face)
-         (2 font-lock-doc-face))
-        ("\\(port\\) \\([^ \t\n]+\\)"
-         (1 font-lock-type-face)
-         (2 font-lock-type-face))))
-
-(define-derived-mode authinfo-mode fundamental-mode "authinfo"
-  "Major mode for editing the authinfo file."
-  (font-lock-add-keywords nil authinfo-keywords)
-  (setq-local comment-start "#")
-  (setq-local comment-end ""))
-
-(provide 'authinfo-mode)
-(use-package! authinfo-mode
-  :mode ("authinfo\\.gpg\\'" . authinfo-mode))
+;; Switch to the new window after splitting
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
 
 
-;; Modules
-(load! "+ui") ;; My ui mods. Also contains ligature stuff.
-(load! "+magit")
-(load! "+theme")
-(load! "+macos")
-(load! "+org") ;; Org mode stuff like todos and rebindings
-(load! "+bindings")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(deft-auto-save-interval -1.0)
- '(deft-default-extension "org" t)
- '(deft-directory "~/Dropbox/3 Resources/org-roam/")
- '(deft-recursive t)
- '(deft-use-filter-string-for-filename t)
- '(org-journal-date-format "%A, %d %B %Y")
- '(org-journal-date-prefix "#+TITLE: ")
- '(org-journal-dir "~/Dropbox/3 Resources/org-roam/")
- '(org-journal-file-format "%Y-%m-%d.org")
- '(package-selected-packages '(org-roam-server)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(doom-modeline-buffer-modified ((t (:foreground "orange"))))
- '(doom-modeline-evil-insert-state ((t (:weight bold :foreground "#339CDB"))))
- '(org-document-title ((t (:height 1.2)))))
+;;;; :tools magit
+(after! magit
+  (setq magit-repository-directories '(("~/projects" . 2))
+        magit-save-repository-buffers nil
+        ;; don't restore the wconf after quitting magit
+        magit-inhibit-save-previous-winconf t
+        transient-values '((magit-fetch  "--prune")
+                           (magit-commit "--gpg-sign=50C3D91E4C96CE4A")
+                           (magit-rebase "--autostash" "--interactive" "--gpg-sign=50C3D91E4C96CE4A")
+                           (magit-pull   "--rebase" "--gpg-sign=50C3D91E4C96CE4A"))))
+
+;;;; config to pipe into apple's repos
+(after! forge
+  (add-to-list 'forge-alist '("github.pie.apple.com" "api.github.pie.apple.com" "github.pie.apple.com" forge-github-repository)))
+
+
+;;; :lang org
+(setq org-directory "~/projects/org/"
+      org-archive-location (concat org-directory ".archive/%s::")
+      org-roam-directory (concat org-directory "notes/")
+      org-roam-db-location (concat org-roam-directory ".org-roam.db")
+      org-journal-encrypt-journal t
+      org-journal-file-format "%Y%m%d.org"
+      org-startup-folded 'overview
+      org-ellipsis " [...] ")
+
+
+;;; :ui doom-dashboard
+(setq fancy-splash-image (concat doom-private-dir "splash.png"))
+;; Don't need the menu; I know them all by heart
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+
+
+;;
+;;; Language customizations
+
+(custom-theme-set-faces! 'doom-dracula
+  `(markdown-code-face :background ,(doom-darken 'bg 0.075))
+  `(font-lock-variable-name-face :foreground ,(doom-lighten 'magenta 0.6)))

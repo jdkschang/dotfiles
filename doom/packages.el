@@ -1,22 +1,6 @@
-;; -*- no-byte-compile: t; -*-
-;;; ~/dotfiles/dots/emacs/doom/packages.el
+;;; ~/.config/doom/packages.el
 
-;; feature/snippets
-(package! yasnippet-snippets)
+(package! atomic-chrome)
 
-;; tools/tldr
-(package! tldr)
-
-;; Better folds
-(package! origami)
-
+; emojis
 (package! emojify)
-(package! move-text)
-
-;; Better window sizing
-(package! golden-ratio)
-
-(package! deft)
-(package! zetteldeft)
-
-(package! git-timemachine)

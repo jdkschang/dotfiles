@@ -85,6 +85,8 @@ abbr "nug" "npm uninstall --global"
 
 # python
 abbr "pap" "pyenv activate pop"
+abbr "pr" "poetry run"
+abbr "prm" "poetry run ./manage.py"
 
 # terraform
 abbr "tf" "terraform"

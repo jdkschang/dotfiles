@@ -38,6 +38,7 @@ set -x MPD_HOST "localhost"
 
 # Python - PyEnv
 set -x PYENV_ROOT "$HOME/.pyenv"
+set -x POETRY_ROOT "$HOME/.poetry"
 
 # Npm
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
@@ -64,4 +65,4 @@ set -x LDFLAGS "-L/usr/local/opt/llvm/lib"
 set -x CPPFLAGS "-I/usr/local/opt/llvm/include"
 
 # Path
-set -U fish_user_paths "$PYENV_ROOT/bin" "$HOME/bin" "$HOME/.local/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/opt/findutils/libexec/gnubin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin"
+set -U fish_user_paths "$PYENV_ROOT/bin" "$POETRY_ROOT/bin" "$HOME/bin" "$HOME/.local/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/opt/findutils/libexec/gnubin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin"

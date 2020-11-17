@@ -10,7 +10,7 @@ SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
-SETUVAR --export GPG_TTY:/dev/ttys003
+SETUVAR --export GPG_TTY:not\x20a\x20tty
 SETUVAR TMUX_HOME:/Users/dmitri/\x2econfig/tmux
 SETUVAR --path TMUX_PLUGIN_MANAGER_PATH:/Users/dmitri/\x2econfig/tmux/plugins
 SETUVAR ZO_CMD:zo
@@ -64,6 +64,8 @@ SETUVAR _fish_abbr_pap:pyenv\x20activate\x20pop
 SETUVAR _fish_abbr_popb:cd\x20\x7e/projects/apple/population\x2dbackend/population
 SETUVAR _fish_abbr_popf:cd\x20\x7e/projects/apple/population\x2dfrontend/population
 SETUVAR _fish_abbr_popr:cd\x20\x7e/projects/apple/resources/population
+SETUVAR _fish_abbr_pr:poetry\x20run
+SETUVAR _fish_abbr_prm:poetry\x20run\x20\x2e/manage\x2epy
 SETUVAR _fish_abbr_proj:cd\x20\x7e/projects/
 SETUVAR _fish_abbr_projgc:cd\x20\x7e/Projects/
 SETUVAR _fish_abbr_rwa:cd\x20\x7e/projects/react\x2dweb\x2dapp
@@ -97,7 +99,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/Users/dmitri/\x2epyenv/bin\x1e/Users/dmitri/bin\x1e/Users/dmitri/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/usr/local/opt/coreutils/libexec/gnubin\x1e/usr/local/opt/findutils/libexec/gnubin\x1e/Users/dmitri/\x2eemacs\x2ed/bin\x1e/Users/dmitri/\x2econfig/nvm/11\x2e9\x2e0/bin\x1e/Users/dmitri/usr/share/cargo/bin
+SETUVAR fish_user_paths:/Users/dmitri/\x2epyenv/bin\x1e/Users/dmitri/\x2epoetry/bin\x1e/Users/dmitri/bin\x1e/Users/dmitri/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/usr/local/opt/coreutils/libexec/gnubin\x1e/usr/local/opt/findutils/libexec/gnubin\x1e/Users/dmitri/\x2eemacs\x2ed/bin\x1e/Users/dmitri/\x2econfig/nvm/11\x2e9\x2e0/bin\x1e/Users/dmitri/usr/share/cargo/bin
 SETUVAR grc_plugin_execs:cat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eip\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_color_command_duration:pure_color_warning

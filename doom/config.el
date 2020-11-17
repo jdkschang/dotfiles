@@ -5,98 +5,118 @@
       user-mail-address "jdkschang@apple.com"
       epa-file-encrypt-to user-mail-address
 
+      auth-sources '("~/.authinfo.gpg")
+      auth-source-cache-expiry nil
+
       ;; Line numbers are pretty slow all around. The performance boost of
-      ;; disabling them outweighs utility of keeping them on.
+      ;; disabling them outweighs the utility of always keeping them on.
       display-line-numbers-type nil
 
-      ;; On-demand code completion turned off
-      company-idle-delay nil
-
-      doom-large-file-size 1
-      doom-scratch-buffer-major-mode 'org-mode
+      doom-fallback-buffer-name "► Doom"
+      +doom-dashboard-name "► Doom"
+      ;; doom-large-file-size 1
+      doom-scratch-initial-major-mode 'lisp-interaction-mode
+      ;; doom-scratch-buffer-major-mode 'org-mode
 
       ;; lsp-ui-sideline is redundant with eldoc and more invasive
       ;; disable by default
       lsp-ui-sideline-enable nil
-      lsp-enable-indentation nil
-      lsp-enable-on-type-formatting nil
       lsp-enable-symbol-highlighting nil
-      lsp-enable-file-watchers nil
 
-      ;; Disable help mouse-overs for mode-line segments (i.e. :help-echo text)
-      ;; Generally unhelpful and adds confusing visual clutter
-      mode-line-default-help-echo nil
-      show-help-function nil
+      evil-ex-substitute-global t
 
-      ;; <gs SPC> works across all visible windows
-      ;; useful for jumping around the screen
-      avy-all-windows t
+      projectile-project-search-path '("~/projects/jdkschang" "~/projects/apple"))
 
-      projectile-project-search-path '("~/projects/jdkschang" "~/projects/apple")
+(use-package! atomic-chrome
+  :after-call focus-out-hook
+  :config
+  (setq atomic-chrome-default-major-mode 'markdown-mode
+        atomic-chrome-buffer-open-style 'frame)
+  (atomic-chrome-start-server))
 
-      +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
-      +format-on-save-enabled-modes '(not emacs-lisp-mode))
 
-;;; Frames/Windows
+;;
+;;;; UI
+
+(setq treemacs-width 32
+      doom-theme 'doom-dracula
+      doom-font (font-spec :family "MonoLisa" :size 13)
+      doom-variable-pitch-font (font-spec :family "Operator Mono SSm" :slant 'italic :size 13))
+
+
+;; Prevents some cases of Emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-(use-package! zetteldeft
-  :after deft)
+
+;;
+;;; Keybinds
+
+(map! :n [tab] (cmds! (and (featurep! :editor fold)
+                           (save-excursion (end-of-line) (invisible-p (point))))
+                      #'+fold/toggle
+                      (fboundp 'evil-jump-item)
+                      #'evil-jump-item)
+      :v [tab] (cmds! (and (bound-and-true-p yas-minor-mode)
+                           (or (eq evil-visual-selection 'line)
+                               (not (memq (char-after) (list ?\( ?\[ ?\{ ?\} ?\] ?\))))))
+                      #'yas-insert-snippet
+                      (fboundp 'evil-jump-item)
+                      #'evil-jump-item)
+
+      :leader
+      "h L" #'global-keycast-mode
+      "f t" #'find-in-dotfiles
+      "f T" #'browse-dotfiles)
 
 
-;; henrik code snippet
-;; patch for workspaces to not load correctly on session reload
-(after! persp-mode
-  (remove-hook 'persp-filter-save-buffers-functions #'buffer-live-p)
+;;
+;;; Modules
 
-  (defun +workspaces-dead-buffer-p (buf)
-    (not (buffer-live-p buf)))
-  (add-hook 'persp-filter-save-buffers-functions #'+workspaces-dead-buffer-p))
+(after! ivy
+  ;; I prefer search matching to be ordered; it's more precise
+  (add-to-list 'ivy-re-builders-alist '(counsel-projectile-find-file . ivy--regex-plus)))
 
-(add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
-(add-hook 'after-init-hook #'global-emojify-mode) ;; Enable emojis
+;; Switch to the new window after splitting
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
 
-;; Load snippets
-(after! yasnippet
-  (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
-;; Trying to be more friendly for .ts & .tsx files
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-(after! typescript-mode
-  (require 'web-mode)
-  (add-hook 'typescript-mode-hook #'flycheck-mode))
+;;;; :tools magit
+(after! magit
+  (setq magit-repository-directories '(("~/projects" . 2))
+        magit-save-repository-buffers nil
+        ;; don't restore the wconf after quitting magit
+        magit-inhibit-save-previous-winconf t
+        transient-values '((magit-fetch  "--prune")
+                           (magit-commit "--gpg-sign=50C3D91E4C96CE4A")
+                           (magit-rebase "--autostash" "--interactive" "--gpg-sign=50C3D91E4C96CE4A")
+                           (magit-pull   "--rebase" "--gpg-sign=50C3D91E4C96CE4A"))))
 
-(setq +set-eslint-checker nil)
-(after! lsp-ui
-  ;; for w/e reason this is running twice
-  (setq lsp-ui-sideline-show-hover t)
-  (when (not +set-eslint-checker)
-    (progn
-      (setq +set-eslint-checker t)
-      (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-next-checker 'lsp-ui '(warning . javascript-eslint)))))
+;;;; config to pipe into apple's repos
+(after! forge
+  (add-to-list 'forge-alist '("github.pie.apple.com" "api.github.pie.apple.com" "github.pie.apple.com" forge-github-repository)))
 
-(after! web-mode
-  (add-hook 'web-mode-hook #'flycheck-mode)
-  (setq web-mode-markup-indent-offset 4
-        web-mode-code-indent-offset 4
-        web-mode-enable-auto-quoting nil
-        web-mode-auto-close-style 2))
 
-(after! lsp
-  ;; These take up a lot of space on my big font size
-  (setq lsp-ui-sideline-show-code-actions nil
-        lsp-ui-sideline-show-diagnostics nil
-        lsp-signature-render-all nil))
+;;; :lang org
+(setq org-directory "~/projects/org/"
+      org-archive-location (concat org-directory ".archive/%s::")
+      org-roam-directory (concat org-directory "notes/")
+      org-roam-db-location (concat org-roam-directory ".org-roam.db")
+      org-journal-encrypt-journal t
+      org-journal-file-format "%Y%m%d.org"
+      org-startup-folded 'overview
+      org-ellipsis " [...] ")
 
-(after! web-mode
-  (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
-  (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
 
-;; Modules
-(load! "+ui") ;; My ui mods. Also contains ligature stuff.
-(load! "+magit")
-(load! "+theme")
-(load! "+macos")
-(load! "+org") ;; Org mode stuff like todos and rebindings
-(load! "+bindings")
+;;; :ui doom-dashboard
+(setq fancy-splash-image (concat doom-private-dir "splash.png"))
+;; Don't need the menu; I know them all by heart
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+
+
+;;
+;;; Language customizations
+
+(custom-theme-set-faces! 'doom-dracula
+  `(markdown-code-face :background ,(doom-darken 'bg 0.075))
+  `(font-lock-variable-name-face :foreground ,(doom-lighten 'magenta 0.6)))

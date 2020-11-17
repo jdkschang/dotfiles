@@ -50,7 +50,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       ;; eshell
+       eshell
        ;; shell
        ;; term
        vterm

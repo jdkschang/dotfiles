@@ -36,6 +36,10 @@ set -x BUILDDIR "/tmp/makepkg"
 set -x LESS "-F -g -i -M -R -S -w -X -z-4"
 set -x MPD_HOST "localhost"
 
+
+# AWS settings
+set -x AWS_REGION "us-west-2"
+
 # Python - PyEnv
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x POETRY_ROOT "$HOME/.poetry"

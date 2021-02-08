@@ -53,7 +53,7 @@
        eshell
        ;; shell
        ;; term
-       vterm
+       ;; vterm
 
        :tools
        ;; ansible

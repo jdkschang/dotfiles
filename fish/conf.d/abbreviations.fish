@@ -94,3 +94,25 @@ abbr "tfa" "terraform apply"
 abbr "tfaa" "terraform apply -auto-approve"
 abbr "tfd" "terraform destroy"
 abbr "tfda" "terraform destroy -auto-approve"
+
+# kubernetes
+abbr "kb" "kubectl -n population"
+# get logs
+abbr "kbbl" "kubectl -n population logs -f (kubectl -n population get pods | grep population-backend | grep Running | awk '{print \$1}')"
+abbr "kbfl" "kubectl -n population logs -f (kubectl -n population get pods | grep population-frontend | grep Running | awk '{print \$1}')"
+
+# exec into pod
+abbr "kbbe" "kubectl -n population exec -ti (kubectl -n population get pods | grep population-backend | grep Running | awk '{print \$1}') -- /bin/bash -c 'AWS_REGION=us-west-2 AWS_ENV_PATH=/population/dev/ eval \$(aws-env) && /bin/bash'"
+abbr "kbfe" "kubectl -n population exec -ti (kubectl -n population get pods | grep population-frontend | grep Running | awk '{print \$1}') -- /bin/bash -c 'AWS_REGION=us-west-2 AWS_ENV_PATH=/population/dev/ eval \$(aws-env) && /bin/bash'"
+abbr "kbde" "kubectl -n population run pop-psql --image=postgres -i --tty --rm --command /bin/bash"
+
+# update kube images
+abbr "kbbd" "kubectl -n population set image deployment/population-backend population-backend=docker.apple.com/vedi/population/population:"
+abbr "kbfd" "kubectl -n population set image deployment/population-frontend population-frontend=docker.apple.com/vedi/population/population-frontend:"
+abbr "kbcd" "kubectl -n population set image cronjob/population-popbot-daily population-backend=docker.apple.com/vedi/population/population:"
+
+# check kube image
+abbr "kbbc" "kubectl -n population get deployments population-backend -o yaml | rg 'image: docker'"
+abbr "kbfc" "kubectl -n population get deployments population-frontend -o yaml | rg 'image: docker'"
+abbr "kbcc" "kubectl -n population get cronjobs population-popbot-daily -o yaml | grep 'image: docker'"
+abbr "kbdc" "kubectl -n population exec -ti (kubectl -n population get pods | grep population-backend | grep Running | awk '{print \$1}') -- /bin/bash -c 'AWS_REGION=us-west-2 AWS_ENV_PATH=/population/dev/ aws-env' | rg DATABASE"

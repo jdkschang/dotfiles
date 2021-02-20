@@ -54,7 +54,6 @@ betterDefaults () {
 	echo "Setting up better defaults"
 	echo "Installing homebrew..."
 	source ./macos/homebrew.sh
-	source ./macos/cask.sh
 	echo "Setting better defaults for macOS"
 	source ./macos/macos.sh
 }

@@ -33,7 +33,7 @@ brew install wget --with-iri
 
 # emacs
 brew tap d12frosted/emacs-plus
-brew install emacs-plus
+brew install emacs-plus --with-no-titlebar
 
 # neovim
 brew install python3
@@ -53,17 +53,11 @@ brew install tmux
 brew install urlview
 
 # git
-brew install cdiff
 brew install git
 
 # Install more recent versions of some OS X tools.
 brew tap homebrew/dupes
 brew install grep --with-default-names
-
-# Window manager
-brew install koekeishiya/formulae/skhd
-brew tap crisidev/homebrew-chunkwm
-brew install chunkwm
 
 # Install other useful binaries.
 brew install ack
@@ -77,10 +71,7 @@ brew install httpie
 brew install p7zip
 brew install python
 brew install neofetch
-brew install redis
-brew install thefuck
 brew install bat # super cat
-brew install ledger # cli finance
 brew install gnupg # secure sign
 brew install ncdu # prettier du (diskutil)
 brew install shpotify # cli spotify
@@ -88,5 +79,25 @@ brew install tldr # dummy for descriptions
 brew install tree
 brew install yarn
 brew install youtube-dl
+
+# Cloud
+brew install --cask dropbox
+
+# Media
+brew install --cask spotify
+
+# Browser
+brew install --cask brave-browser
+
+# Window Management
+brew install --cask moom
+
+# Development
+brew install openjdk
+brew install --cask visual-studio-code
+
+# Mac OS Enhancements
+brew install --cask alfred
+brew install --cask bartender
 
 brew cleanup

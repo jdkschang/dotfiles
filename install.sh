@@ -39,6 +39,8 @@ setupNvim() {
 			echo "Setting colorscheme..."
 			nvim --cmd 'set t_ti= t_te= nomore' -N -U NONE -i NONE \
 				-c "try | colorscheme palenight | finally | call confirm('') | qall! | endtry"
+			sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 		else
 			echo "Please install python 3"
 		fi

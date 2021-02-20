@@ -100,6 +100,7 @@ abbr "kb" "kubectl -n population"
 # get logs
 abbr "kbbl" "kubectl -n population logs -f (kubectl -n population get pods | grep population-backend | grep Running | awk '{print \$1}')"
 abbr "kbfl" "kubectl -n population logs -f (kubectl -n population get pods | grep population-frontend | grep Running | awk '{print \$1}')"
+abbr "kbcl" "kubectl -n population logs -f (kubectl -n population get pods | grep population-frontend | grep Running | awk '{print \$1}')"
 
 # exec into pod
 abbr "kbbe" "kubectl -n population exec -ti (kubectl -n population get pods | grep population-backend | grep Running | awk '{print \$1}') -- /bin/bash -c 'AWS_REGION=us-west-2 AWS_ENV_PATH=/population/dev/ eval \$(aws-env) && /bin/bash'"

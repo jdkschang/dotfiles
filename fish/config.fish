@@ -22,7 +22,7 @@ set -U FZF_COMPLETE 2
 # Enable preview window open command
 set -U FZF_ENABLE_OPEN_PREVIEW 1
 
-fnm env --multi | source
+fnm env | source
 status --is-interactive
 and source (pyenv init - --no-rehash |psub)
 status --is-interactive

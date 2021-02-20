@@ -2,6 +2,9 @@
 
 BASEDIR=$(dirname "$0")
 
+# TODO: discover & set env variables
+# TODO: `clean` dotfiles function to remove the files & symlinks added by install script
+
 setupFish() {
 	if command -v fish > /dev/null 2>&1; then
 		echo "Installing fisher..."
@@ -77,6 +80,12 @@ if command -v bat > /dev/null 2>&1; then
 	bat cache init
 fi
 
+read -p "Do you wish to install better macOS defaults (y/n)" yn
+case $yn in
+	[Yy]* ) betterDefaults;;
+	[Nn]* ) echo "Skipping better default initialization..."
+esac
+
 read -p "Do you wish to setup neovim (y/n)" yn
 case $yn in
 	[Yy]* ) setupNvim;;
@@ -93,12 +102,6 @@ read -p "Do you wish to setup fish-shell (y/n)" yn
 case $yn in
 	[Yy]* ) setupFish;;
 	[Nn]* ) echo "Skipping fish setup..."
-esac
-
-read -p "Do you wish to install better macOS defaults (y/n)" yn
-case $yn in
-	[Yy]* ) betterDefaults;;
-	[Nn]* ) echo "Skipping better default initialization..."
 esac
 
 echo "Install finished!"

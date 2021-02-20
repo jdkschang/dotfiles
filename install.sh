@@ -77,7 +77,7 @@ else
 fi
 
 if command -v bat > /dev/null 2>&1; then
-	bat cache init
+	bat cache --build
 fi
 
 read -p "Do you wish to install better macOS defaults (y/n)" yn

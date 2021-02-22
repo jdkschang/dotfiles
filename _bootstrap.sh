@@ -29,14 +29,13 @@ else
 fi
 
 info "Setting better defaults for macOS..."
-if [[ "$COMPNAME" == "geesee" ]]; then
-	success "Better defaults have already been set."
-elif source $DIR/macos/macos.sh &>/dev/null; then
+if source $DIR/macos/macos.sh &>/dev/null; then
 	success "Finished installing XCode command line tools."
 else
 	error "Failed to install XCode command line tools."
 fi
 
+# brewfile vs homebrew.sh
 info "Installing Homebrew package manager..."
 if brew info &>/dev/null; then
 	success "Homebrew is already installed."

@@ -12,10 +12,17 @@ info "Setting macOS defaults..."
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-# Set computer name
-sudo scutil --set ComputerName aurelius
-sudo scutil --set LocalHostName aurelius
-sudo scutil --set HostName aurelius
+read -p "!! Please enter the ComputerName: " -r
+echo
+
+if [[ -n "$REPLY" ]]; then
+  COMPNAME=$REPLY
+  echo "♻️  Naming computer......"
+  sudo scutil --set ComputerName $COMPNAME
+  sudo scutil --set LocalHostName $COMPNAME
+  sudo scutil --set HostName $COMPNAME
+  echo "🎉  Done!"
+fi
 #sudo scutil --set ComputerName "0x6D746873"
 #sudo scutil --set HostName "0x6D746873"
 #sudo scutil --set LocalHostName "0x6D746873"

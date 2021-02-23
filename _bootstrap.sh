@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
 
 DIR=$(dirname "$0")
-COMPNAME=$(scutil --get ComputerName)
 cd "$DIR"
+
+chmod u+x **/*.sh
 
 . $DIR/scripts/functions.sh
 

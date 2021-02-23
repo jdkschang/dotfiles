@@ -30,10 +30,10 @@ else
 fi
 
 info "Setting better defaults for macOS..."
-if source $DIR/macos/macos.sh &>/dev/null; then
-	success "Finished installing XCode command line tools."
+if source $DIR/macos/macos.sh; then
+	success "Finished installing macOS better defaults."
 else
-	error "Failed to install XCode command line tools."
+	error "Failed to install macOS better defaults."
 fi
 
 # brewfile vs homebrew.sh

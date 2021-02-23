@@ -40,7 +40,7 @@ fi
 info "Installing Homebrew package manager..."
 if brew info &>/dev/null; then
 	success "Homebrew is already installed."
-elif /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &>/dev/null; then
+elif /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
 	success "Finished installing Homebrew package manager."
 else
 	error "Failed to install Homebrew package manager."

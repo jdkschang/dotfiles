@@ -34,6 +34,8 @@
         atomic-chrome-buffer-open-style 'frame)
   (atomic-chrome-start-server))
 
+;; Enable emojis by default
+(global-emojify-mode t)
 
 ;;
 ;;;; UI
@@ -95,7 +97,6 @@
 ;;;; config to pipe into apple's repos
 (after! forge
   (add-to-list 'forge-alist '("github.pie.apple.com" "api.github.pie.apple.com" "github.pie.apple.com" forge-github-repository)))
-
 
 ;;; :lang org
 (setq org-directory "~/projects/org/"

@@ -23,7 +23,5 @@ set -U FZF_COMPLETE 2
 set -U FZF_ENABLE_OPEN_PREVIEW 1
 
 fnm env | source
-status --is-interactive
-and source (pyenv init - --no-rehash |psub)
-status --is-interactive
-and pyenv virtualenv-init - | source
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source

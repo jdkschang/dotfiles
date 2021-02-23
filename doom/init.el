@@ -17,7 +17,7 @@
        (modeline +light)
        ;; nav-flash
        ophints
-       ;; treemacs
+       treemacs
        (popup +defaults)
        ;; (ligatures +extra)
        ;; ligatures

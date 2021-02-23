@@ -11,7 +11,7 @@ COMMENT=\#*
 sudo -v
 
 info "Installing Brewfile packages..."
-brew bundle
+brew bundle install
 success "Finished installing Brewfile packages."
 
 fnm use 11

@@ -1,123 +1,119 @@
-tap "arkweid/lefthook"
-tap "borkdude/brew"
-tap "buo/cask-upgrade"
-tap "clojure/tools"
-tap "cloudtech/tap", "git@github.pie.apple.com:cloudtech/homebrew-tap.git"
-tap "crisidev/chunkwm"
-tap "d12frosted/emacs-plus"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "neovim/neovim"
-tap "schniz/tap"
-brew "ack"
-brew "aspell"
-brew "automake"
-brew "readline"
-brew "sqlite"
-brew "xz"
-brew "awscli"
-brew "bash-completion"
-brew "bat"
-brew "brew-cask-completion"
-brew "gettext"
-brew "cairo"
-brew "ccls"
-brew "coreutils"
-brew "ctags"
-brew "curl"
-brew "diff-so-fancy"
-brew "direnv"
-brew "duti"
-brew "exa"
-brew "pkg-config"
-brew "libass"
-brew "libbluray"
-brew "srt"
-brew "ffmpeg"
-brew "findutils"
-brew "fish"
-brew "fnm"
-brew "fzf"
-brew "gcc"
-brew "gdb"
-brew "gh"
-brew "git"
-brew "git-lfs"
-brew "gnu-sed"
-brew "pinentry"
-brew "gnupg"
-brew "go"
-brew "grep"
-brew "htop"
-brew "httpie"
-brew "hub"
-brew "python@3.8"
-brew "imagemagick"
-brew "imagemagick@6"
-brew "jq"
-brew "kind"
-brew "krb5"
-brew "librsvg"
-brew "lsd"
-brew "lua"
-brew "mas"
-brew "moreutils"
-brew "mysql"
-brew "ncdu"
-brew "neofetch"
-brew "neovim"
-brew "nginx"
-brew "node"
-brew "openapi-generator", link: false
-brew "openjdk@11"
-brew "pinentry-mac"
-brew "qt"
-brew "poppler"
-brew "postgresql"
-brew "pyenv"
-brew "pyenv-virtualenv"
-brew "pyqt"
-brew "reattach-to-user-namespace"
-brew "redis"
-brew "ripgrep"
-brew "shpotify"
-brew "source-highlight"
-brew "ssh-copy-id", link: true
-brew "terraform@0.13"
-brew "the_silver_searcher"
-brew "thefuck"
-brew "tldr"
-brew "tmux"
-brew "tree"
-brew "urlview"
-brew "wget"
-brew "wordnet"
-brew "yarn"
-brew "ydiff"
-brew "youtube-dl"
-brew "zlib"
-brew "arkweid/lefthook/lefthook"
-brew "borkdude/brew/babashka"
-brew "clojure/tools/clojure"
-brew "cloudtech/tap/aws-login"
-brew "cloudtech/tap/aws-session-manager-plugin"
-brew "cloudtech/tap/awsappleconnect"
-brew "d12frosted/emacs-plus/emacs-plus@27"
-cask "alfred"
-cask "bartender"
-cask "discord", args: { appdir: "/Applications" }
-cask "docker"
-cask "firefox"
-cask "google-chrome", args: { appdir: "/Applications" }
-cask "iterm2"
-cask "java11", args: { appdir: "/Applications" }
-cask "karabiner-elements", args: { appdir: "/Applications" }
-cask "mongodb", args: { appdir: "/Applications" }
-cask "platypus"
-cask "spotify", args: { appdir: "/Applications" }
-cask "visual-studio-code", args: { appdir: "/Applications" }
-cask "vlc", args: { appdir: "/Applications" }
-cask "xquartz", args: { appdir: "/Applications" }
+tap 'homebrew/core'
+tap 'homebrew/services'
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'buo/cask-upgrade'
+# tap to install fnm
+tap 'schniz/tap'
+tap 'd12frosted/emacs-plus'
+tap 'neovim/neovim'
+tap 'clojure/tools'
+tap 'borkdude/brew'
+tap 'arkweid/lefthook'
+
+tap 'cloudtech/tap', 'git@github.pie.apple.com:cloudtech/homebrew-tap.git'
+
+brew 'ack'
+brew 'brew-cask-completion'
+
+brew 'coreutils'
+brew 'moreutils'
+brew 'findutils'
+
+brew 'awscli'
+brew 'curl'
+brew 'ctags'
+brew 'diff-so-fancy'
+brew 'direnv'
+brew 'findutils'
+brew 'ffmpeg'
+brew 'fish'
+brew 'fnm'
+brew 'fzf'
+brew 'gcc'
+brew 'git'
+brew 'git-lfs'
+brew 'grep'
+brew 'glib'
+brew 'gnu-sed'
+brew 'hub'
+brew 'imagemagick'
+brew 'jq'
+brew 'mas'
+brew 'openssl'
+brew 'pinentry'
+brew 'pinentry-mac'
+brew 'pkg-config'
+brew 'postgresql'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'ripgrep'
+brew 'reattach-to-user-namespace'
+brew 'source-highlight'
+brew 'sqlite'
+brew 'ssh-copy-id', link: true
+brew 'the_silver_searcher'
+brew 'tmux'
+brew 'urlview'
+brew 'wget'
+brew 'youtube-dl'
+
+brew 'exa'
+brew 'lsd'
+brew 'htop'
+brew 'httpie'
+brew 'neofetch'
+brew 'bat'
+brew 'gnupg'
+brew 'shpotify'
+brew 'tldr'
+brew 'ncdu'
+brew 'tree'
+brew 'zlib'
+
+brew 'arkweid/lefthook/lefthook'
+brew 'borkdude/brew/babashka'
+brew 'ccls'
+brew 'clojure/tools/clojure'
+brew 'go'
+brew 'node'
+brew 'rust'
+brew 'terraform'
+brew 'mysql'
+brew 'nginx'
+
+brew 'cloudtech/tap/aws-login'
+brew 'cloudtech/tap/aws-session-manager-plugin'
+brew 'cloudtech/tap/awsappleconnect'
+
+brew 'd12frosted/emacs-plus/emacs-plus@27'
+brew 'neovim'
+
+# to work with emacs
+brew 'fd'
+brew 'editorconfig'
+brew 'pipenv'
+
+cask 'alfred'
+cask 'bartender'
+cask 'brave-browser', args: { appdir: '/Applications' }
+cask 'discord', args: { appdir: '/Applications' }
+cask 'docker'
+cask 'iterm2'
+cask 'java11', args: { appdir: '/Applications' }
+cask 'karabiner-elements', args: { appdir: '/Applications' }
+cask 'spotify', args: { appdir: '/Applications' }
+cask 'visual-studio-code', args: { appdir: '/Applications' }
+cask 'vlc', args: { appdir: '/Applications' }
+cask 'xquartz', args: { appdir: '/Applications' }
+
+mas 'Be Focused Pro', id: 961632517
+mas 'Fantastical', id: 975937182
+mas 'Keynote', id: 409183694
+mas 'Moom', id: 419330170
+mas 'Shotty', id: 1250306151
+mas 'Slack', id: 803453959
+mas 'Things', id: 904280696
+mas 'Tweetbot', id: 1384080005
+mas 'Xcode', id: 497799835
+mas 'Logic Pro X', id: 634148309

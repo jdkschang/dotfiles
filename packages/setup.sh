@@ -1,20 +1,15 @@
 #! /usr/bin/env sh
 
-
 DIR=$(dirname "$0")
-cd "$DIR"
+cd "$DIR" || exit
 
-COMMENT=\#*
-
-. $DIR/scripts/functions.sh
-
-sudo -v
+. "$DIR/scripts/functions.sh"
 
 info "Installing Brewfile packages..."
 brew bundle install
 success "Finished installing Brewfile packages."
 
-fnm use 11
+fnm use 12
 success "Switched to Node v11"
 
 # find * -name "*.list" | while read fn; do

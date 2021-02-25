@@ -23,22 +23,22 @@ backup = "$HOME/.dotfiles~"
 "dotbro" = ".config/dotbro"
 "bin" = "bin"
 
-"fish" = ".config/fish"
-"git" = ".config/git"
-"htop" = ".config/htop"
+#"fish" = ".config/fish"
+#"git" = ".config/git"
+#"htop" = ".config/htop"
 "dots/ssh-config" = ".ssh/config"
 
 # Editors
 # Vim
-"vim/vimrc" = ".config/nvim/init.vim"
-"vim/vimrc.bundles" = ".config/vim/vimrc.bundles"
+#"vim/vimrc" = ".config/nvim/init.vim"
+#"vim/vimrc.bundles" = ".config/vim/vimrc.bundles"
 
 # Doom Emacs
-"doom" = ".config/doom"
+#"doom" = ".config/doom"
 
 # Tmux
-"tmux/tmux.conf" = ".config/tmux/tmux.conf"
-"tmux/tmux.theme.conf" = ".config/tmux/tmux.theme.conf"
+#"tmux/tmux.conf" = ".config/tmux/tmux.conf"
+#"tmux/tmux.theme.conf" = ".config/tmux/tmux.theme.conf"
 
 # Chunkwm & skhd
 "dots/chunkwmrc" = ".chunkwmrc"

@@ -14,6 +14,7 @@ tap 'arkweid/lefthook'
 tap 'cloudtech/tap', 'git@github.pie.apple.com:cloudtech/homebrew-tap.git'
 
 brew 'ack'
+brew 'aspell'
 brew 'brew-cask-completion'
 
 brew 'coreutils'
@@ -47,8 +48,9 @@ brew 'pkg-config'
 brew 'postgresql'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
-brew 'ripgrep'
+brew 'readline'
 brew 'reattach-to-user-namespace'
+brew 'ripgrep'
 brew 'source-highlight'
 brew 'sqlite'
 brew 'ssh-copy-id', link: true

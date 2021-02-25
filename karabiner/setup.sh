@@ -13,8 +13,8 @@ info "Setting up Karabiner Elements..."
 substep_info "Creating Karabiner Elements folder..."
 mkdir -p $DESTINATION
 
-find * -name "*.json" | while read fn; do
-    symlink "$SOURCE/$fn" "$DESTINATION/$fn"
+find -- * -name "*.json" | while read -r fn; do
+	symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 clear_broken_symlinks "$DESTINATION"
 

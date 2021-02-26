@@ -2,9 +2,9 @@
 
 # ~/.macos — https://mths.be/macos
 DIR=$(dirname "$0")
-cd "$DIR"
+cd "$DIR" || exit
 
-. ../scripts/functions.sh
+. "$DIR/macos/scripts/utils.sh"
 
 info "Setting macOS defaults..."
 
@@ -12,21 +12,17 @@ info "Setting macOS defaults..."
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-read -p "!! Please enter the ComputerName: " -r
+read -rp "!! Please enter the ComputerName: "
 echo
 
 if [[ -n "$REPLY" ]]; then
-  COMPNAME=$REPLY
-  echo "♻️  Naming computer......"
-  sudo scutil --set ComputerName $COMPNAME
-  sudo scutil --set LocalHostName $COMPNAME
-  sudo scutil --set HostName $COMPNAME
-  echo "🎉  Done!"
+	COMPNAME=$REPLY
+	echo  "♻️  Naming computer......"
+	sudo  scutil --set ComputerName "$COMPNAME"
+	sudo  scutil --set LocalHostName "$COMPNAME"
+	sudo  scutil --set HostName "$COMPNAME"
+	echo  "🎉  Done!"
 fi
-#sudo scutil --set ComputerName "0x6D746873"
-#sudo scutil --set HostName "0x6D746873"
-#sudo scutil --set LocalHostName "0x6D746873"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
 
 ###############################################################################
 # General UI/UX                                                               #

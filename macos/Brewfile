@@ -3,18 +3,17 @@ tap 'homebrew/services'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'buo/cask-upgrade'
-# tap to install fnm
 tap 'schniz/tap'
 tap 'd12frosted/emacs-plus'
 tap 'neovim/neovim'
 tap 'clojure/tools'
 tap 'borkdude/brew'
 tap 'arkweid/lefthook'
+tap 'universal-ctags/universal-ctags'
 
 tap 'cloudtech/tap', 'git@github.pie.apple.com:cloudtech/homebrew-tap.git'
 
 brew 'ack'
-brew 'aspell'
 brew 'brew-cask-completion'
 
 brew 'coreutils'
@@ -52,8 +51,10 @@ brew 'readline'
 brew 'reattach-to-user-namespace'
 brew 'ripgrep'
 brew 'source-highlight'
+brew 'shellcheck'
 brew 'sqlite'
 brew 'ssh-copy-id', link: true
+brew 'stow'
 brew 'the_silver_searcher'
 brew 'tmux'
 brew 'urlview'
@@ -82,16 +83,17 @@ brew 'node'
 brew 'rust'
 brew 'terraform'
 brew 'mysql'
+brew 'sbcl'
 brew 'nginx'
 
-brew 'cloudtech/tap/aws-login'
 brew 'cloudtech/tap/aws-session-manager-plugin'
 brew 'cloudtech/tap/awsappleconnect'
 
 brew 'd12frosted/emacs-plus/emacs-plus@27'
 brew 'neovim'
 
-# to work with emacs
+brew 'aspell'
+brew 'universal-ctags', args: ['HEAD']
 brew 'fd'
 brew 'editorconfig'
 brew 'pipenv'

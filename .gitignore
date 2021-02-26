@@ -1,2 +1,4 @@
 *.tmp
 *.local
+karabiner/.config/karabiner/automatic_backups
+tmux/.config/tmux/plugins

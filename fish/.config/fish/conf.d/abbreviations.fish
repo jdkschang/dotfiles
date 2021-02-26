@@ -65,7 +65,7 @@ abbr "g" "git"
 
 # tmux
 alias "tmux" "env TERM=xterm-256color-it tmux -2 -f ~/.config/tmux/tmux.conf"
-abbr "tinit" 'source $DOTFILES/tmux/scripts/tmux.fish'
+abbr "tinit" 'source ~/.config/tmux/scripts/tmux.fish'
 abbr "tls" "tmux ls"
 abbr "tnew" "tmux new -s"
 abbr "tkill" "tmux kill-session -t"

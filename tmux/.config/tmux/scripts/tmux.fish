@@ -9,7 +9,7 @@ function session_base
     tmux send-keys 'git status' C-m
     tmux split-window -h
     tmux send-keys 'cd ~/.emacs.d' C-m
-    tmux send-keys 'doom sync & doom build' C-m
+    tmux send-keys 'doom sync && doom build' C-m
 
     tmux neww -k -n pop-front -t base:2
     tmux send-keys 'popf' C-m

@@ -7,33 +7,24 @@
 </p>
 
 ## System info
-* browser: `Firefox`
-* editor: `Emacs`
+* browser: `Brave`
+* editor: `emacs`
 * os: `macOS`
-* shell: `Fish`
-* terminal editor: `Neovim`
-* terminal font: `IBM Plex Mono`
+* shell: `fish`
+* terminal editor: `neovim`
+* terminal font: `MonoLisa`
 * terminal: `iTerm2`
-* window manager: `chunkwm`
+* window manager: `Moom`
 
 ## Installation
-Set `DOTFILES` to whatever you want.
-Make sure the enviroment variables `$XDG_CONFIG_HOME` and `$XDG_DATA_HOME` are
-set.
+`chmod u+x bootstrap.sh && ./bootstrap.sh`
 
-### Dependencies
-* git
-* Go (required for installation)
-* Dotbro (installed with install.sh, is used to symlink files)
-``` shell
-export DOTFILES="${HOME}/etc"
-git clone git://github.com/Brettm12345/dotfiles "$DOTFILES"
-eval "$DOTFILES"/install.sh
-```
+> Environment variables `$XDG_CONFIG_HOME`, `$XDG_DATA_HOME`, etc are
+set within fish env
+
+Leveraging GNU Stow for symlinking, [Brandon Invergo](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) has a useful blog entry with examples
 
 ## Credit
-[Brettm12345](https://github.com/Brettm12345/dotfiles)
-[ar1a](https://github.com/ar1a/dotfiles)
 [hlissner](https://github.com/hlissner/doom-emacs-private)
 [dkarter](https://github.com/dkarter/dotfiles)
 [jackfranklin](https://github.com/jackfranklin/dotfiles)

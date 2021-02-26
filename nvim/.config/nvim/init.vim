@@ -8,7 +8,7 @@
 "  ▀██████▀  █▀    ▀█   ███   █▀
 
 " General settings {{{
-  scriptencoding  utf-16    " allow emojies in vimrc
+  scriptencoding  utf-16    " allow emojis in vimrc
   set nocompatible          " vim, not vi
   syntax on                 " syntax highlighting
   filetype plugin indent on " try to recognize filetypes and load rel' plugins
@@ -20,7 +20,7 @@
   let maplocalleader = ' '
 
   " setting general behaviors
-  set background=light  " tell vim what the background color looks like
+  set background=dark   " tell vim what the background color looks like
   set backspace=2       " Backspace deletes like most programs in insert mode
   set history=200       " how many : commands to save in history
   set ruler             " show the cursor position all the time
@@ -229,17 +229,6 @@
   if s:has_plugin('splitjoin')
     let g:splitjoin_align = 1
     " let g:splitjoin_trailing_comma = 1
-  endif
-
-  " Snippets (UltiSnips):
-  " ----------------------------------------------------------------------------
-  if s:has_plugin('ultisnips')
-    let g:UltiSnipsExpandTrigger               = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger          = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger         = '<s-tab>'
-    " :UltiSnipsEdit opens in a vertical split
-    let g:UltiSnipsEditSplit                   = 'vertical'
-    let g:UltiSnipsSnippetsDir                 = $HOME . '/dotfiles/vim/UltiSnips'
   endif
 
   " IndentLine
@@ -562,16 +551,16 @@
 " }}}
 
 " Load Plugins {{{
-  if filereadable(expand('~/.config/vim/vimrc.bundles'))
-    source ~/.config/vim/vimrc.bundles
+  if filereadable(expand('~/.config/nvim/vimrc.bundles'))
+    source ~/.config/nvim/vimrc.bundles
   endif
 " }}}
 
 " General Config {{{
   " Theme (light | mirage | dark)
   " let ayucolor="dark"
-  " colo ayu
-  colo solarized
+  colo ayu
+  " colo solarized
 
   " hi Comment cterm=italic
   hi Comment gui=italic

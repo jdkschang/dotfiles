@@ -48,9 +48,9 @@ setup-brew()   {
 setup-fish() {
 	if command -v fish > /dev/null 2>&1; then
 		info "Installing fisher..."
-		curl https://git.io/fisher --create-dirs -sLo "$XDG_CONFIG_HOME/fish/functions/fisher.fish" > /dev/null
+		curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 		info "Installing plugins..."
-		fish -c fisher
+		fisher update
 
 		read -rp "Do you wish to fish? (y/n)" yn
 		case $yn in

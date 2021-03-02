@@ -2,5 +2,7 @@
 *.local
 karabiner/.config/karabiner/automatic_backups
 tmux/.config/tmux/plugins
+fish/.config/completions
 fish_variables
 nvim/.config/nvim/plugged
+nvim/.config/nvim/undo

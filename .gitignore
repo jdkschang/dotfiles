@@ -6,3 +6,4 @@ fish/.config/completions
 fish_variables
 nvim/.config/nvim/plugged
 nvim/.config/nvim/undo
+nvim/.config/nvim/pack

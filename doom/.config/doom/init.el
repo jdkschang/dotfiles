@@ -76,7 +76,7 @@
        (cc +lsp)                ; C/C++/Obj-C madness
        clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
-       ;; data              ; config/data formats
+       data              ; config/data formats
        ;; erlang            ; an elegant language for a more civilized age
        ;; elixir            ; erlang done right
        emacs-lisp        ; drown in parentheses

@@ -161,3 +161,5 @@
 # URL shorthands
 [url "https://github.com/"]
 	insteadOf = "github:"
+[init]
+	defaultBranch = main

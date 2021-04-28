@@ -45,7 +45,7 @@
        :emacs
        dired
        electric          ; smarter, keyword-based electric-indent
-       ;; ibuffer        ; interactive buffer management
+       ibuffer        ; interactive buffer management
        undo              ; persistent, smarter undo
        vc                ; version-control and Emacs, sitting in a tree
 
@@ -69,7 +69,7 @@
        ;; make
        ;; pdf
        rgb                  ; creating color string
-       ;; terraform
+       terraform
        ;; upload               ; map local to remote projects via ssh/ftp
 
        :lang

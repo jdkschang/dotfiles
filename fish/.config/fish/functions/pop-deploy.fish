@@ -7,21 +7,28 @@ function pop-deploy -d 'Update & Deploy latest Population image'
     __fetch_pop_front_latest_commit_hash $argv[1]
     __fetch_pop_back_latest_commit_hash $argv[1]
 
-    if [ "$argv[1]" = 'dev' ]
+    if [ $argv[1] = 'dev' ]
         set FRONT_HASH $POPFRONT_dev
         set BACK_HASH $POPBACK_dev
-    else if [ "$argv[1]" = 'main' ]
+		set -x AWS_PROFILE 'dev'
+		set KUBE_ENV 'dev'
+    else if [ $argv[1] = 'main' ]
         set FRONT_HASH $POPFRONT_main
         set BACK_HASH $POPBACK_main
+		set -x AWS_PROFILE 'prod'
+		set KUBE_ENV 'prod'
     end
 
-    # # update frontend kube image with frontend hash
+	# set kube env
+	ln -sfv ~/.kube/config-$KUBE_ENV ~/.kube/config
+
+    # update frontend kube image with frontend hash
     echo "updating frontend image $FRONT_HASH"
     kubectl -n population set image deployment/population-frontend population-frontend=docker.apple.com/vedi/population/population-frontend:$FRONT_HASH
-    # # update backend kube image with backend hash
+    # update backend kube image with backend hash
     echo "updating backend image $BACK_HASH"
     kubectl -n population set image deployment/population-backend population-backend=docker.apple.com/vedi/population/population:$BACK_HASH
-    # # update cronjob daily & hourly kube image with backend image
+    # update cronjob daily & hourly kube image with backend image
     echo "updating cronjob images"
     kubectl -n population set image cronjob/population-popbot-daily population-popbot-daily=docker.apple.com/vedi/population/population:$BACK_HASH
     kubectl -n population set image cronjob/population-popbot-hourly population-popbot-hourly=docker.apple.com/vedi/population/population:$BACK_HASH

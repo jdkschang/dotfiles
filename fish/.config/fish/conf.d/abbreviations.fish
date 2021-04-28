@@ -47,16 +47,6 @@ abbr "h" "history"
 abbr "jo" "jobs"
 abbr "k" "pkill"
 
-# Services
-abbr "bstart" "brew services start"
-abbr "bstop" "brew services stop"
-
-abbr "bsrcs" "brew services restart chunkwm; brew services restart skhd;"
-abbr "bsrc" "brew services restart chunkwm"
-abbr "bssc" "brew services stop chunkwm"
-abbr "bsrs" "brew services restart skhd"
-abbr "bsss" "brew services stop skhd"
-
 # Spotify
 abbr "sp" "spotify"
 
@@ -86,7 +76,6 @@ abbr "nug" "npm uninstall --global"
 # python
 abbr "pap" "pyenv activate pop"
 abbr "pr" "poetry run"
-abbr "prm" "poetry run ./manage.py"
 
 # terraform
 abbr "tf" "terraform"
